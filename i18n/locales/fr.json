@@ -1,0 +1,149 @@
+{
+  "seo": {
+    "title": "Emeric Guyon — Développeur Fullstack Freelance",
+    "description": "Emeric Guyon — Développeur fullstack freelance, orienté produit. 10+ ans à livrer des apps web et plateformes SaaS pour startups et équipes tech. Vue.js, Nuxt, React, Next.js, TypeScript, Node.js. Basé à Chambéry, disponible à Lyon, Grenoble, Annecy et Paris."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "cta": "CONTACTEZ-MOI"
+  },
+  "hero": {
+    "name": "EMERIC GUYON",
+    "baseline": "Développeur fullstack senior — j'aide les startups et équipes tech à construire ce qu'il faut, et à le construire bien.",
+    "location": "Basé à Chambéry, full remote ou déplacement selon le projet. Lyon, Grenoble, Annecy, Paris..."
+  },
+  "about": {
+    "title": "Développeur orienté produit. Je ne fais pas que coder — j'aide à livrer ce qui compte vraiment.",
+    "p1": "Développeur fullstack freelance avec 10+ ans d'expérience. J'ai travaillé avec des startups, des scale-ups et de grandes organisations — du MVP à la production, d'une feature à une plateforme complète.",
+    "p2": "Je pense produit avant de penser composant. Je challenge les specs, je questionne les priorités, je cherche le ROI. Quand je rejoins une équipe, je comprends le « pourquoi » avant de coder le « comment ». C'est comme ça qu'on évite de construire la mauvaise chose.",
+    "p3": "React, Next.js, Vue.js, Nuxt, TypeScript, Node.js, Symfony — et du WordPress custom quand c'est le bon choix. L'IA fait partie de mon quotidien : elle accélère le delivery, je garantis la qualité.",
+    "label": "À propos",
+    "experienceLabel": "Parcours",
+    "exp1": {
+      "company": "Indépendant",
+      "role": "Développeur fullstack",
+      "period": "2025 — aujourd'hui",
+      "clients": "MyRole, INRIA, Lönn, Elite Trackr"
+    },
+    "exp2": {
+      "company": "Patriarche",
+      "role": "Développeur front-end senior",
+      "period": "2022 — 2024",
+      "clients": "Patriarche, Ekkinox, 25 lieux d'inovation"
+    },
+    "exp3": {
+      "company": "DATASOLUTION",
+      "role": "Développeur web",
+      "period": "2021 — 2022",
+      "clients": "EvianChezVous, Mieux Voir, NutriciaStore"
+    },
+    "exp4": {
+      "company": "NewQuest",
+      "role": "Développeur web",
+      "period": "2010 — 2021",
+      "clients": "My Evian, Chocolat De Neuville, Mieux Voir, Bragard"
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "Ce que je peux faire pour vous.",
+    "items": {
+      "custom": {
+        "title": "Construire quelque chose de nouveau",
+        "desc": "Applications web, plateformes SaaS, outils métier — du cadrage technique au déploiement. Je construis des produits pensés pour durer, pas juste pour livrer."
+      },
+      "redesign": {
+        "title": "Corriger ou moderniser l'existant",
+        "desc": "Modernisation de stack, migration de framework, refactoring legacy — je reprends l'existant et je le fais évoluer sans tout casser."
+      },
+      "performance": {
+        "title": "Accélérer et gagner en visibilité",
+        "desc": "Audit, optimisation Core Web Vitals, SSR, lazy loading — des gains mesurables sur la vitesse et le référencement."
+      },
+      "consulting": {
+        "title": "Poser les bonnes fondations",
+        "desc": "Choix de stack, architecture technique, revue de code — j'interviens en amont pour construire juste, avant qu'une ligne soit écrite."
+      },
+      "ai": {
+        "title": "Intégrer l'IA là où ça a du sens",
+        "desc": "Intégration d'APIs IA (OpenAI, Claude, etc.), workflows automatisés, features intelligentes — l'IA au service de votre produit, pas l'inverse."
+      },
+      "team": {
+        "title": "Renforcer votre équipe",
+        "desc": "Je m'intègre à vos sprints, vos process, vos outils. En autonomie ou en pair, je m'adapte à votre rythme et vos standards. Opérationnel dès le premier jour."
+      }
+    }
+  },
+  "skills": {
+    "label": "Compétences",
+    "title": "Les bons outils pour chaque projet, selon vos besoins techniques."
+  },
+  "projects": {
+    "label": "Projets",
+    "title": "Chaque projet m'a appris quelque chose. En voici quelques-uns.",
+    "view": "Voir",
+    "back": "Retour",
+    "madeWith": "Réalisé avec",
+    "viewSite": "Voir le site",
+    "items": {
+      "evianchezvous": {
+        "description": "E-commerce Magento 2 pour la livraison d'eau à domicile sur Paris et Île-de-France.",
+        "longDescription": "Site e-commerce sous Magento 2 pour la livraison d'eau Evian à domicile, en ponctuel ou par abonnement récurrent, sur Paris et Île-de-France. Front-end React.js avec GraphQL pour une expérience fluide et performante."
+      },
+      "ekkinox": {
+        "description": "Application métier sur mesure pour le suivi de chantier financier.",
+        "longDescription": "Application métier développée sur mesure pour le suivi financier de chantiers. Interface de gestion complète permettant le pilotage budgétaire et le reporting en temps réel."
+      },
+      "25lieuxinnovation": {
+        "description": "Site vitrine des 25 lieux qui changent l'innovation en France.",
+        "longDescription": "Site WordPress custom avec des animations GSAP soignées pour mettre en lumière les 25 lieux qui transforment l'innovation en France. Back-office sur mesure avec ACF et Timber."
+      },
+      "lonn": {
+        "description": "Marketplace SaaS dédiée aux centres de bien-être et praticiens indépendants.",
+        "longDescription": "MVP d'une marketplace dédiée aux centres de bien-être et aux praticiens indépendants. Plateforme SaaS permettant la mise en relation, la réservation et la gestion d'activités."
+      },
+      "elitetrackr": {
+        "description": "Plateforme de statistiques et classements en athlétisme.",
+        "longDescription": "Plateforme de statistiques et classements en athlétisme couvrant un grand nombre d'athlètes et de performances à travers de nombreux pays. Données agrégées, classements dynamiques et fiches athlètes détaillées."
+      },
+      "juriscan": {
+        "description": "MVP d'extraction de textes de documents pour huissiers de justice.",
+        "longDescription": "MVP permettant l'extraction automatique de textes à partir de documents juridiques, destiné aux huissiers de justice. Design UI/UX et développement. Upload, parsing et restitution structurée des données extraites."
+      },
+      "parentsdouceur": {
+        "description": "Site WordPress custom pour l'accompagnement périnatal et parental.",
+        "longDescription": "Site WordPress custom dédié à l'accompagnement périnatal et parental. Design UI/UX et développement. Back-office sur mesure avec ACF et Timber, animations GSAP pour une navigation fluide et chaleureuse."
+      },
+      "inria": {
+        "description": "Outil de memory profiling pour traquer les allocations mémoire (malloc).",
+        "longDescription": "Refonte complète de MALT, un outil de memory profiling développé par l'INRIA, permettant de traquer les allocations mémoire (malloc). Migration d'Angular vers Vue.js, avec de nombreuses visualisations D3.js.",
+        "takeaway1": "Réécriture complète de l'interface Angular vers Vue.js + TypeScript",
+        "takeaway2": "Reconstruction du visualiseur de code source : navigation par fichier, affichage des lignes et métadonnées par fonction — rendu identique à l'original, stack moderne",
+        "takeaway3": "Visualisations D3.js pour l'analyse des allocations mémoire (malloc tracking)"
+      },
+      "uplexa": {
+        "description": "Site vitrine pour un projet crypto axé vie privée et minage IoT.",
+        "longDescription": "Site vitrine pour uPlexa, une cryptomonnaie axée vie privée exploitant la puissance de calcul des appareils IoT pour le minage et les paiements anonymes."
+      }
+    }
+  },
+  "clients": {
+    "label": "Mais aussi...",
+    "title": "D'autres projets sur lesquels j'ai travaillé."
+  },
+  "contact": {
+    "label": "Contactez-moi",
+    "title": "Parlons-en.",
+    "subtitle": "Décrivez-moi votre projet, je vous dis honnêtement si je peux vous aider.",
+    "phone": "+33 6 28 08 71 80"
+  },
+  "footer": {
+    "copyright": "Emeric Guyon — Développeur freelance fullstack",
+    "source": "Code source ouvert — fork, explore, inspire-toi."
+  }
+}

@@ -1,0 +1,345 @@
+@import './fonts.css';
+
+@import 'tailwindcss';
+
+html,
+body {
+  overflow-x: clip;
+}
+
+/* Project page layout */
+.project-header-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 0;
+}
+
+@media (min-width: 768px) {
+  .project-header-wrapper {
+    padding: 8rem 2rem 0;
+  }
+}
+
+.project-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .project-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .project-images {
+    order: -1; /* images à gauche sur desktop */
+  }
+
+  .project-text {
+    position: sticky;
+    top: 6rem;
+  }
+}
+
+@theme {
+  --breakpoint-nav: 900px;
+  --font-sans: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Clash Display', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  /* Light theme (default) */
+  --color-background: #fafafa;
+  --color-foreground: #111111;
+  --color-primary: #06B6D4;
+  --color-primary-foreground: #fff;
+  --color-accent-cyan: #00e5ff;
+  --color-accent-magenta: #e91e8c;
+  --color-accent-amber: #f5a623;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f5f5f5;
+  --color-muted: #f0f0f0;
+  --color-muted-foreground: #6b6b6b;
+  --color-border: #e0e0e0;
+}
+
+/* Section title — H2 de section */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  line-height: 1.25; /* leading-tight */
+  color: var(--color-foreground);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+
+/* Section label — petit titre de section (À propos, Services, etc.) */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  transition: color 2s ease;
+}
+
+/* Dark theme overrides */
+.dark {
+  --color-background: #050505;
+  --color-foreground: #f0f0f0;
+  --color-surface: #111;
+  --color-surface-elevated: #161616;
+  --color-muted: #1a1a1a;
+  --color-muted-foreground: #737373;
+  --color-border: #222;
+}
+
+/* Hide page until JS is ready — prevents flash of unanimated content */
+.app-loading main {
+  opacity: 0;
+}
+main {
+  transition: opacity 0.3s ease;
+}
+
+/* Smooth color cycling transition */
+:root {
+  transition: --color-primary 2s ease;
+}
+
+@property --color-primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #06B6D4;
+}
+
+
+/* Noise grain overlay */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+}
+
+.dark .grain::after {
+  opacity: 0.035;
+}
+
+/* Custom cursor base styles */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--color-foreground);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hovering {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(240 240 240 / 10%);
+}
+
+.custom-cursor.hovering-project {
+  width: 90px;
+  height: 90px;
+  background-color: rgb(240 240 240 / 5%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-cursor-label {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10001;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-foreground);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-label.visible {
+  opacity: 1;
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+  .custom-cursor,
+  .custom-cursor-label {
+    display: none !important;
+  }
+}
+
+/* Section glow effect */
+.section-glow {
+  position: absolute;
+  z-index: 0;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.07;
+  pointer-events: none;
+  transition: background-color 1.5s ease;
+}
+
+/* Marquee animation */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+}
+
+.marquee-track:hover .animate-marquee-left,
+.marquee-track:hover .animate-marquee-right {
+  animation-duration: 80s;
+}
+
+/* Scroll indicator pulse */
+@keyframes pulse-scroll {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(6px);
+  }
+}
+
+.animate-scroll-pulse {
+  animation: pulse-scroll 2s ease-in-out infinite;
+}
+
+/* Letter reveal animation helper */
+.letter-reveal {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.letter-reveal span {
+  display: inline-block;
+  transform: translateY(110%);
+}
+
+/* Hero code zone — full viewport, fades at edges */
+.hero-code-zone {
+  overflow: hidden;
+  mask-image:
+    linear-gradient(to bottom, black 60%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.hero-code-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 2000px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Skill logos: dark by default (light mode), white by default (dark mode) */
+.skill-logo {
+  filter: brightness(0);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.dark .skill-logo {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+/* When a skill is hovered (icon or text): others dim */
+.skills-icons.has-hover .skill-logo:not(.skill-logo--active) {
+  opacity: 0.25;
+}
+
+/* Skill names — same underline animation as nav links */
+.skill-name-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.28s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+.skill-name--active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Nav links — underline slides in from left, out to right */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.28s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+.nav-link:hover::after,
+.nav-link--active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-cta {
+  border: 1px solid #000;
+  border-radius: 9999px;
+}
+
+.dark .nav-cta {
+  border-color: #fff;
+}
+

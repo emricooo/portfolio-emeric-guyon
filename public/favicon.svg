@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    @keyframes cycle {
+      0%, 20%   { fill: #06B6D4; }
+      25%, 45%  { fill: #e91e8c; }
+      50%, 70%  { fill: #f5a623; }
+      75%, 95%  { fill: #00e5ff; }
+      100%      { fill: #06B6D4; }
+    }
+    .bg { animation: cycle 40s steps(1, end) infinite; }
+  </style>
+  <rect class="bg" width="32" height="32" rx="6" fill="#06B6D4"/>
+  <text x="16" y="23" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="20" fill="#ffffff">eg</text>
+</svg>

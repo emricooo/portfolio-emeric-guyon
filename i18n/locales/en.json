@@ -1,0 +1,129 @@
+{
+  "seo": {
+    "title": "Emeric Guyon — Freelance Fullstack Developer",
+    "description": "Emeric Guyon — Freelance fullstack developer, product-minded. 10+ years shipping web apps and SaaS platforms for startups and tech teams. Vue.js, Nuxt, React, Next.js, TypeScript, Node.js. Based in Chambéry, available in Lyon, Grenoble, Annecy and Paris."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "services": "Services",
+    "skills": "Stack",
+    "projects": "Work",
+    "contact": "Contact",
+    "cta": "GET IN TOUCH"
+  },
+  "hero": {
+    "name": "EMERIC GUYON",
+    "baseline": "Senior fullstack developer — I help startups and tech teams build the right thing, and build it right.",
+    "location": "Based in France — fully remote or on-site depending on the project. Lyon, Grenoble, Annecy, Paris..."
+  },
+  "about": {
+    "title": "Product-minded developer. I don't just write code — I help you ship the right thing.",
+    "p1": "Freelance fullstack developer with 10+ years of experience. I've worked with startups, scale-ups and large organizations — from MVP to production, from a single feature to a full platform.",
+    "p2": "I think product before component. I challenge specs, question priorities, and chase ROI. When I join a team, I understand the \"why\" before I code the \"how\". That's how I avoid building the wrong thing.",
+    "p3": "React, Next.js, Vue.js, Nuxt, TypeScript, Node.js, Symfony — and custom WordPress when it's the right fit. AI is part of my daily workflow: it speeds up delivery, I ensure quality.",
+    "label": "About me",
+    "experienceLabel": "Experience",
+    "exp1": { "company": "Freelance", "role": "Fullstack developer", "period": "2025 — present", "clients": "MyRole, INRIA, Lönn, Elite Trackr" },
+    "exp2": { "company": "Patriarche", "role": "Senior front-end developer", "period": "2022 — 2024", "clients": "Patriarche, Ekkinox, 25 lieux d'innovation" },
+    "exp3": { "company": "DATASOLUTION", "role": "Web developer", "period": "2021 — 2022", "clients": "EvianChezVous, Mieux Voir, NutriciaStore" },
+    "exp4": { "company": "NewQuest", "role": "Web developer", "period": "2010 — 2021", "clients": "My Evian, Chocolat De Neuville, Mieux Voir, Bragard" }
+  },
+  "services": {
+    "label": "Services",
+    "title": "What I can do for you.",
+    "items": {
+      "custom": {
+        "title": "Build something new",
+        "desc": "Web apps, SaaS platforms, business tools — from technical scoping to deployment. I build products designed to last, not just to ship."
+      },
+      "redesign": {
+        "title": "Fix or modernize what you have",
+        "desc": "Stack modernization, framework migration, legacy refactoring — I take over existing code and evolve it without breaking things."
+      },
+      "performance": {
+        "title": "Make it faster and more visible",
+        "desc": "Audit, Core Web Vitals optimization, SSR, lazy loading — measurable gains in speed and search rankings."
+      },
+      "consulting": {
+        "title": "Get the architecture right",
+        "desc": "Stack selection, technical architecture, code review — I step in upstream to lay the right foundations before a line of code is written."
+      },
+      "ai": {
+        "title": "Add AI where it actually helps",
+        "desc": "AI API integration (OpenAI, Claude, etc.), automated workflows, smart features — AI serving your product, not the other way around."
+      },
+      "team": {
+        "title": "Reinforce your team",
+        "desc": "I embed in your sprints, your processes, your tools. Solo or paired, I adapt to your pace and your standards. Operational from day one."
+      }
+    }
+  },
+  "skills": {
+    "label": "Stack",
+    "title": "The right tools for every project, tailored to your technical needs."
+  },
+  "projects": {
+    "label": "Work",
+    "title": "Every project taught me something. Here are a few.",
+    "view": "View",
+    "back": "Back",
+    "madeWith": "Made with",
+    "viewSite": "View site",
+    "items": {
+      "evianchezvous": {
+        "description": "Magento 2 e-commerce for home water delivery in Paris and Île-de-France.",
+        "longDescription": "Magento 2 e-commerce platform for Evian home water delivery — one-time orders or recurring subscriptions across Paris and Île-de-France. React.js front-end with GraphQL for a fast, seamless experience."
+      },
+      "ekkinox": {
+        "description": "Custom business app for construction project financial tracking.",
+        "longDescription": "Tailor-made business application for construction site financial monitoring. Full management interface for budget tracking and real-time reporting."
+      },
+      "25lieuxinnovation": {
+        "description": "Showcase website for the 25 places changing innovation in France.",
+        "longDescription": "Custom WordPress site with polished GSAP animations highlighting the 25 places transforming innovation in France. Tailor-made back-office with ACF and Timber."
+      },
+      "lonn": {
+        "description": "SaaS marketplace for wellness centers and independent practitioners.",
+        "longDescription": "MVP of a marketplace for wellness centers and independent practitioners. SaaS platform for matchmaking, booking and activity management."
+      },
+      "elitetrackr": {
+        "description": "Athletics statistics and rankings platform.",
+        "longDescription": "Athletics statistics and rankings platform covering a large number of athletes and performances across many countries. Aggregated data, dynamic rankings and detailed athlete profiles."
+      },
+      "juriscan": {
+        "description": "MVP for document text extraction for judicial officers.",
+        "longDescription": "MVP enabling automatic text extraction from legal documents, built for judicial officers. UI/UX design and development. Upload, parsing and structured output of extracted data."
+      },
+      "parentsdouceur": {
+        "description": "Custom WordPress site for perinatal and parental support.",
+        "longDescription": "Custom WordPress site dedicated to perinatal and parental support. UI/UX design and development. Tailor-made back-office with ACF and Timber, GSAP animations for a smooth and warm browsing experience."
+      },
+      "inria": {
+        "description": "Memory profiling tool to track malloc allocations.",
+        "longDescription": "Full rewrite of MALT, a memory profiling tool developed by INRIA to track malloc allocations. Migration from Angular to Vue.js, featuring extensive D3.js data visualizations.",
+        "takeaway1": "Full rewrite of the Angular interface to Vue.js + TypeScript",
+        "takeaway2": "Rebuilt the source code visualizer from scratch: file navigation, line-level display and per-function metadata — feature parity with the original, modern stack",
+        "takeaway3": "D3.js visualizations for memory allocation analysis (malloc tracking)"
+      },
+      "uplexa": {
+        "description": "Landing site for a privacy-focused crypto project leveraging IoT mining.",
+        "longDescription": "Landing site for uPlexa, a privacy-focused cryptocurrency harnessing IoT device computing power for mining and anonymous payments."
+      }
+    }
+  },
+  "clients": {
+    "label": "And also...",
+    "title": "Other projects I've worked on."
+  },
+  "contact": {
+    "label": "Contact me",
+    "title": "Let's talk.",
+    "subtitle": "Tell me about your project — I'll be straight with you about whether I can help.",
+    "phone": "+33 6 28 08 71 80"
+  },
+  "footer": {
+    "copyright": "Emeric Guyon — Freelance fullstack developer",
+    "source": "Open source — fork, explore, get inspired."
+  }
+}
