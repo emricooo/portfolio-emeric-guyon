@@ -1,0 +1,246 @@
+{
+  "seo": {
+    "title": "Emeric Guyon — Freelance Fullstack Developer",
+    "description": "Freelance fullstack developer Vue/Nuxt/React. 10+ years shipping web apps and SaaS for startups. Available France, fully remote."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "services": "Services",
+    "skills": "Stack",
+    "projects": "Work",
+    "contact": "Contact",
+    "cta": "GET IN TOUCH",
+    "toggleMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLang": "Switch to French"
+  },
+  "a11y": {
+    "skipLink": "Skip to content"
+  },
+  "console": {
+    "greeting": "Hey curious dev 👋",
+    "hint": "Digging through the code? Good instinct.",
+    "cta": "Need a dev who does the same? hello{'@'}emericguyon.com",
+    "stack": "Stack: Nuxt 3 + GSAP + Lenis + Tailwind v4"
+  },
+  "hero": {
+    "name": "EMERIC GUYON",
+    "baseline": "Senior fullstack developer — I help startups and tech teams build the right thing, and build it right.",
+    "location": "Based in France — fully remote or on-site depending on the project. Lyon, Grenoble, Annecy, Paris…",
+    "ariaLabel": "Home: introducing Emeric Guyon, senior fullstack developer"
+  },
+  "about": {
+    "title": "Product-minded developer. I don't just write code — I help you ship the right thing.",
+    "p1": "Freelance fullstack developer with 10+ years of experience. I've worked with startups, scale-ups and large organizations — from MVP to production, from a single feature to a full platform.",
+    "p2": "I think product before component. I challenge specs, question priorities, and chase ROI. When I join a team, I understand the \"why\" before I code the \"how\". That's how I avoid building the wrong thing.",
+    "p3": "React, Next.js, Vue.js, Nuxt, TypeScript, Node.js, Symfony — and custom WordPress when it's the right fit. AI is part of my daily workflow: it speeds up delivery, I ensure quality.",
+    "label": "About me",
+    "experienceLabel": "Experience",
+    "exp1": { "company": "Freelance", "role": "Fullstack developer", "period": "2025 — present", "clients": "MyRole, INRIA, Lönn, Elite Trackr" },
+    "exp2": { "company": "Patriarche", "role": "Senior front-end developer", "period": "2022 — 2024", "clients": "Patriarche, Ekkinox, 25 lieux d'innovation" },
+    "exp3": { "company": "DATASOLUTION", "role": "Web developer", "period": "2021 — 2022", "clients": "EvianChezVous, Mieux Voir, NutriciaStore" },
+    "exp4": { "company": "NewQuest", "role": "Web developer", "period": "2010 — 2021", "clients": "My Evian, Chocolat De Neuville, Mieux Voir, Bragard" }
+  },
+  "services": {
+    "label": "Services",
+    "title": "What I can do for you.",
+    "items": {
+      "custom": {
+        "title": "Build something new",
+        "desc": "Web apps, SaaS platforms, business tools — from technical scoping to deployment. I build products designed to last, not just to ship."
+      },
+      "redesign": {
+        "title": "Fix or modernize what you have",
+        "desc": "Stack modernization, framework migration, legacy refactoring — I take over existing code and evolve it without breaking things."
+      },
+      "performance": {
+        "title": "Make it faster and more visible",
+        "desc": "Audit, Core Web Vitals optimization, SSR, lazy loading — measurable gains in speed and search rankings."
+      },
+      "consulting": {
+        "title": "Get the architecture right",
+        "desc": "Stack selection, technical architecture, code review — I step in upstream to lay the right foundations before a line of code is written."
+      },
+      "ai": {
+        "title": "Add AI where it actually helps",
+        "desc": "AI API integration (OpenAI, Claude, etc.), automated workflows, smart features — AI serving your product, not the other way around."
+      },
+      "team": {
+        "title": "Reinforce your team",
+        "desc": "I embed in your sprints, your processes, your tools. Solo or paired, I adapt to your pace and your standards. Operational from day one."
+      }
+    }
+  },
+  "skills": {
+    "label": "Stack",
+    "title": "The right tools for every project, tailored to your technical needs."
+  },
+  "projects": {
+    "label": "Work",
+    "title": "Every project taught me something.",
+    "titleSuffix": "Here are a few.",
+    "view": "View",
+    "back": "Back",
+    "madeWith": "Made with",
+    "viewSite": "View site",
+    "viewProject": "View project",
+    "contextLabel": "Context",
+    "approachLabel": "My approach",
+    "stackLabel": "Stack & technical choices",
+    "resultLabel": "Outcome & takeaways",
+    "previous": "Previous",
+    "next": "Next",
+    "allProjects": "All projects",
+    "pagination": "Project navigation",
+    "statsLabel": "Key figures",
+    "madeWithAgency": "Made with",
+    "imageAlt": "{project} — interface screenshot {n} ({tech})",
+    "items": {
+      "evianchezvous": {
+        "description": "Headless rebuild of evianchezvous: Magento 1 → 2, React + GraphQL front-end.",
+        "longDescription": "Full rebuild of evianchezvous, Evian's home water delivery site (Paris / Île-de-France): migration from a monolithic Magento 1 to headless Magento 2 with a React + GraphQL front-end. Front-end tech lead for 2 years, from scoping to production.",
+        "approach": "The project meant doing everything at once: migrating Magento 1 → 2, pulling the front out of the monolith into a React app, rethinking checkout and the customer account, and porting the subscription logic (recurring water delivery) that Magento doesn't ship with. With SSR running underneath to keep search rankings, and performance that had to beat the V1 from day one.",
+        "takeaway1": "React front-end built from scratch across the full e-commerce tunnel: cart, checkout, account, subscriptions, postal-code-based delivery slots — all the business logic moved to JS.",
+        "takeaway2": "Custom GraphQL layer on top of Magento 2: native M2 doesn't cover everything, lots of custom resolvers and extended schemas to serve the front without unnecessary round-trips.",
+        "takeaway3": "Subscription module + recurring payments + one-shot orders, wired into per-zone delivery constraints — something Magento can't do alone, coded custom on both sides.",
+        "stackNote": "Magento 2 on the back for the e-commerce stack (catalog, orders, customers, payments), with a custom-extended GraphQL layer. React + Apollo Client + SSR on the front for performance and SEO — pulling out of a Magento monolith without losing indexation is the whole headless bet. React also enables a real mobile experience — components designed for touch and native-feeling transitions — that Magento 1 couldn't deliver. M1 → M2 data migration (products, customers, orders, active subscriptions) without breaking history.",
+        "result": "Still live years after delivery. Performance and conversion rate up vs the Magento 1 V1. On a personal level, this is my first React e-commerce site and my first front-end tech lead role over 2 years. The main lesson: moving a Magento to headless means rebuilding in React things the V1 used to give for free — cart, sessions, customer flows. A lot of plumbing to lay back down to gain on UX and perf."
+      },
+      "ekkinox": {
+        "description": "Construction-site financial tracking tool — internal at Patriarche, then white-labeled.",
+        "longDescription": "Custom business tool for construction-site financial tracking, started as an internal Patriarche product then turned into a white-label version with a SaaS path ahead. Senior front-end and front lead for 18 months — team of 2 front, 2 back, 1 PM, 1 designer.",
+        "approach": "We started out wanting a modular setup, but the domain is too interconnected for that: we went with a domain-oriented organization structured around interfaces — a split that follows the UX designer's mental model and real user flows. Business workshops for every feature, fast iterations, regular client demos: we adjusted often, sometimes heavily, but without losing the overall coherence.",
+        "takeaway1": "Domain-oriented front-end architecture built to last 18 months of delivery — split by interfaces aligned with UX flows, not by file type (no components/utils/views folder that grows without holding).",
+        "takeaway2": "Tailor-made business views: financial tables, custom behaviors per module, in-house design system built alongside the product to stay coherent as features piled up.",
+        "takeaway3": "Recurring user workshops and client demos at every milestone — learning construction-site finance on the job became part of the role, not a side concern.",
+        "stackNote": "Vue + TypeScript and Pinia on the front, in-house design system built in parallel with the product. NestJS on the back — full-TS end to end. Front-end architecture was the structuring topic: a strict domain split wouldn't have held (everything is linked), so we went for an interface-based split that maps to the business and actual usage.",
+        "result": "18 months on the project, from day one through the move to a white-label version, with a front-end architecture that never had to be rewritten along the way. On a personal level, this is my first real front-lead role over the long haul — a chance to lay foundations that hold, challenge the PM when it mattered, and learn a domain (construction-site finance) deep enough to discuss with users without hand-waving."
+      },
+      "25lieuxinnovation": {
+        "description": "Editorial site for the 25 places transforming innovation in France.",
+        "longDescription": "Editorial site spotlighting 25 places that are transforming innovation in France — an in-house Patriarche project built around a book / site / event trio. Full-custom WordPress (custom post types + taxonomies), Timber for Twig templating, ACF Pro for editorial blocks, and serious GSAP work to bring the content to life as you scroll.",
+        "approach": "An editorial site with rich source material (long-form text, photos, places sorted by category) where the front-end challenge is to avoid flat reading. The direction: scroll storytelling with crafted reveals, transitions between places, and a layout that lets photo and text breathe in alternation. On the CMS side: leave default WordPress behind and give editors a back-office aligned with how they actually think.",
+        "takeaway1": "GSAP / ScrollTrigger scroll storytelling: scroll-driven reveals, parallax, pinning, transitions between places — motion in service of the editorial, not decoration for its own sake.",
+        "takeaway2": "Full-custom WordPress: custom post types for the places, dedicated taxonomies for category filtering, ACF Pro for modular editorial blocks on the admin side.",
+        "takeaway3": "Timber + Twig to separate logic from view — a maintainable WordPress codebase that escapes the single.php soup that gets unreadable fast as a project grows.",
+        "stackNote": "WordPress with Timber + ACF Pro — my routine for full-custom WordPress done cleanly. Timber gives real logic/view separation (Twig on the template side), ACF Pro turns the admin into a place editors can actually work in. GSAP + ScrollTrigger on the front for the motion layer: the right tools for an editorial site that needs to breathe.",
+        "result": "Site live. On a personal level, this is the project where I really pushed GSAP further — not just fades, but real motion writing in service of the editorial content."
+      },
+      "lonn": {
+        "description": "B2B SaaS for wellness centers: staff scheduling and appointment booking.",
+        "longDescription": "B2B SaaS for wellness centers: a staff scheduling module on the manager side (pre-payroll-style, working-time rules) and an appointment booking system on the client side. MVP built as a team via Le Collectif 40 — I was responsible for the backend architecture, the data model and the server-side technical choices.",
+        "approach": "The core of the project on the server side: lay an architecture that holds, model a clean database to let two scopes coexist (HR scheduling + client bookings) without mixing them, and expose it through a custom Symfony BFF API. In continuous dialogue with the client, who acted as product owner — every scope trade-off and every business rule was discussed before being settled. Strict MVP discipline: cut what doesn't fit V1 rather than ship late.",
+        "takeaway1": "Backend architecture and data model designed to let two scopes coexist (staff scheduling and client bookings) without stepping on each other.",
+        "takeaway2": "A Symfony BFF API designed for a single client (the Vue front-end): aggregation, clear contracts, business-rule validation centralized server-side.",
+        "takeaway3": "MVP scope held: cut feature by feature to lay clean foundations, ready to be extended.",
+        "stackNote": "Symfony requested by the client — a solid framework to carry business logic. PostgreSQL for persistence: a mature ORM and relational guarantees that pay off the moment HR and calendar data mix. On the front, Vue + TypeScript built by another team member: a stable, typed API contract, and a front that doesn't duplicate the logic.",
+        "result": "MVP shipped. Nothing louder than that: the goal was to lay the foundations cleanly and hold the scope. For me, the project where the discipline of \"what does NOT belong in V1\" was at the heart of the brief — and where the architecture set early on directly determined delivery speed."
+      },
+      "elitetrackr": {
+        "description": "The Wikipedia of athletics. 800K athletes, 14M performances, 230 countries, 9 languages.",
+        "role": "Solo · Design, dev, devops, data, SEO",
+        "stats": {
+          "athletes": "Athletes",
+          "perfs": "Performances",
+          "countries": "Countries",
+          "languages": "Languages"
+        },
+        "longDescription": "I did track and field for years. Every time I wanted to dig into a performance, compare a season, or follow an athlete's trajectory, I'd hit sites capped at the Olympics or the biggest meets — never the full picture, never the tools to tell stories with the numbers. So I built it. EliteTrackr is the ambition to become the Wikipedia of athletics: a global, multilingual reference where raw data becomes readable again — for fans, athletes, coaches.",
+        "approach": "Three things to ship alone: get the data in, make it indexable everywhere, and protect it. Each with its own constraints — from a pipeline that digests 14M performances to infrastructure that has to hold against scrapers and AI bots.",
+        "takeaway1": "A Python pipeline that aggregates data from several sources and consolidates it into one database: 800,000 athletes, 14 million performances, 230 countries — and growing every day.",
+        "takeaway2": "Nuxt SSR + i18n across 9 languages, with an indexing strategy tuned per market. No ads, no growth hacking — the quality of the data does the rest.",
+        "takeaway3": "Cloudflare up front to absorb bots, AI scrapers, and attacks. Redis to cache hot queries. A defensive architecture from day one.",
+        "stackNote": "Full-JS to share types end-to-end between Nuxt and AdonisJS, and to ship Adonis in production (a deliberate bet). Python for the data layer: better raw performance and an unmatched data-science ecosystem. Postgres for persistence, Redis for cache, Coolify for deployment.",
+        "result": "Live since January 2026. ~50 visitors/day, pure organic growth, no paid acquisition. Lighthouse 99/92/96 on desktop, 80/92/96 on mobile — on pages serving up to 14M records. All solo: design, UI/UX, front, back, devops, data, SEO. Beyond the numbers, this is the project where I found my voice — visual, tone, structure — and where I watch the database grow a little richer every day. Value compounds."
+      },
+      "juriscan": {
+        "description": "MVP for AI-powered data extraction from legal documents — fully local OCR + LLM pipeline.",
+        "longDescription": "MVP for automated data extraction from legal documents (writs of summons, enforcement orders, official reports) for a firm of judicial officers. OCR + AI interpretation, structured field extraction, export into the client's internal CRM. One month solo as a freelancer, from scoping to delivery.",
+        "approach": "The core: a two-stage pipeline. First an OCR with layout understanding on the PDF, then an LLM that reads the resulting markdown and identifies the fields to extract (parties, dates, amounts, addresses) per document type. All running locally on GPU — no cloud APIs, sensitive data demands it. A Rust worker to orchestrate multithreading and keep throughput acceptable on batches of PDFs.",
+        "takeaway1": "100% self-hosted AI pipeline: DeepSeek-OCR for the read, DeepSeek-Coder-V2 for structuring, llama.cpp + CUDA for inference — data never leaves the client's server.",
+        "takeaway2": "Rust worker for multithreading and orchestration: parallel OCR, predictable memory — where Node would have folded under volume.",
+        "takeaway3": "Vue 3 + shadcn-vue front: upload, PDF preview on the left, editable extracted data on the right, CSV export to the client CRM.",
+        "stackNote": "AdonisJS 6 + PostgreSQL for persistence and the API on the back. Vue 3 + Tailwind + shadcn-vue on the front. Infrastructure centerpiece: a Rust worker that calls DeepSeek-OCR then DeepSeek-Coder-V2 (via llama.cpp) on a local GPU — multithreaded, deployed via Docker + NVIDIA Container Toolkit. Fully self-hosted: a firm of judicial officers can't send its documents to OpenAI.",
+        "result": "MVP delivered, currently in testing on the client side. On a personal level, this is my first real AI project — and the first one I built mostly in pair with an AI coding assistant. A stack I didn't know (Rust, llama.cpp, local DeepSeek on CUDA), learned and shipped in one month — exactly the use case where the assistant speeds you up without degrading quality, as long as you stay in charge of the architecture."
+      },
+      "parentsdouceur": {
+        "description": "Custom WordPress vitrine site for an independent perinatal practitioner. Solo UI/UX + dev.",
+        "longDescription": "Vitrine site for an independent perinatal and parental practitioner. UI/UX and development, working directly with the practitioner. Full-custom WordPress (ACF + Timber), GSAP for soft animations.",
+        "approach": "Small solo project in direct contact with the client: a practitioner who wanted a site that felt like her — warm, soft, feminine. Maternal art direction (pastels, curves, serif type), no over-the-top motion — just what was needed for the page to breathe.",
+        "takeaway1": "Soft, maternal art direction: pastel palette, curved shapes, warm serif typography.",
+        "takeaway2": "Full-custom WordPress with Timber + ACF Pro — a clean back-office so the practitioner can update content on her own.",
+        "takeaway3": "Discreet GSAP animations serving the mood, not stealing the show.",
+        "stackNote": "WordPress with Timber + ACF Pro for a back-office usable by a non-tech, GSAP for the motion layer. A stack matched to scope: a vitrine site should stay light to edit.",
+        "result": "Site shipped. For me, a solo project end to end (UI/UX + dev) in direct contact with the client — a useful exercise in aligning art direction and code with no middleman."
+      },
+      "inria": {
+        "description": "Memory profiling tool to track malloc allocations.",
+        "longDescription": "Full rewrite of MALT, an open-source memory profiling tool developed by INRIA to track malloc/free allocations in C/C++ programs. Migration of the interface from Angular to Vue 3 + TypeScript, with substantial work on the D3 visualizations.",
+        "approach": "The brief: move a scientific tool from Angular to Vue + TypeScript without degrading the experience of the researchers who use it daily. Once the base was stable and plugins refreshed, rework the readability of the graphs and add the interactions that were missing.",
+        "takeaway1": "Full migration Angular → Vue 3 + TypeScript, plugins updated, existing behavior preserved 1:1 to avoid breaking users' habits.",
+        "takeaway2": "Source code visualizer rebuilt from scratch: per-file navigation, annotated lines, detailed popups on memory allocations per line and per function.",
+        "takeaway3": "D3 graphs reworked (legibility, design, interactions) + TanStack Query to cache calls — essential on profiling datasets that quickly weigh several MB.",
+        "stackNote": "Vue.js + TypeScript required by INRIA — a strong fit for a tool that spends its time rendering data: typing cuts down on silent errors. D3.js kept from V1, perfect for highly custom visualizations like an annotated code viewer. I added TanStack Query for caching: on this kind of dataset, you never want to fire the same request twice.",
+        "result": "Live on the official memtt/malt repo — open-source, used by the C/C++ community doing memory profiling. The maintainers' feedback: interface and source code clearer and more readable than V1. On a personal level, this is the project that forced me to dig deep into D3 on genuinely complex visualizations — territory you rarely encounter on standard web projects."
+      },
+      "uplexa": {
+        "description": "Volunteer rebuild of uPlexa's official site — privacy crypto + IoT mining.",
+        "longDescription": "Rebuild of uPlexa's official website — a privacy-focused cryptocurrency mining via IoT devices. Solo volunteer project, after joining the community as a dev and user — the old site was dated and the team wanted something more professional and cleaner.",
+        "approach": "A crypto vitrine has two jobs: explain the project (privacy, IoT mining) to a tech audience and build trust. Full Next.js rebuild with i18n for an international community — the classic sections of a serious crypto project: presentation, IoT mining, roadmap, team, wallet / exchange.",
+        "takeaway1": "Full Next.js rebuild — moving from a basic vitrine to a more professional, cleaner site that holds up for a serious crypto project.",
+        "takeaway2": "Native Next.js i18n to reach uPlexa's international community.",
+        "takeaway3": "Volunteer contribution: a project where the brief is the wish to do better for something I believed in — no client spec.",
+        "stackNote": "Next.js without Tailwind — more traditional CSS to keep the vitrine light. Next-side i18n for the multilingual layer. A deliberately simple stack: for a volunteer community site, the priority is that another dev can pick it up without friction.",
+        "result": "Still live on uplexa.com. On a personal level, a community contribution project."
+      }
+    }
+  },
+  "clients": {
+    "label": "And also…",
+    "title": "Other projects I've worked on."
+  },
+  "contact": {
+    "label": "Contact me",
+    "title": "Let's talk.",
+    "subtitle": "Tell me about your project — I'll be straight with you about whether I can help.",
+    "phone": "+33 6 28 08 71 80",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "you{'@'}example.com",
+      "type": "Project type",
+      "typePlaceholder": "Select an option",
+      "typeOptions": {
+        "showcase": "Marketing site",
+        "ecommerce": "E-commerce",
+        "webapp": "Web app / SaaS",
+        "redesign": "Redesign / optimization",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Briefly describe your project: goals, context, timeline…",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": {
+        "title": "Thank you {name}, your message has been sent. I'll get back to you within 24 hours.",
+        "again": "Send another message"
+      },
+      "errors": {
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Invalid email format",
+        "typeRequired": "Please select a project type",
+        "messageRequired": "Please write your message",
+        "messageMin": "Your message must be at least 20 characters",
+        "network": "Sending failed. Please try again or email hello{'@'}emericguyon.com directly.",
+        "rateLimit": "A message was sent recently. I'll respond shortly."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Emeric Guyon — Freelance fullstack developer",
+    "source": "Open source — fork, explore, get inspired."
+  }
+}
