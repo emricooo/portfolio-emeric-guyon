@@ -23,7 +23,7 @@ onMounted(() => {
     <HomeHeroCodeBackground />
 
     <!-- Invisible h1 for SEO / accessibility -->
-    <h1 class="sr-only">{{ t('hero.name') }}</h1>
+    <h1 class="sr-only">{{ t('seo.title') }}</h1>
 
     <!-- Scroll indicator -->
     <div class="hero-scroll-indicator absolute bottom-47.5 left-1/2 z-10 -translate-x-1/2 nav:bottom-8">

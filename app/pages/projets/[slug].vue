@@ -25,17 +25,45 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'CreativeWork',
-        'name': project.value.title,
-        'description': t(`projects.items.${project.value.slug}.description`),
-        'image': coverSrc ? `https://emericguyon.com${coverSrc}` : undefined,
-        'url': project.value.url || `https://emericguyon.com/projets/${project.value.slug}`,
-        'author': {
-          '@type': 'Person',
-          'name': 'Emeric Guyon',
-          'url': 'https://emericguyon.com',
-        },
-        'keywords': project.value.technologies.join(', '),
+        '@graph': [
+          {
+            '@type': 'CreativeWork',
+            'name': project.value.title,
+            'description': t(`projects.items.${project.value.slug}.description`),
+            'image': coverSrc ? `https://emericguyon.com${coverSrc}` : undefined,
+            'url': `https://emericguyon.com/projets/${project.value.slug}`,
+            'author': {
+              '@type': 'Person',
+              '@id': 'https://emericguyon.com/#person',
+              'name': 'Emeric Guyon',
+              'url': 'https://emericguyon.com',
+            },
+            'keywords': project.value.technologies.join(', '),
+          },
+          {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Accueil',
+                'item': 'https://emericguyon.com',
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Projets',
+                'item': 'https://emericguyon.com/#projects',
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': project.value.title,
+                'item': `https://emericguyon.com/projets/${project.value.slug}`,
+              },
+            ],
+          },
+        ],
       }),
     },
   ],
