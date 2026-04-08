@@ -36,7 +36,8 @@ const textBounds = { x: 0, y: 0, w: 0, h: 0 }
 let cachedLines: string[] = []
 let cachedW = 0
 let cachedFontSize = 0
-let maskUrl = ''
+let maskDirty = true
+let subAnimating = false
 let subSplitY = 0 // Y coordinate separating name from subtitle for solid text clipping
 
 // Letter reveal animation state
@@ -239,17 +240,6 @@ function buildMaskUrl(cssW: number, cssH: number) {
   }
 
   lastMaskCanvas = tmp
-
-  // On desktop, apply mask to bright canvas; on mobile bright is hidden so skip
-  if (!isMobile.value && brightCanvasRef.value) {
-    maskUrl = tmp.toDataURL()
-    brightCanvasRef.value.style.maskImage = `url(${maskUrl})`
-    brightCanvasRef.value.style.maskSize = '100% 100%'
-    brightCanvasRef.value.style.maskRepeat = 'no-repeat'
-    brightCanvasRef.value.style.webkitMaskImage = `url(${maskUrl})`
-    brightCanvasRef.value.style.webkitMaskSize = '100% 100%'
-    brightCanvasRef.value.style.webkitMaskRepeat = 'no-repeat'
-  }
 }
 
 // Draw solid white text with a radial "hole" around cursor that reveals the code underneath
@@ -340,6 +330,7 @@ function startSubtitleCycle() {
   const INTERVAL = 3000
   const cycleNext = () => {
     const len = currentSubText.length
+    subAnimating = true
     // Exit: stagger each letter upward + fade out
     const exitTl = gsap.timeline({
       onComplete: () => {
@@ -361,6 +352,7 @@ function startSubtitleCycle() {
           duration: 0.5,
           ease: 'power2.out',
           stagger: 0.025,
+          onComplete: () => { subAnimating = false },
         })
         gsap.to(solidSubOpacity, { value: 1, duration: 0.6, ease: 'power2.out', delay: 0.3 })
       },
@@ -669,6 +661,15 @@ function draw() {
     if (frameSkip % 2 !== 0) return
   }
 
+  // Rebuild mask only when something affecting it changed:
+  // - intro letter reveal in progress
+  // - subtitle cycle animating
+  // - mouse moved (magnetic repel) → maskDirty set by listeners
+  if (dimCanvasRef.value && (maskDirty || !revealDone || subAnimating)) {
+    buildMaskUrl(dimCanvasRef.value.clientWidth, dimCanvasRef.value.clientHeight)
+    maskDirty = false
+  }
+
   if (dimCanvasRef.value) {
     drawCode(dimCanvasRef.value, true)
   }
@@ -676,6 +677,17 @@ function draw() {
   if (!isMobile.value) {
     if (brightCanvasRef.value) {
       drawCode(brightCanvasRef.value, false)
+      // Clip bright code to the text mask via canvas compositing (no toDataURL / CSS mask)
+      if (codeRevealDone && lastMaskCanvas) {
+        const bctx = brightCanvasRef.value.getContext('2d')
+        if (bctx) {
+          const cw = brightCanvasRef.value.clientWidth
+          const ch = brightCanvasRef.value.clientHeight
+          bctx.globalCompositeOperation = 'destination-in'
+          bctx.drawImage(lastMaskCanvas, 0, 0, cw, ch)
+          bctx.globalCompositeOperation = 'source-over'
+        }
+      }
       brightCanvasRef.value.style.opacity = revealDone ? '0.85' : '0'
     }
     if (hoverCanvasRef.value) drawHoverLayer(hoverCanvasRef.value)
@@ -683,11 +695,6 @@ function draw() {
 
   // Draw solid text (with radial hole around cursor)
   if (solidCanvasRef.value) drawSolidText(solidCanvasRef.value)
-
-  // Rebuild mask every frame: during intro for letter animation, after for magnetic repel
-  if (dimCanvasRef.value) {
-    buildMaskUrl(dimCanvasRef.value.clientWidth, dimCanvasRef.value.clientHeight)
-  }
 }
 
 let rafId: number
@@ -736,7 +743,7 @@ onMounted(() => {
           scrollTween?.pause()
         }
       },
-      { threshold: 0 },
+      { threshold: 0, rootMargin: '0px 0px -40% 0px' },
     )
     visibilityObserver.observe(heroSection)
     onUnmounted(() => visibilityObserver.disconnect())
@@ -782,6 +789,7 @@ onMounted(() => {
     if (!rect) return
     mousePos.x = e.clientX - rect.left
     mousePos.y = e.clientY - rect.top
+    maskDirty = true
 
     // Check proximity to text bounding box
     const dx = Math.max(textBounds.x - mousePos.x, 0, mousePos.x - (textBounds.x + textBounds.w))
@@ -801,6 +809,7 @@ onMounted(() => {
   onMouseLeave = () => {
     mousePos.x = -1000
     mousePos.y = -1000
+    maskDirty = true
     if (nearText) {
       nearText = false
       gsap.to(solidOpacity, { value: 1, duration: 0.4, ease: 'power2.out' })
@@ -814,7 +823,7 @@ onMounted(() => {
 
   resizeObserver = new ResizeObserver(() => {
     cachedW = 0
-    maskUrl = ''
+    maskDirty = true
   })
   if (dimCanvasRef.value) resizeObserver.observe(dimCanvasRef.value)
 
