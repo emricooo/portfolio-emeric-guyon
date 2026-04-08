@@ -10,11 +10,12 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
     '@nuxt/image',
+    '@nuxt/fonts',
   ],
 
   image: {
     quality: 82,
-    format: ['webp'],
+    format: ['avif', 'webp'],
   },
 
   site: {
@@ -122,11 +123,7 @@ export default defineNuxtConfig({
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/ClashDisplay-Bold.woff2', crossorigin: '' },
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/Satoshi-Regular.woff2', crossorigin: '' },
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/Satoshi-Medium.woff2', crossorigin: '' },
-        // Secondary fonts: non-blocking (Google Fonts)
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap', media: 'print', onload: 'this.media="all"' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap', media: 'print', onload: 'this.media="all"' },
+        // Plus Jakarta Sans + JetBrains Mono are now self-hosted by @nuxt/fonts
       ],
     },
   },

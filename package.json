@@ -16,6 +16,7 @@
     "format": "prettier --write 'app/**/*.{ts,vue,css,json}'"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/i18n": "^10.2.1",
     "@nuxtjs/sitemap": "^7.6.0",
