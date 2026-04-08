@@ -5,35 +5,40 @@ const overlay = ref<HTMLElement | null>(null)
 const router = useRouter()
 
 onMounted(() => {
-  const removeBefore = router.beforeEach((to, from, next) => {
-    if (!overlay.value || to.path === from.path) return next()
-
-    gsap.set(overlay.value, { scaleX: 0, transformOrigin: 'left center', display: 'block' })
-    gsap.to(overlay.value, {
-      scaleX: 1,
-      duration: 0.45,
-      ease: 'power3.inOut',
-      onComplete: () => next(),
+  router.beforeEach((to, from) => {
+    if (!overlay.value || to.path === from.path) return true
+    return new Promise<boolean>((resolve) => {
+      if (!overlay.value) return resolve(true)
+      gsap.killTweensOf(overlay.value)
+      gsap.set(overlay.value, { scaleX: 0, transformOrigin: 'left center', display: 'block' })
+      gsap.to(overlay.value, {
+        scaleX: 1,
+        duration: 0.45,
+        ease: 'power3.inOut',
+        onComplete: () => resolve(true),
+      })
     })
   })
 
-  const removeAfter = router.afterEach(() => {
+  router.afterEach(() => {
     if (!overlay.value) return
-
-    gsap.set(overlay.value, { transformOrigin: 'right center' })
-    gsap.to(overlay.value, {
-      scaleX: 0,
-      duration: 0.45,
-      ease: 'power3.inOut',
-      onComplete: () => {
-        if (overlay.value) overlay.value.style.display = 'none'
-      },
+    // Use nextTick so the new page has mounted before we wipe the overlay out
+    nextTick(() => {
+      if (!overlay.value) return
+      gsap.killTweensOf(overlay.value)
+      gsap.set(overlay.value, { transformOrigin: 'right center' })
+      gsap.to(overlay.value, {
+        scaleX: 0,
+        duration: 0.45,
+        ease: 'power3.inOut',
+        onComplete: () => {
+          if (overlay.value) {
+            overlay.value.style.display = 'none'
+            gsap.set(overlay.value, { scaleX: 0 })
+          }
+        },
+      })
     })
-  })
-
-  onUnmounted(() => {
-    removeBefore()
-    removeAfter()
   })
 })
 </script>

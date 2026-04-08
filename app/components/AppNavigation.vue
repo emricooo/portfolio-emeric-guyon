@@ -82,25 +82,35 @@ onMounted(() => {
 
   onUnmounted(() => sectionObserver?.disconnect())
 
-  // Nav entrance animation — slides from bottom on mobile, from top on desktop
-  const isMobileNav = window.innerWidth < 900
+  // Nav entrance animation — only run once per app session (not on every route change)
+  const navAnimated = useState('nav-animated', () => false)
   const navItems = document.querySelectorAll('.nav-item')
-  gsap.set('.nav-bar', { y: isMobileNav ? 80 : -80 })
-  gsap.set(navItems, { opacity: 0, y: isMobileNav ? 20 : -20 })
 
-  const navTl = gsap.timeline({ delay: 1.8 })
-  navTl.to('.nav-bar', {
-    y: 0,
-    duration: 0.6,
-    ease: 'power3.out',
-  })
-  navTl.to(navItems, {
-    opacity: 1,
-    y: 0,
-    duration: 0.4,
-    stagger: 0.15,
-    ease: 'power3.out',
-  }, '-=0.3')
+  if (navAnimated.value) {
+    // Already played: snap to final state, no animation
+    gsap.set('.nav-bar', { y: 0 })
+    gsap.set(navItems, { opacity: 1, y: 0 })
+  }
+  else {
+    navAnimated.value = true
+    const isMobileNav = window.innerWidth < 900
+    gsap.set('.nav-bar', { y: isMobileNav ? 80 : -80 })
+    gsap.set(navItems, { opacity: 0, y: isMobileNav ? 20 : -20 })
+
+    const navTl = gsap.timeline({ delay: 1.8 })
+    navTl.to('.nav-bar', {
+      y: 0,
+      duration: 0.6,
+      ease: 'power3.out',
+    })
+    navTl.to(navItems, {
+      opacity: 1,
+      y: 0,
+      duration: 0.4,
+      stagger: 0.15,
+      ease: 'power3.out',
+    }, '-=0.3')
+  }
 
   // Apply magnetic effect to CTA
   if (ctaRef.value) {
