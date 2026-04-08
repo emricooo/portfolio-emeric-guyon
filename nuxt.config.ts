@@ -42,6 +42,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    baseUrl: 'https://emericguyon.com',
     locales: [
       { code: 'fr', file: 'fr.json', name: 'Français', language: 'fr-FR' },
       { code: 'en', file: 'en.json', name: 'English', language: 'en-US' },
