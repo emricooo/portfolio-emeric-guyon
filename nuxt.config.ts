@@ -18,6 +18,13 @@ export default defineNuxtConfig({
     format: ['avif', 'webp'],
   },
 
+  fonts: {
+    defaults: {
+      preload: true,
+      weights: [400, 500, 600, 700],
+    },
+  },
+
   site: {
     url: 'https://emericguyon.com',
     name: 'Emeric Guyon — Fullstack Freelance Developer',
