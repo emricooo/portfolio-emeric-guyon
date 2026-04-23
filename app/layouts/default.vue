@@ -2,10 +2,12 @@
 const { init: initCursor, destroy: destroyCursor } = useCustomCursor()
 const { init: initTheme } = useTheme()
 const { start: startColorCycle, stop: stopColorCycle } = useColorCycle()
+const { init: initLenis, destroy: destroyLenis } = useLenis()
 
 onMounted(() => {
-  initCursor()
+  initLenis()
   initTheme()
+  initCursor()
   startColorCycle()
 
   // Remove loading state after a tick so GSAP can set initial states
@@ -18,6 +20,7 @@ onMounted(() => {
 onUnmounted(() => {
   destroyCursor()
   stopColorCycle()
+  destroyLenis()
 })
 </script>
 

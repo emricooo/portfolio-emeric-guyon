@@ -1,0 +1,20 @@
+{
+  "name": "Emeric Guyon — Développeur Fullstack Freelance",
+  "short_name": "Emeric Guyon",
+  "description": "Développeur fullstack freelance à Chambéry. 10+ ans à livrer des apps web et SaaS pour startups et équipes tech. Vue, Nuxt, React, TypeScript.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#050505",
+  "orientation": "portrait",
+  "lang": "fr-FR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

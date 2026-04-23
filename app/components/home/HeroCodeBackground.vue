@@ -365,8 +365,7 @@ function startSubtitleCycle() {
       stagger: 0.02,
     })
   }
-  const intervalId = setInterval(cycleNext, INTERVAL)
-  onUnmounted(() => clearInterval(intervalId))
+  subtitleIntervalId = setInterval(cycleNext, INTERVAL)
 }
 
 // Syntax highlighting colors (One Dark inspired)
@@ -703,6 +702,13 @@ let scrollTween: gsap.core.Tween | null = null
 let heroEl: HTMLElement | null = null
 let onMouseMove: ((e: MouseEvent) => void) | null = null
 let onMouseLeave: (() => void) | null = null
+let subtitleIntervalId: ReturnType<typeof setInterval> | null = null
+let visibilityObserver: IntersectionObserver | null = null
+
+onUnmounted(() => {
+  if (subtitleIntervalId) clearInterval(subtitleIntervalId)
+  visibilityObserver?.disconnect()
+})
 
 onMounted(() => {
   // Detect mobile/touch device
@@ -733,7 +739,7 @@ onMounted(() => {
   // Stop rendering + scrolling when hero is off-screen
   const heroSection = dimCanvasRef.value?.closest('section')
   if (heroSection) {
-    const visibilityObserver = new IntersectionObserver(
+    visibilityObserver = new IntersectionObserver(
       (entries) => {
         isHeroVisible = entries[0]?.isIntersecting ?? true
         if (isHeroVisible) {
@@ -746,7 +752,6 @@ onMounted(() => {
       { threshold: 0, rootMargin: '0px 0px -40% 0px' },
     )
     visibilityObserver.observe(heroSection)
-    onUnmounted(() => visibilityObserver.disconnect())
   }
 
   // Force first draw to build tokens

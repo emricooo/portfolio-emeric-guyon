@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 
 const { locale, setLocale, t } = useI18n()
 const { applyMagnetic } = useMagnetic()
+const { scrollTo: lenisScrollTo } = useLenis()
 
 const navLinks = computed(() => [
   { label: t('nav.about'), href: '#about' },
@@ -36,10 +37,12 @@ function scrollTo(href: string) {
   }
 
   const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
+  if (el) lenisScrollTo(el, { offset: 0 })
 }
 
 let sectionObserver: IntersectionObserver | null = null
+
+onUnmounted(() => sectionObserver?.disconnect())
 
 onMounted(() => {
   const sectionIds = ['home', 'about', 'services', 'skills', 'projects', 'clients', 'contact']
@@ -79,8 +82,6 @@ onMounted(() => {
     const nearBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 100
     if (nearBottom) activeSection.value = 'contact'
   })
-
-  onUnmounted(() => sectionObserver?.disconnect())
 
   // Nav entrance animation — only run once per app session (not on every route change)
   const navAnimated = useState('nav-animated', () => false)

@@ -91,7 +91,7 @@ useHead({
     <HomeAbout />
     <LazyHomeServices />
     <LazyHomeSkills />
-    <LazyHomeProjects />
+    <HomeProjects />
     <LazyHomeClients />
     <LazyAppContact />
   </div>

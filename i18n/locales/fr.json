@@ -90,6 +90,15 @@
     "back": "Retour",
     "madeWith": "Réalisé avec",
     "viewSite": "Voir le site",
+    "viewProject": "Voir le projet",
+    "contextLabel": "Contexte",
+    "approachLabel": "Mon approche",
+    "stackLabel": "Stack & choix techniques",
+    "resultLabel": "Résultat & apprentissages",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "allProjects": "Tous les projets",
+    "madeWithAgency": "Réalisé avec",
     "items": {
       "evianchezvous": {
         "description": "E-commerce Magento 2 pour la livraison d'eau à domicile sur Paris et Île-de-France.",

@@ -70,6 +70,15 @@
     "back": "Back",
     "madeWith": "Made with",
     "viewSite": "View site",
+    "viewProject": "View project",
+    "contextLabel": "Context",
+    "approachLabel": "My approach",
+    "stackLabel": "Stack & technical choices",
+    "resultLabel": "Outcome & takeaways",
+    "previous": "Previous",
+    "next": "Next",
+    "allProjects": "All projects",
+    "madeWithAgency": "Made with",
     "items": {
       "evianchezvous": {
         "description": "Magento 2 e-commerce for home water delivery in Paris and Île-de-France.",

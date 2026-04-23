@@ -32,6 +32,7 @@ export function useSeo(options: {
     ],
     meta: [
       { name: 'description', content: description },
+      { name: 'robots', content: 'index, follow, max-image-preview:large' },
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: title },
       { property: 'og:description', content: description },
@@ -44,6 +45,8 @@ export function useSeo(options: {
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
       { name: 'twitter:image', content: image },
+      { name: 'twitter:site', content: '@emericguyon' },
+      { name: 'twitter:creator', content: '@emericguyon' },
     ],
   })
 }

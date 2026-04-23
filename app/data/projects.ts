@@ -27,7 +27,7 @@ export const projects: Project[] = [
   },
   {
     slug: '25lieuxinnovation',
-    title: '25lieuxinnovation',
+    title: '25 Lieux Innovation',
     images: [
       { src: '/images/projects/25lieuxinnovation-2.jpg' },
       { src: '/images/projects/25lieuxinnovation-cover.jpg', cover: true },

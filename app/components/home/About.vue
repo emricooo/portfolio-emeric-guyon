@@ -26,13 +26,10 @@ timelineReveal('.about-timeline')
     <div class="relative z-10 mx-auto max-w-[1280px] px-4 md:px-8">
       <div class="flex flex-col items-start gap-12 md:flex-row md:gap-10 lg:gap-20">
         <!-- Photo -->
-        <div class="relative w-full flex-1 self-stretch">
-          <NuxtPicture
+        <div class="about-image relative w-full flex-1 self-stretch min-h-[400px] md:min-h-[500px]">
+          <HomeAboutPortraitLive
             src="/images/portrait-about.jpg"
-            sizes="sm:100vw md:600px"
-            :img-attrs="{ class: 'about-image relative h-full w-full rounded-2xl object-cover object-top', width: 640, height: 853 }"
             alt="Emeric Guyon"
-            loading="lazy"
           />
         </div>
 

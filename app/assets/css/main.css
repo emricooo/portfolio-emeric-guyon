@@ -7,6 +7,28 @@ body {
   overflow-x: clip;
 }
 
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 /* Project page layout */
 .project-header-wrapper {
   max-width: 1280px;
@@ -36,11 +58,6 @@ body {
 
   .project-images {
     order: -1; /* images à gauche sur desktop */
-  }
-
-  .project-text {
-    position: sticky;
-    top: 6rem;
   }
 }
 
