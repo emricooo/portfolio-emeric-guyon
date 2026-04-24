@@ -134,7 +134,7 @@
       "name": "Name",
       "namePlaceholder": "What should I call you?",
       "email": "Email",
-      "emailPlaceholder": "you@email.com",
+      "emailPlaceholder": "you{'@'}email.com",
       "type": "Project type",
       "typePlaceholder": "Choose…",
       "typeOptions": {
@@ -159,7 +159,7 @@
         "typeRequired": "Pick a project type",
         "messageRequired": "A little message please",
         "messageMin": "A few more words?",
-        "network": "Sending failed. Try again or write to hello@emericguyon.com.",
+        "network": "Sending failed. Try again or write to hello{'@'}emericguyon.com.",
         "rateLimit": "You already reached out recently — I'll reply soon!"
       }
     }

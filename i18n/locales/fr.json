@@ -154,7 +154,7 @@
       "name": "Nom",
       "namePlaceholder": "Comment je t'appelle ?",
       "email": "Email",
-      "emailPlaceholder": "ton@email.com",
+      "emailPlaceholder": "ton{'@'}email.com",
       "type": "Type de projet",
       "typePlaceholder": "Choisir…",
       "typeOptions": {
@@ -179,7 +179,7 @@
         "typeRequired": "Choisis un type de projet",
         "messageRequired": "Un petit message stp",
         "messageMin": "Encore quelques mots ?",
-        "network": "L'envoi a échoué. Réessaie ou écris-moi à hello@emericguyon.com.",
+        "network": "L'envoi a échoué. Réessaie ou écris-moi à hello{'@'}emericguyon.com.",
         "rateLimit": "Tu m'as déjà écrit récemment, je te réponds vite !"
       }
     }
