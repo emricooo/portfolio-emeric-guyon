@@ -45,7 +45,44 @@ function validate(): boolean {
 async function onSubmit() {
   submitError.value = null
   if (!validate()) return
-  // Submit handler implementation lands in Task 7.
+  state.value = 'submitting'
+
+  try {
+    const res = await $fetch<{ ok: boolean, errors?: Record<string, string>, error?: string }>('/api/contact', {
+      method: 'POST',
+      body: {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        type: type.value,
+        message: message.value.trim(),
+        website: website.value,
+      },
+      ignoreResponseError: true,
+    })
+
+    if (res.ok) {
+      submittedName.value = name.value.trim().split(' ')[0] || name.value.trim()
+      state.value = 'success'
+      return
+    }
+
+    if (res.error === 'rate_limit') {
+      submitError.value = 'rateLimit'
+    }
+    else if (res.errors) {
+      // Server-side validation rejected something the client missed — surface generic network msg.
+      submitError.value = 'network'
+    }
+    else {
+      submitError.value = 'network'
+    }
+    state.value = 'idle'
+  }
+  catch (err) {
+    console.error('[ContactForm] submit failed', err)
+    submitError.value = 'network'
+    state.value = 'idle'
+  }
 }
 
 function reset() {
