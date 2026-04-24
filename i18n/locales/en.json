@@ -129,7 +129,40 @@
     "label": "Contact me",
     "title": "Let's talk.",
     "subtitle": "Tell me about your project — I'll be straight with you about whether I can help.",
-    "phone": "+33 6 28 08 71 80"
+    "phone": "+33 6 28 08 71 80",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "What should I call you?",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "type": "Project type",
+      "typePlaceholder": "Choose…",
+      "typeOptions": {
+        "showcase": "Marketing site",
+        "ecommerce": "E-commerce",
+        "webapp": "Web app / SaaS",
+        "redesign": "Redesign / optimization",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project in a few words…",
+      "submit": "Send",
+      "submitting": "Sending…",
+      "success": {
+        "title": "Thanks {name}, I'll get back to you within 24h.",
+        "again": "Send another"
+      },
+      "errors": {
+        "nameRequired": "Your name is required",
+        "emailRequired": "Your email is required",
+        "emailInvalid": "That email doesn't look valid",
+        "typeRequired": "Pick a project type",
+        "messageRequired": "A little message please",
+        "messageMin": "A few more words?",
+        "network": "Sending failed. Try again or write to hello@emericguyon.com.",
+        "rateLimit": "You already reached out recently — I'll reply soon!"
+      }
+    }
   },
   "footer": {
     "copyright": "Emeric Guyon — Freelance fullstack developer",

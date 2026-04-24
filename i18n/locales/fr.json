@@ -149,7 +149,40 @@
     "label": "Contactez-moi",
     "title": "Parlons-en.",
     "subtitle": "Décrivez-moi votre projet, je vous dis honnêtement si je peux vous aider.",
-    "phone": "+33 6 28 08 71 80"
+    "phone": "+33 6 28 08 71 80",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Comment je t'appelle ?",
+      "email": "Email",
+      "emailPlaceholder": "ton@email.com",
+      "type": "Type de projet",
+      "typePlaceholder": "Choisir…",
+      "typeOptions": {
+        "showcase": "Site vitrine",
+        "ecommerce": "E-commerce",
+        "webapp": "Web app / SaaS",
+        "redesign": "Refonte / optimisation",
+        "other": "Autre"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Raconte-moi ton projet en quelques mots…",
+      "submit": "Envoyer",
+      "submitting": "Envoi…",
+      "success": {
+        "title": "Merci {name}, je te réponds sous 24h.",
+        "again": "Envoyer un autre"
+      },
+      "errors": {
+        "nameRequired": "Ton nom est requis",
+        "emailRequired": "Ton email est requis",
+        "emailInvalid": "Cet email ne semble pas valide",
+        "typeRequired": "Choisis un type de projet",
+        "messageRequired": "Un petit message stp",
+        "messageMin": "Encore quelques mots ?",
+        "network": "L'envoi a échoué. Réessaie ou écris-moi à hello@emericguyon.com.",
+        "rateLimit": "Tu m'as déjà écrit récemment, je te réponds vite !"
+      }
+    }
   },
   "footer": {
     "copyright": "Emeric Guyon — Développeur freelance fullstack",
