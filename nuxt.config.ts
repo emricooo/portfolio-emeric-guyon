@@ -78,6 +78,10 @@ export default defineNuxtConfig({
     strict: true,
   },
 
+  runtimeConfig: {
+    resendApiKey: process.env.RESEND_API_KEY || '',
+  },
+
   components: [
     { path: '~/components', pathPrefix: false },
     { path: '~/components/ui', prefix: '' },
