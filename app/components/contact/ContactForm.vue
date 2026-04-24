@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import { gsap } from 'gsap'
+
 const { t } = useI18n()
+
+const formRef = ref<HTMLFormElement | null>(null)
+const successRef = ref<HTMLElement | null>(null)
+const checkPathRef = ref<SVGPathElement | null>(null)
 
 type ProjectType = 'showcase' | 'ecommerce' | 'webapp' | 'redesign' | 'other'
 type FormState = 'idle' | 'submitting' | 'success'
@@ -42,6 +48,46 @@ function validate(): boolean {
   return Object.keys(errs).length === 0
 }
 
+async function playSuccessTransition() {
+  const form = formRef.value
+  if (!form) {
+    state.value = 'success'
+    return
+  }
+  const fields = form.querySelectorAll<HTMLElement>('[data-field]')
+  await gsap.to(fields, {
+    opacity: 0,
+    y: -8,
+    duration: 0.3,
+    stagger: 0.05,
+    ease: 'power2.in',
+  }).then()
+
+  state.value = 'success'
+
+  await nextTick()
+  const successEl = successRef.value
+  const checkPath = checkPathRef.value
+  if (!successEl) return
+
+  // Move focus to success block so screen readers announce the change.
+  successEl.focus()
+
+  if (checkPath) {
+    const length = checkPath.getTotalLength()
+    gsap.set(checkPath, { strokeDasharray: length, strokeDashoffset: length })
+    gsap.to(checkPath, { strokeDashoffset: 0, duration: 0.4, ease: 'power2.out' })
+  }
+  gsap.from(successEl.querySelectorAll('[data-success-line]'), {
+    opacity: 0,
+    y: 8,
+    duration: 0.4,
+    delay: 0.2,
+    stagger: 0.08,
+    ease: 'power2.out',
+  })
+}
+
 async function onSubmit() {
   submitError.value = null
   if (!validate()) return
@@ -62,7 +108,7 @@ async function onSubmit() {
 
     if (res.ok) {
       submittedName.value = name.value.trim().split(' ')[0] || name.value.trim()
-      state.value = 'success'
+      await playSuccessTransition()
       return
     }
 
@@ -102,6 +148,7 @@ function reset() {
   <div class="w-full max-w-md">
     <form
       v-if="state !== 'success'"
+      ref="formRef"
       class="space-y-6"
       novalidate
       @submit.prevent="onSubmit"
@@ -119,7 +166,7 @@ function reset() {
       </div>
 
       <!-- Name -->
-      <div>
+      <div data-field>
         <label for="contact-name" class="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">
           {{ t('contact.form.name') }}
         </label>
@@ -144,7 +191,7 @@ function reset() {
       </div>
 
       <!-- Email -->
-      <div>
+      <div data-field>
         <label for="contact-email" class="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">
           {{ t('contact.form.email') }}
         </label>
@@ -169,7 +216,7 @@ function reset() {
       </div>
 
       <!-- Type -->
-      <div>
+      <div data-field>
         <label for="contact-type" class="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">
           {{ t('contact.form.type') }}
         </label>
@@ -199,7 +246,7 @@ function reset() {
       </div>
 
       <!-- Message -->
-      <div>
+      <div data-field>
         <label for="contact-message" class="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">
           {{ t('contact.form.message') }}
         </label>
@@ -224,7 +271,7 @@ function reset() {
       </div>
 
       <!-- Submit -->
-      <div>
+      <div data-field>
         <button
           type="submit"
           :disabled="state === 'submitting'"
@@ -244,16 +291,16 @@ function reset() {
       </div>
     </form>
 
-    <!-- Success block (Task 8 will animate the transition) -->
-    <div v-else class="space-y-4 text-foreground">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M6 16 l7 7 l13 -14" />
+    <div v-else ref="successRef" tabindex="-1" class="space-y-4 text-foreground focus:outline-none">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path ref="checkPathRef" d="M6 16 l7 7 l13 -14" />
       </svg>
-      <p class="text-base">
+      <p data-success-line class="text-base">
         {{ t('contact.form.success.title', { name: submittedName }) }}
       </p>
       <button
         type="button"
+        data-success-line
         class="text-sm text-muted-foreground underline underline-offset-4 decoration-border hover:text-foreground hover:decoration-foreground transition-colors"
         @click="reset"
       >
