@@ -186,8 +186,6 @@
   },
   "footer": {
     "copyright": "Emeric Guyon — Développeur freelance fullstack",
-    "source": "Code source ouvert — fork, explore, inspire-toi.",
-    "available": "Disponible",
-    "builtWith": "Built with"
+    "source": "Code source ouvert — fork, explore, inspire-toi."
   }
 }
