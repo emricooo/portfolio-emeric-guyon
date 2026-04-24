@@ -5,8 +5,7 @@ const { animateOnScroll, letterReveal, wordReveal } = useScrollAnimation()
 // Animations
 letterReveal('.contact-label')
 wordReveal('.contact-subtitle', 0.2)
-animateOnScroll('.contact-email', { y: 20, duration: 0.5, delay: 0.6 })
-animateOnScroll('.contact-links', { y: 20, duration: 0.5, delay: 0.8 })
+animateOnScroll('.contact-form-wrapper', { y: 20, duration: 0.5, delay: 0.6 })
 animateOnScroll('.contact-baseline', { y: 20, duration: 0.5, delay: 1.0 })
 animateOnScroll('.contact-location', { y: 20, duration: 0.5, delay: 1.1 })
 </script>
@@ -25,34 +24,9 @@ animateOnScroll('.contact-location', { y: 20, duration: 0.5, delay: 1.1 })
           </p>
         </div>
 
-        <!-- Right: contact info -->
-        <div class="space-y-4 text-left md:text-right">
-          <a
-            href="mailto:hello@emericguyon.com"
-            class="contact-email group relative inline-block text-base text-foreground underline underline-offset-4"
-            data-cursor-hover
-          >
-            hello@emericguyon.com
-          </a>
-          <div class="contact-links flex flex-col items-start gap-1 md:items-end">
-            <a href="tel:+33628087180" class="nav-link relative inline-block text-sm text-muted-foreground transition-colors hover:text-foreground w-fit">{{ t('contact.phone') }}</a>
-            <a
-              href="https://www.linkedin.com/in/emeric-guyon/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="nav-link relative inline-block text-sm text-muted-foreground transition-colors hover:text-foreground w-fit"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/emricooo"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="nav-link relative inline-block text-sm text-muted-foreground transition-colors hover:text-foreground w-fit"
-            >
-              Github
-            </a>
-          </div>
+        <!-- Right: contact form -->
+        <div class="contact-form-wrapper w-full md:max-w-md">
+          <ContactForm />
         </div>
       </div>
 
