@@ -47,7 +47,11 @@ export function buildEmail(input: ContactEmailInput): BuiltEmail {
   ].join('\n')
 
   const escape = (s: string) =>
-    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    s.replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
   const messageHtml = escape(input.message).replace(/\n/g, '<br>')
   const html = `
 <div style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#111">
