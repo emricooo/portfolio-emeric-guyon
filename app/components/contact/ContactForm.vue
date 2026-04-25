@@ -2,10 +2,22 @@
 import { gsap } from 'gsap'
 
 const { t } = useI18n()
+const { applyMagnetic } = useMagnetic()
 
 const formRef = ref<HTMLFormElement | null>(null)
 const successRef = ref<HTMLElement | null>(null)
 const checkPathRef = ref<SVGPathElement | null>(null)
+const submitRef = ref<HTMLButtonElement | null>(null)
+
+let cleanupMagnetic: (() => void) | undefined
+
+onMounted(() => {
+  if (submitRef.value) cleanupMagnetic = applyMagnetic(submitRef.value, 0.2)
+})
+
+onUnmounted(() => {
+  cleanupMagnetic?.()
+})
 
 type ProjectType = 'showcase' | 'ecommerce' | 'webapp' | 'redesign' | 'other'
 type FormState = 'idle' | 'submitting' | 'success'
@@ -35,6 +47,13 @@ const submitError = ref<ErrorKey | null>(null)
 const submittedName = ref('')
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const isFormFilled = computed(() =>
+  name.value.trim().length > 0
+  && email.value.trim().length > 0
+  && type.value !== ''
+  && message.value.trim().length > 0,
+)
 
 function validate(): boolean {
   const errs: FieldErrors = {}
@@ -145,7 +164,7 @@ function reset() {
 </script>
 
 <template>
-  <div class="w-full max-w-md">
+  <div class="contact-form-card w-full max-w-lg rounded-2xl bg-white p-6 dark:bg-background md:p-8">
     <form
       v-if="state !== 'success'"
       ref="formRef"
@@ -178,7 +197,7 @@ function reset() {
           :disabled="state === 'submitting'"
           :aria-invalid="!!fieldErrors.name"
           :aria-describedby="fieldErrors.name ? 'contact-name-error' : undefined"
-          class="w-full bg-transparent border-b border-border py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none transition-colors"
+          class="w-full bg-transparent dark:bg-foreground/[0.06] border border-border dark:border-foreground/15 rounded-lg px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none transition-colors"
         >
         <p
           v-if="fieldErrors.name"
@@ -203,7 +222,7 @@ function reset() {
           :disabled="state === 'submitting'"
           :aria-invalid="!!fieldErrors.email"
           :aria-describedby="fieldErrors.email ? 'contact-email-error' : undefined"
-          class="w-full bg-transparent border-b border-border py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none transition-colors"
+          class="w-full bg-transparent dark:bg-foreground/[0.06] border border-border dark:border-foreground/15 rounded-lg px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none transition-colors"
         >
         <p
           v-if="fieldErrors.email"
@@ -220,21 +239,26 @@ function reset() {
         <label for="contact-type" class="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">
           {{ t('contact.form.type') }}
         </label>
-        <select
-          id="contact-type"
-          v-model="type"
-          :disabled="state === 'submitting'"
-          :aria-invalid="!!fieldErrors.type"
-          :aria-describedby="fieldErrors.type ? 'contact-type-error' : undefined"
-          class="w-full bg-transparent border-b border-border py-3 text-base text-foreground focus:border-foreground focus:outline-none transition-colors appearance-none"
-        >
-          <option value="" disabled>
-            {{ t('contact.form.typePlaceholder') }}
-          </option>
-          <option v-for="opt in TYPE_OPTIONS" :key="opt" :value="opt">
-            {{ t(`contact.form.typeOptions.${opt}`) }}
-          </option>
-        </select>
+        <div class="relative">
+          <select
+            id="contact-type"
+            v-model="type"
+            :disabled="state === 'submitting'"
+            :aria-invalid="!!fieldErrors.type"
+            :aria-describedby="fieldErrors.type ? 'contact-type-error' : undefined"
+            class="peer w-full appearance-none rounded-lg border border-border bg-transparent px-4 py-3 pr-10 text-base text-foreground transition-colors focus:border-foreground focus:outline-none dark:border-foreground/15 dark:bg-foreground/[0.06]"
+          >
+            <option value="" disabled>
+              {{ t('contact.form.typePlaceholder') }}
+            </option>
+            <option v-for="opt in TYPE_OPTIONS" :key="opt" :value="opt">
+              {{ t(`contact.form.typeOptions.${opt}`) }}
+            </option>
+          </select>
+          <IconsChevronDown
+            class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground transition-transform duration-200 peer-focus:-rotate-180 peer-focus:text-foreground"
+          />
+        </div>
         <p
           v-if="fieldErrors.type"
           id="contact-type-error"
@@ -258,7 +282,7 @@ function reset() {
           :disabled="state === 'submitting'"
           :aria-invalid="!!fieldErrors.message"
           :aria-describedby="fieldErrors.message ? 'contact-message-error' : undefined"
-          class="w-full bg-transparent border-b border-border py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none transition-colors resize-none"
+          class="w-full bg-transparent dark:bg-foreground/[0.06] border border-border dark:border-foreground/15 rounded-lg px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none transition-colors resize-none"
         />
         <p
           v-if="fieldErrors.message"
@@ -273,13 +297,14 @@ function reset() {
       <!-- Submit -->
       <div data-field>
         <button
+          ref="submitRef"
           type="submit"
-          :disabled="state === 'submitting'"
+          :disabled="state === 'submitting' || !isFormFilled"
           :aria-busy="state === 'submitting'"
-          class="inline-flex items-center gap-2 text-base text-foreground underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors disabled:opacity-50"
+          class="contact-submit nav-cta relative inline-flex cursor-pointer items-center pl-6 pr-7 py-2.5 text-xs font-semibold tracking-wider uppercase text-foreground transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          <span>{{ state === 'submitting' ? t('contact.form.submitting') : t('contact.form.submit') }}</span>
-          <span aria-hidden="true">→</span>
+          {{ state === 'submitting' ? t('contact.form.submitting') : t('contact.form.submit') }}
+          <IconsArrowTopRight class="ml-2 h-3.5 w-3.5 shrink-0" />
         </button>
         <p
           v-if="submitError"
