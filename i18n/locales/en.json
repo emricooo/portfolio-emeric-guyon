@@ -132,11 +132,11 @@
     "phone": "+33 6 28 08 71 80",
     "form": {
       "name": "Name",
-      "namePlaceholder": "What should I call you?",
+      "namePlaceholder": "Your full name",
       "email": "Email",
-      "emailPlaceholder": "you{'@'}email.com",
+      "emailPlaceholder": "you{'@'}example.com",
       "type": "Project type",
-      "typePlaceholder": "Choose…",
+      "typePlaceholder": "Select an option",
       "typeOptions": {
         "showcase": "Marketing site",
         "ecommerce": "E-commerce",
@@ -145,22 +145,22 @@
         "other": "Other"
       },
       "message": "Message",
-      "messagePlaceholder": "Tell me about your project in a few words…",
-      "submit": "Send",
+      "messagePlaceholder": "Briefly describe your project: goals, context, timeline…",
+      "submit": "Send message",
       "submitting": "Sending…",
       "success": {
-        "title": "Thanks {name}, I'll get back to you within 24h.",
-        "again": "Send another"
+        "title": "Thank you {name}, your message has been sent. I'll get back to you within 24 hours.",
+        "again": "Send another message"
       },
       "errors": {
-        "nameRequired": "Your name is required",
-        "emailRequired": "Your email is required",
-        "emailInvalid": "That email doesn't look valid",
-        "typeRequired": "Pick a project type",
-        "messageRequired": "A little message please",
-        "messageMin": "A few more words?",
-        "network": "Sending failed. Try again or write to hello{'@'}emericguyon.com.",
-        "rateLimit": "You already reached out recently — I'll reply soon!"
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Invalid email format",
+        "typeRequired": "Please select a project type",
+        "messageRequired": "Please write your message",
+        "messageMin": "Your message must be at least 20 characters",
+        "network": "Sending failed. Please try again or email hello{'@'}emericguyon.com directly.",
+        "rateLimit": "A message was sent recently. I'll respond shortly."
       }
     }
   },

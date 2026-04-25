@@ -152,11 +152,11 @@
     "phone": "+33 6 28 08 71 80",
     "form": {
       "name": "Nom",
-      "namePlaceholder": "Comment je t'appelle ?",
+      "namePlaceholder": "Votre nom complet",
       "email": "Email",
-      "emailPlaceholder": "ton{'@'}email.com",
+      "emailPlaceholder": "vous{'@'}exemple.com",
       "type": "Type de projet",
-      "typePlaceholder": "Choisir…",
+      "typePlaceholder": "Sélectionnez une option",
       "typeOptions": {
         "showcase": "Site vitrine",
         "ecommerce": "E-commerce",
@@ -165,22 +165,22 @@
         "other": "Autre"
       },
       "message": "Message",
-      "messagePlaceholder": "Raconte-moi ton projet en quelques mots…",
-      "submit": "Envoyer",
-      "submitting": "Envoi…",
+      "messagePlaceholder": "Présentez votre projet en quelques lignes : objectifs, contexte, échéance…",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours…",
       "success": {
-        "title": "Merci {name}, je te réponds sous 24h.",
-        "again": "Envoyer un autre"
+        "title": "Merci {name}, votre message a bien été envoyé. Je vous répondrai sous 24 h.",
+        "again": "Envoyer un nouveau message"
       },
       "errors": {
-        "nameRequired": "Ton nom est requis",
-        "emailRequired": "Ton email est requis",
-        "emailInvalid": "Cet email ne semble pas valide",
-        "typeRequired": "Choisis un type de projet",
-        "messageRequired": "Un petit message stp",
-        "messageMin": "Encore quelques mots ?",
-        "network": "L'envoi a échoué. Réessaie ou écris-moi à hello{'@'}emericguyon.com.",
-        "rateLimit": "Tu m'as déjà écrit récemment, je te réponds vite !"
+        "nameRequired": "Veuillez indiquer votre nom",
+        "emailRequired": "Veuillez indiquer votre email",
+        "emailInvalid": "Format d'email invalide",
+        "typeRequired": "Veuillez sélectionner un type de projet",
+        "messageRequired": "Veuillez rédiger votre message",
+        "messageMin": "Votre message doit contenir au moins 20 caractères",
+        "network": "L'envoi a échoué. Veuillez réessayer ou m'écrire directement à hello{'@'}emericguyon.com.",
+        "rateLimit": "Un message a déjà été envoyé récemment. Je vous répondrai sous peu."
       }
     }
   },
