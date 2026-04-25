@@ -494,7 +494,7 @@ onUnmounted(() => mm?.revert())
                 {{ String(stripProjects.length - i).padStart(2, '0') }}
               </div>
 
-              <h3 class="strip-panel-title strip-panel-side-item mb-6 font-display text-3xl font-bold leading-[0.95] text-foreground @[700px]:mb-8 @[700px]:text-5xl @[1100px]:text-6xl @[1500px]:text-7xl @[1800px]:text-8xl">
+              <h3 class="strip-panel-title strip-panel-side-item mb-6 font-display font-bold leading-[0.95] text-balance text-foreground text-[clamp(1.75rem,4cqi,4.5rem)] @[700px]:mb-8">
                 {{ project.title }}
               </h3>
 
