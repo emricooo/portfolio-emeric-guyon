@@ -23,48 +23,49 @@ animateOnScroll('.contact-location', { y: 20, duration: 0.5, delay: 1.1 })
           <p class="section-title contact-subtitle mt-4">
             {{ t('contact.subtitle') }}
           </p>
-          <div class="contact-socials mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+          <div class="contact-socials mt-8 flex flex-col items-start gap-4">
+            <a
+              href="mailto:hello@emericguyon.com"
+              class="group inline-flex items-center gap-3 text-base text-foreground"
+              data-cursor-hover
+            >
+              <IconsMail class="h-[18px] w-[18px] shrink-0 text-foreground" />
+              <span class="underline-grow">hello@emericguyon.com</span>
+            </a>
             <a
               href="https://www.linkedin.com/in/emeric-guyon/"
               target="_blank"
               rel="noopener noreferrer"
-              class="transition-colors hover:text-foreground"
+              class="group inline-flex items-center gap-3 text-base text-foreground"
             >
-              LinkedIn
+              <IconsLinkedIn class="h-[18px] w-[18px] shrink-0 text-foreground" />
+              <span class="underline-grow">LinkedIn</span>
             </a>
-            <span class="text-muted-foreground/40" aria-hidden="true">·</span>
             <a
               href="https://github.com/emricooo"
               target="_blank"
               rel="noopener noreferrer"
-              class="transition-colors hover:text-foreground"
+              class="group inline-flex items-center gap-3 text-base text-foreground"
             >
-              GitHub
+              <IconsGitHub class="h-[18px] w-[18px] shrink-0 text-foreground" />
+              <span class="underline-grow">GitHub</span>
             </a>
-            <span class="text-muted-foreground/40" aria-hidden="true">·</span>
-            <a
-              href="mailto:hello@emericguyon.com"
-              class="transition-colors hover:text-foreground"
-            >
-              hello@emericguyon.com
-            </a>
+          </div>
+
+          <div class="mt-8">
+            <p class="contact-baseline text-sm text-muted-foreground md:text-base">
+              {{ t('hero.baseline') }}
+            </p>
+            <p class="contact-location mt-2 text-[11px] uppercase tracking-[0.2em] text-muted-foreground/60">
+              {{ t('hero.location') }}
+            </p>
           </div>
         </div>
 
         <!-- Right: contact form -->
-        <div class="contact-form-wrapper w-full md:max-w-md">
+        <div class="contact-form-wrapper w-full md:max-w-lg">
           <ContactForm />
         </div>
-      </div>
-
-      <!-- Bloc 2 — full width : baseline + géo -->
-      <div class="mt-8">
-        <p class="contact-baseline text-sm text-muted-foreground md:text-base">
-          {{ t('hero.baseline') }}
-        </p>
-        <p class="contact-location mt-2 text-[11px] uppercase tracking-[0.2em] text-muted-foreground/60">
-          {{ t('hero.location') }}
-        </p>
       </div>
 
     </div>
