@@ -73,8 +73,6 @@ function onEnter() {
 function onLeave() {
   emit('hover', null)
 }
-
-defineExpose({ root, project: props.project })
 </script>
 
 <template>

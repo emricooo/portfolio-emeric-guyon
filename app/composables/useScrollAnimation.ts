@@ -439,37 +439,5 @@ export function useScrollAnimation() {
     })
   }
 
-  function columnsReveal(containerSelector: string, columnSelector: string, itemSelector: string) {
-    onMounted(() => {
-      const container = document.querySelector(containerSelector)
-      if (!container) return
-
-      const columns = container.querySelectorAll(columnSelector)
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerSelector,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-          lazy: true,
-        },
-      })
-      if (tl.scrollTrigger) triggers.push(tl.scrollTrigger)
-
-      columns.forEach((col, colIndex) => {
-        const items = col.querySelectorAll(itemSelector)
-        if (items.length) {
-          tl.from(items, {
-            y: 30,
-            opacity: 0,
-            duration: 0.4,
-            stagger: 0.06,
-            ease: 'power3.out',
-          }, 0.5 + colIndex * 0.15)
-        }
-      })
-    })
-  }
-
-  return { animateOnScroll, staggerReveal, letterReveal, parallax, maskReveal, drawLine, wordReveal, timelineReveal, servicesReveal, skillsReveal, projectsReveal, columnsReveal }
+  return { animateOnScroll, staggerReveal, letterReveal, parallax, maskReveal, drawLine, wordReveal, timelineReveal, servicesReveal, skillsReveal, projectsReveal }
 }
