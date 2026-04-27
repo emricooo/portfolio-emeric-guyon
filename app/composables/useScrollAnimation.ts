@@ -31,7 +31,7 @@ export function useScrollAnimation() {
     })
   }
 
-  function staggerReveal(selector: string, staggerAmount: number = 0.1) {
+  function staggerReveal(selector: string, staggerAmount: number = 0.1, delay: number = 0) {
     onMounted(() => {
       const tween = gsap.from(selector, {
         y: 40,
@@ -39,6 +39,7 @@ export function useScrollAnimation() {
         duration: 0.7,
         stagger: staggerAmount,
         ease: 'power3.out',
+        delay,
         scrollTrigger: {
           trigger: selector,
           start: 'top 85%',

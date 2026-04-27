@@ -17,7 +17,7 @@ const services = Object.keys(SERVICE_COLORS).map(key => ({ key, color: SERVICE_C
 </script>
 
 <template>
-  <section id="services" class="relative py-20 lg:py-32">
+  <section id="services" class="relative pb-10 pt-10 lg:pb-16 lg:pt-16">
     <div class="section-glow left-1/3 top-1/4 bg-accent-amber" />
 
     <div class="relative z-10 mx-auto max-w-7xl px-4 md:px-8">

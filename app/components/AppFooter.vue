@@ -4,7 +4,7 @@ const { t } = useI18n()
 
 <template>
   <footer class="border-t border-border pb-24 pt-8 nav:pb-8">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-start gap-3 px-4 sm:flex-row sm:items-center sm:justify-between md:px-8">
       <p class="text-xs text-muted-foreground">
         &copy; {{ new Date().getFullYear() }} {{ t('footer.copyright') }}
       </p>

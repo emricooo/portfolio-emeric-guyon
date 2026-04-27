@@ -1,18 +1,23 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { animateOnScroll, letterReveal, wordReveal } = useScrollAnimation()
+const { animateOnScroll, letterReveal, wordReveal, staggerReveal } = useScrollAnimation()
 
 // Animations
 letterReveal('.contact-label')
 wordReveal('.contact-subtitle', 0.2)
-animateOnScroll('.contact-form-wrapper', { y: 20, duration: 0.5, delay: 0.6 })
-animateOnScroll('.contact-socials', { y: 20, duration: 0.5, delay: 0.7 })
-animateOnScroll('.contact-baseline', { y: 20, duration: 0.5, delay: 1.0 })
-animateOnScroll('.contact-location', { y: 20, duration: 0.5, delay: 1.1 })
+
+// Social links — stagger each link individually, delayed to start AFTER the title
+staggerReveal('.contact-socials > a', 0.1, 0.8)
+
+// Form — stagger each field block (input + label) and the submit button together
+staggerReveal('.contact-form-card [data-field]', 0.1, 0.4)
+
+animateOnScroll('.contact-baseline', { y: 20, duration: 0.5, delay: 1.2 })
+animateOnScroll('.contact-location', { y: 20, duration: 0.5, delay: 1.3 })
 </script>
 
 <template>
-  <section id="contact" class="relative bg-muted py-20 lg:py-32">
+  <section id="contact" class="relative bg-muted pb-10 pt-20 lg:pb-16 lg:pt-32">
     <div class="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
 
       <!-- Bloc 1 — flex row : subtitle gauche, liens droite -->

@@ -19,14 +19,14 @@ timelineReveal('.about-timeline')
 </script>
 
 <template>
-  <section id="about" class="relative py-20 lg:py-32">
+  <section id="about" class="relative pb-10 pt-20 lg:pb-16 lg:pt-32">
     <!-- Glow -->
     <div class="section-glow left-1/4 top-1/2 -translate-y-1/2 bg-accent-cyan" />
 
     <div class="relative z-10 mx-auto max-w-[1280px] px-4 md:px-8">
       <div class="flex flex-col items-start gap-12 md:flex-row md:gap-10 lg:gap-20">
         <!-- Photo -->
-        <div class="about-image relative w-full flex-1 self-stretch min-h-[400px] md:min-h-[500px]">
+        <div class="about-image relative w-full aspect-[3/4] md:aspect-auto md:flex-1 md:self-stretch md:min-h-[500px]">
           <HomeAboutPortraitLive
             src="/images/portrait-about.jpg"
             alt="Emeric Guyon"

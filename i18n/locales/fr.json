@@ -15,7 +15,8 @@
   "hero": {
     "name": "EMERIC GUYON",
     "baseline": "Développeur fullstack senior — j'aide les startups et équipes tech à construire ce qu'il faut, et à le construire bien.",
-    "location": "Basé à Chambéry, full remote ou déplacement selon le projet. Lyon, Grenoble, Annecy, Paris..."
+    "location": "Basé à Chambéry, full remote ou déplacement selon le projet. Lyon, Grenoble, Annecy, Paris...",
+    "ariaLabel": "Page d'accueil : présentation d'Emeric Guyon, développeur fullstack senior"
   },
   "about": {
     "title": "Développeur orienté produit. Je ne fais pas que coder — j'aide à livrer ce qui compte vraiment.",
@@ -85,7 +86,8 @@
   },
   "projects": {
     "label": "Projets",
-    "title": "Chaque projet m'a appris quelque chose. En voici quelques-uns.",
+    "title": "Chaque projet m'a appris quelque chose.",
+    "titleSuffix": "En voici quelques-uns.",
     "view": "Voir",
     "back": "Retour",
     "madeWith": "Réalisé avec",

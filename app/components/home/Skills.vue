@@ -94,6 +94,22 @@ function scheduleNextSwap() {
   }, SWAP_INTERVAL)
 }
 
+// On resize, accumulated x/y transforms point to old visual coordinates that
+// no longer match the new layout — reset them so swaps recompute from a clean
+// state. We also kill any active swap timeline.
+function resetIconTransforms() {
+  currentSwapTl?.kill()
+  currentSwapTl = null
+  const icons = document.querySelectorAll<HTMLElement>('.skills-icons .skill-icon')
+  gsap.set(icons, { x: 0, y: 0, scale: 1, clearProps: 'transform' })
+}
+
+let resizeRaf: number | null = null
+function onResize() {
+  if (resizeRaf !== null) cancelAnimationFrame(resizeRaf)
+  resizeRaf = requestAnimationFrame(resetIconTransforms)
+}
+
 onMounted(() => {
   if (import.meta.server) return
 
@@ -106,16 +122,20 @@ onMounted(() => {
       setTimeout(() => scheduleNextSwap(), SWAP_INITIAL_DELAY)
     },
   })
+
+  window.addEventListener('resize', onResize)
 })
 
 onUnmounted(() => {
   if (swapTimeoutId) clearTimeout(swapTimeoutId)
+  if (resizeRaf !== null) cancelAnimationFrame(resizeRaf)
   currentSwapTl?.kill()
+  window.removeEventListener('resize', onResize)
 })
 </script>
 
 <template>
-  <section id="skills" class="relative py-20 lg:py-32">
+  <section id="skills" class="relative pb-20 pt-10 lg:pb-32 lg:pt-16">
     <div class="section-glow right-1/4 top-1/3 bg-accent-magenta" />
 
     <div class="relative z-10 mx-auto max-w-7xl px-4 md:px-8">

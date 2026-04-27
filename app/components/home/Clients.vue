@@ -2,25 +2,16 @@
 import { clients } from '~/data/clients'
 
 const { t } = useI18n()
-const { letterReveal, wordReveal, columnsReveal } = useScrollAnimation()
-
-// Split clients into 5 balanced columns
-const columns = computed(() => {
-  const cols: string[][] = [[], [], [], [], []]
-  clients.forEach((client, i) => {
-    cols[i % 5]!.push(client)
-  })
-  return cols
-})
+const { letterReveal, wordReveal, staggerReveal } = useScrollAnimation()
 
 // Animations
 letterReveal('.clients-label')
 wordReveal('.clients-title', 0.2)
-columnsReveal('.clients-grid', '.clients-column', '.client-name')
+staggerReveal('.clients-grid .client-name', 0.03, 0.3)
 </script>
 
 <template>
-  <section id="clients" class="relative py-20 lg:py-32">
+  <section id="clients" class="relative pb-20 lg:pb-32">
     <div class="section-glow left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-amber" />
 
     <div class="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
@@ -29,16 +20,15 @@ columnsReveal('.clients-grid', '.clients-column', '.client-name')
         {{ t('clients.title') }}
       </h2>
 
-      <div class="clients-grid grid grid-cols-2 gap-x-8 gap-y-2 sm:grid-cols-3 md:grid-cols-5">
-        <div v-for="(col, colIndex) in columns" :key="colIndex" class="clients-column space-y-2">
-          <span
-            v-for="client in col"
-            :key="client"
-            class="client-name block text-sm text-muted-foreground"
-          >
-            {{ client }}
-          </span>
-        </div>
+      <!-- CSS multi-column auto-balances client names: 2 cols mobile, 3 sm, 5 md+ -->
+      <div class="clients-grid columns-2 gap-x-8 sm:columns-3 md:columns-5">
+        <span
+          v-for="client in clients"
+          :key="client"
+          class="client-name mb-2 block break-inside-avoid text-sm text-muted-foreground"
+        >
+          {{ client }}
+        </span>
       </div>
     </div>
   </section>

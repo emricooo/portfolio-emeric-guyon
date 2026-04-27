@@ -11,6 +11,7 @@ export const projects: Project[] = [
     technologies: ['Nuxt.js', 'TypeScript', 'AdonisJS', 'Python', 'D3.js'],
     featured: true,
     accentColor: '#F59E0B',
+    bentoSize: 'l',
     url:'https://elitetrackr.com/'
   },
   {
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     technologies: ['Vue.js', 'TypeScript'],
     featured: true,
     accentColor: '#8B5CF6',
+    bentoSize: 'm',
   },
   {
     slug: '25lieuxinnovation',
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     technologies: ['WordPress', 'ACF', 'Timber', 'GSAP'],
     featured: true,
     accentColor: '#3B82F6',
+    bentoSize: 's',
     url: 'https://www.25lieuxinnovation.fr/'
   },
   {
@@ -49,6 +52,7 @@ export const projects: Project[] = [
     url: 'https://evianchezvous.com',
     featured: true,
     accentColor: '#4fc3f7',
+    bentoSize: 's',
   },
   {
     slug: 'lonn',
@@ -62,6 +66,7 @@ export const projects: Project[] = [
     agency: { name: 'Le Collectif 40', url: 'https://lecollectif40.fr/' },
     featured: true,
     accentColor: '#10B981',
+    bentoSize: 'm',
   },
   {
     slug: 'juriscan',
@@ -72,6 +77,7 @@ export const projects: Project[] = [
     technologies: ['Vue.js', 'TypeScript', 'AdonisJS'],
     featured: true,
     accentColor: '#06B6D4',
+    bentoSize: 's',
   },
   {
     slug: 'parentsdouceur',
@@ -82,6 +88,7 @@ export const projects: Project[] = [
     technologies: ['WordPress', 'ACF', 'Timber', 'GSAP'],
     featured: true,
     accentColor: '#F97316',
+    bentoSize: 's',
   },
   {
     slug: 'inria',
@@ -95,6 +102,7 @@ export const projects: Project[] = [
     agency: { name: 'Le Collectif 40', url: 'https://lecollectif40.fr/' },
     featured: true,
     accentColor: '#ef5350',
+    bentoSize: 'm',
     url: 'https://github.com/memtt/malt',
     takeawaysCount: 3,
   },
@@ -107,6 +115,7 @@ export const projects: Project[] = [
     technologies: ['Next.js'],
     featured: true,
     accentColor: '#ce93d8',
+    bentoSize: 's',
     url:'https://uplexa.com/'
 
   },

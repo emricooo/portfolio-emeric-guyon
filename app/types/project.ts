@@ -3,6 +3,8 @@ export interface ProjectImage {
   cover?: boolean
 }
 
+export type BentoSize = 'l' | 'm' | 's'
+
 export interface Project {
   slug: string
   title: string
@@ -13,6 +15,7 @@ export interface Project {
   featured: boolean
   accentColor?: string
   takeawaysCount?: number
+  bentoSize?: BentoSize
 }
 
 export interface Skill {
