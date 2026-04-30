@@ -29,25 +29,317 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* Project page layout */
-.project-header-wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem 1.25rem 0;
+/* ============================================================
+ * Project Detail Page — cinematic editorial layout
+ * Hero (fullscreen) → Stats band → 2-col body → Footer cards
+ * ============================================================ */
+
+.project-page {
+  position: relative;
 }
 
+/* Topbar (back button + agency) — sits above the hero */
+.project-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 7rem 1.25rem 1rem;
+  pointer-events: none;
+}
+.project-topbar > * {
+  pointer-events: auto;
+}
 @media (min-width: 768px) {
-  .project-header-wrapper {
-    padding: 8rem 2rem 0;
+  .project-topbar {
+    padding: 7rem 2rem 1rem;
+  }
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  background: transparent;
+  border: 0;
+  padding: 0.4rem 0.6rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+.project-back:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.project-topbar-agency {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+.project-topbar-agency a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+.project-topbar-agency a:hover {
+  opacity: 0.8;
+}
+
+/* HERO — fullscreen cover with title overlay */
+.project-hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #0a0a0a;
+  isolation: isolate;
+}
+
+.project-hero-image-wrap {
+  position: absolute;
+  inset: -8% 0 -8%;
+  z-index: 0;
+}
+.project-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+.project-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    /* Accent glow from bottom-left for personality */
+    radial-gradient(
+      ellipse 80% 50% at 0% 100%,
+      color-mix(in srgb, var(--project-accent, var(--color-primary)) 35%, transparent) 0%,
+      transparent 60%
+    ),
+    /* Strong vertical gradient — dark top + dark bottom */
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.18) 25%,
+      rgba(0, 0, 0, 0.35) 55%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+  pointer-events: none;
+}
+
+.project-hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1.25rem 5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .project-hero-content {
+    padding: 0 2rem 6rem;
+  }
+}
+
+.project-hero-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+.project-hero-rule {
+  display: inline-block;
+  width: 2.25rem;
+  height: 1px;
+}
+.project-hero-tag {
+  font-variant-numeric: tabular-nums;
+}
+
+.project-hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 9.2vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-wrap: balance;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  margin: 0 0 1.5rem;
+  will-change: transform;
+}
+
+.project-hero-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.project-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+/* Override Badge styling on dark hero — Badge is a <span> with text-muted-foreground */
+.project-hero-tags > * {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* CTA — matches the global nav-cta (transparent + outline) on the dark hero */
+.project-hero-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem 0.625rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 9999px;
+  background: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.project-hero-cta:hover {
+  background: #fff;
+  color: #0a0a0a;
+  border-color: #fff;
+}
+.project-hero-cta svg {
+  transition: transform 0.3s ease;
+}
+.project-hero-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.project-hero-scroll-cue {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+.project-hero-scroll-line {
+  display: block;
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: project-hero-scroll-pulse 2.4s ease-in-out infinite;
+}
+@keyframes project-hero-scroll-pulse {
+  0%, 100% { opacity: 0.25; transform: translateY(0); }
+  50%      { opacity: 1;    transform: translateY(8px); }
+}
+
+/* STATS band — big animated numbers */
+.project-stats {
+  position: relative;
+  background: var(--color-foreground);
+  color: var(--color-background);
+  padding: 4rem 1.25rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+@media (min-width: 768px) {
+  .project-stats {
+    padding: 6rem 2rem;
+  }
+}
+.project-stats-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .project-stats-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+}
+.project-stat-wrap {
+  overflow: hidden;
+}
+.project-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid var(--project-accent, var(--color-primary));
+  will-change: transform;
+}
+.project-stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-background);
+}
+.project-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.55);
+}
+
+/* BODY — 2-col layout (existing structure preserved) */
+.project-body-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 1.25rem 2rem;
+}
+@media (min-width: 768px) {
+  .project-body-wrapper {
+    padding: 8rem 2rem 4rem;
   }
 }
 
 .project-layout {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
-
 @media (min-width: 768px) {
   .project-layout {
     display: grid;
@@ -58,6 +350,167 @@ html.lenis body {
 
   .project-images {
     order: -1; /* images à gauche sur desktop */
+    position: sticky;
+    top: 6rem;
+  }
+}
+
+/* Section number — big, accent-colored, pinned-feel */
+.project-section {
+  position: relative;
+}
+.project-section-num {
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+}
+
+/* FOOTER NAV — full-bleed accent cards */
+.project-footer-nav {
+  margin-top: 6rem;
+  border-top: 1px solid var(--color-border);
+}
+@media (min-width: 768px) {
+  .project-footer-nav {
+    margin-top: 9rem;
+  }
+}
+.project-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (min-width: 768px) {
+  .project-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-footer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.4s ease;
+}
+@media (min-width: 768px) {
+  .project-footer-card {
+    padding: 5rem 3rem;
+    min-height: 280px;
+    justify-content: flex-end;
+  }
+}
+.project-footer-card--next,
+.project-footer-card--right {
+  text-align: right;
+  align-items: flex-end;
+}
+.project-footer-card + .project-footer-card {
+  border-top: 1px solid var(--color-border);
+}
+@media (min-width: 768px) {
+  .project-footer-card + .project-footer-card {
+    border-top: 0;
+    border-left: 1px solid var(--color-border);
+  }
+}
+
+.project-footer-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  transition: color 0.4s ease;
+}
+.project-footer-card:hover .project-footer-kicker {
+  color: var(--color-foreground);
+}
+
+/* Arrow glides on hover */
+.project-footer-arrow {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.project-footer-card:hover .project-footer-arrow--left {
+  transform: translateX(-10px);
+}
+.project-footer-card:hover .project-footer-arrow--right {
+  transform: translateX(10px);
+}
+
+/* Hairline rule under the title — slides in from the same side as the arrow */
+.project-footer-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.project-footer-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.project-footer-card--next .project-footer-title::after,
+.project-footer-card--right .project-footer-title::after {
+  transform-origin: right;
+}
+.project-footer-card:hover .project-footer-title::after {
+  transform: scaleX(1);
+}
+
+.project-footer-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--color-foreground);
+  transition: color 0.4s ease;
+}
+
+.project-footer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.project-footer-card--next .project-footer-tags,
+.project-footer-card--right .project-footer-tags {
+  justify-content: flex-end;
+}
+.project-footer-tags > span {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  color: var(--color-muted-foreground);
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Reduced motion — kill the dramatic stuff */
+@media (prefers-reduced-motion: reduce) {
+  .project-hero-img,
+  .project-hero-title,
+  .project-stat {
+    transform: none !important;
+    will-change: auto;
+  }
+  .project-hero-scroll-line {
+    animation: none;
+  }
+  .project-footer-card::before {
+    transition: transform 0.001ms;
   }
 }
 
@@ -136,6 +589,12 @@ main {
   initial-value: #06B6D4;
 }
 
+/* Text selection follows the primary color cycle */
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 28%, transparent);
+  color: inherit;
+}
+
 
 /* Noise grain overlay */
 .grain::after {
@@ -154,40 +613,59 @@ main {
   opacity: 0.035;
 }
 
-/* Custom cursor base styles */
-.custom-cursor {
+/* Custom cursor — ring (halo, slow trail) + dot (precise tight follow).
+ * Both use --color-primary which is cycled by useColorCycle, so the cursor
+ * inherits the site's animated brand color in real time.
+ * Centering via GSAP xPercent/yPercent (-50/-50).
+ */
+.custom-cursor-ring {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid var(--color-foreground);
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  background: color-mix(in srgb, var(--color-primary) 22%, transparent);
   pointer-events: none;
   z-index: 10000;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-  mix-blend-mode: difference;
+  transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1),
+              height 0.3s cubic-bezier(0.65, 0, 0.35, 1),
+              background-color 0.3s ease;
+}
+.custom-cursor-ring.hovering {
+  width: 56px;
+  height: 56px;
+  background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+.custom-cursor-ring.hovering-project {
+  width: 96px;
+  height: 96px;
+  background: color-mix(in srgb, var(--color-primary) 35%, transparent);
 }
 
-.custom-cursor.hovering {
-  width: 60px;
-  height: 60px;
-  background-color: rgb(240 240 240 / 10%);
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  pointer-events: none;
+  z-index: 10001;
+  transition: background-color 0.3s ease, opacity 0.2s ease;
 }
 
-.custom-cursor.hovering-project {
-  width: 90px;
-  height: 90px;
-  background-color: rgb(240 240 240 / 5%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.custom-cursor-dot.is-hidden {
+  opacity: 0;
 }
 
 .custom-cursor-label {
   position: fixed;
+  top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 10001;
-  transform: translate(-50%, -50%);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -196,15 +674,56 @@ main {
   transition: opacity 0.3s ease;
 }
 
+.custom-cursor-label.is-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
 .custom-cursor-label.visible {
   opacity: 1;
 }
 
 /* Hide custom cursor on touch devices */
-@media (hover: none) {
-  .custom-cursor,
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor-ring,
+  .custom-cursor-dot,
   .custom-cursor-label {
     display: none !important;
+  }
+}
+
+/* ============================================================
+ * Page transition curtain — option A
+ * Single fixed panel that slides up to cover, then up to reveal.
+ * Color is set per-project via accentColor (data-driven via JS).
+ * ============================================================ */
+.page-transition-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translateY(101%);
+  will-change: transform;
+}
+
+/* Keep the curtain hidden when reduced motion is preferred — collapse to instant */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-curtain {
+    display: none;
+  }
+}
+
+/* When the custom cursor is active, hide the native cursor everywhere */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+@media (hover: none), (pointer: coarse) {
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: auto !important;
   }
 }
 
@@ -288,7 +807,6 @@ main {
   inset: 0;
   width: 100%;
   height: 100%;
-  max-width: 2000px;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
@@ -320,10 +838,12 @@ main {
   bottom: -2px;
   width: 100%;
   height: 1px;
-  background: currentColor;
+  background: var(--color-primary);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.28s cubic-bezier(0.55, 0, 1, 0.45);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .skill-name--active::after {
@@ -331,7 +851,11 @@ main {
   transform-origin: left;
 }
 
-/* Nav links — underline slides in from left, out to right */
+/* Nav links — underline slides in from left, out to right.
+   `will-change: transform` keeps the pseudo-element on its own GPU layer
+   even at rest, so a 1px line stays the same crispness during and after
+   the transform animation (otherwise the compositor demotes the layer
+   on settle and the line "snaps" thinner). */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -339,10 +863,12 @@ main {
   bottom: -2px;
   width: 100%;
   height: 1px;
-  background: currentColor;
+  background: var(--color-primary);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.28s cubic-bezier(0.55, 0, 1, 0.45);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .nav-link:hover::after,
@@ -363,10 +889,12 @@ main {
   bottom: -2px;
   width: 100%;
   height: 1px;
-  background: currentColor;
+  background: var(--color-primary);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.28s cubic-bezier(0.55, 0, 1, 0.45);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .group:hover .underline-grow::after {
   transform: scaleX(1);
@@ -382,3 +910,102 @@ main {
   border-color: #fff;
 }
 
+/* ============================================================
+ * Skip link — accessibility
+ * Hidden offscreen, slides into view on keyboard focus.
+ * ============================================================ */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 10001;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-foreground);
+  color: var(--color-background);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+ * Focus-visible — accessibility
+ * Keyboard-only focus ring, won't trigger on mouse clicks.
+ * Uses the cycling --color-primary so it stays on-brand.
+ * ============================================================ */
+:focus {
+  outline: none;
+}
+
+:where(a, button, [role='button'], input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+  transition: outline-offset 0.15s ease;
+}
+
+/* ============================================================
+ * Reduced motion — accessibility
+ * Respects the user's OS preference. Strips decorative motion:
+ *  - shrinks transition/animation durations to ~zero
+ *  - freezes the --color-primary cycling transition
+ *  - disables noise grain, marquee, scroll-pulse, custom-cursor scaling
+ *  - opts out of smooth scroll (Lenis honors this in JS too)
+ * Functional motion (page navigation, focus, etc.) stays usable.
+ * ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  :root {
+    transition: none !important;
+  }
+
+  .grain::after {
+    animation: none !important;
+  }
+
+  .animate-scroll-pulse,
+  [class*='animate-marquee'] {
+    animation: none !important;
+  }
+
+  .custom-cursor {
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+ * Reduced data — Save-Data hint
+ * Strips heavy decorative layers when the user opted into
+ * data savings (mobile data, slow networks, capped plans).
+ * ============================================================ */
+@media (prefers-reduced-data: reduce) {
+  .grain::after,
+  .custom-cursor-ring,
+  .custom-cursor-dot,
+  .custom-cursor-label {
+    display: none !important;
+  }
+
+  .hero-code-zone {
+    display: none !important;
+  }
+
+  [class*='animate-marquee'] {
+    animation: none !important;
+  }
+}

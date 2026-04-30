@@ -18,7 +18,15 @@ const isProjectPage = computed(() => route.path.includes('/projets/') || route.p
 const activeSection = ref('home')
 const isMenuOpen = ref(false)
 const { y: scrollY } = useWindowScroll()
+const { height: winH } = useWindowSize()
 const isScrolled = computed(() => scrollY.value > 50)
+
+// On project pages: hide the nav while the user is still in the hero zone (top 40% of viewport).
+// As soon as they scroll past it, the nav slides into view.
+const navHiddenInHero = computed(() => {
+  if (!isProjectPage.value) return false
+  return scrollY.value < winH.value * 0.4
+})
 
 const ctaRef = ref<HTMLElement | null>(null)
 
@@ -42,7 +50,23 @@ function scrollTo(href: string) {
 
 let sectionObserver: IntersectionObserver | null = null
 
-onUnmounted(() => sectionObserver?.disconnect())
+onUnmounted(() => {
+  sectionObserver?.disconnect()
+  setBackgroundInert(false)
+})
+
+function setBackgroundInert(inert: boolean) {
+  if (typeof document === 'undefined') return
+  const targets = document.querySelectorAll('main, footer')
+  targets.forEach((el) => {
+    if (inert) el.setAttribute('inert', '')
+    else el.removeAttribute('inert')
+  })
+}
+
+watch(isMenuOpen, (open) => {
+  setBackgroundInert(open)
+})
 
 onMounted(() => {
   const sectionIds = ['home', 'about', 'services', 'skills', 'projects', 'clients', 'contact']
@@ -124,7 +148,10 @@ onMounted(() => {
 <template>
   <nav
     class="nav-bar fixed left-0 right-0 bottom-0 nav:bottom-auto nav:top-0 z-50 transition-all duration-500"
-    :class="isScrolled ? 'bg-background/90 backdrop-blur-md' : 'bg-transparent'"
+    :class="[
+      isScrolled ? 'bg-background/90 backdrop-blur-md' : 'bg-transparent',
+      navHiddenInHero ? 'translate-y-full nav:-translate-y-full pointer-events-none opacity-0' : 'opacity-100',
+    ]"
   >
     <div class="mx-auto flex max-w-[1280px] items-center px-4 py-2 nav:px-8 nav:py-5">
       <!-- Left: logo + nav links -->
@@ -161,6 +188,7 @@ onMounted(() => {
       <div class="ml-auto hidden items-center gap-6 nav:flex">
         <button
           class="nav-item flex cursor-pointer items-center gap-1 text-sm"
+          :aria-label="t('nav.switchLang')"
           @click="setLocale(locale === 'fr' ? 'en' : 'fr')"
         >
           <span :class="locale === 'en' ? 'text-foreground underline underline-offset-4' : 'text-muted-foreground'">EN</span>
@@ -185,7 +213,9 @@ onMounted(() => {
       <!-- Mobile menu button -->
       <button
         class="ml-auto flex h-10 w-10 cursor-pointer items-center justify-center nav:hidden"
-        aria-label="Toggle menu"
+        :aria-label="isMenuOpen ? t('nav.closeMenu') : t('nav.toggleMenu')"
+        :aria-expanded="isMenuOpen"
+        aria-controls="mobile-menu"
         @click="isMenuOpen = !isMenuOpen"
       >
         <div class="relative h-4 w-6">
@@ -218,6 +248,7 @@ onMounted(() => {
   >
     <div
       v-if="isMenuOpen"
+      id="mobile-menu"
       class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-background nav:hidden"
     >
       <a
@@ -232,6 +263,7 @@ onMounted(() => {
       </a>
       <button
         class="mt-4 flex cursor-pointer items-center gap-2 text-sm"
+        :aria-label="t('nav.switchLang')"
         @click="setLocale(locale === 'fr' ? 'en' : 'fr')"
       >
         <span :class="locale === 'en' ? 'text-foreground underline underline-offset-4' : 'text-muted-foreground'">EN</span>

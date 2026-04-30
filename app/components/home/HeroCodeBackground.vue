@@ -510,7 +510,7 @@ function drawCode(canvas: HTMLCanvasElement, isDim: boolean) {
 
   // Larger font on mobile = fewer characters to draw = better perf
   const minFontSize = isMobile.value ? 11 : 8
-  const fontSize = Math.max(minFontSize, Math.min(cssW * 0.007, 10))
+  const fontSize = Math.max(minFontSize, Math.min(cssW * 0.007, 14))
   const lineHeight = fontSize * 1.35
   const charWidth = fontSize * 0.602
 
@@ -615,7 +615,7 @@ function drawHoverLayer(canvas: HTMLCanvasElement) {
 
   ctx.globalCompositeOperation = 'source-over'
 
-  const fontSize = Math.max(8, Math.min(cssW * 0.007, 10))
+  const fontSize = Math.max(8, Math.min(cssW * 0.007, 14))
   const lineHeight = fontSize * 1.35
   const charWidth = fontSize * 0.602
   const totalLines = cachedLines.length
@@ -711,6 +711,9 @@ onUnmounted(() => {
 })
 
 onMounted(() => {
+  // Bail out entirely on Save-Data — CSS hides .hero-code-zone, we skip canvas work
+  if (window.matchMedia('(prefers-reduced-data: reduce)').matches) return
+
   // Detect mobile/touch device
   isMobile.value = 'ontouchstart' in window || window.innerWidth < 768
 

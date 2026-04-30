@@ -4,7 +4,6 @@ import { projects } from '~/data/projects'
 const props = defineProps<{ slug: string }>()
 const { t } = useI18n()
 
-// Use featured projects (matches the cinema strip ordering)
 const featured = computed(() => projects.filter(p => p.featured))
 const currentIdx = computed(() => featured.value.findIndex(p => p.slug === props.slug))
 
@@ -19,61 +18,64 @@ const next = computed(() => {
 </script>
 
 <template>
-  <nav class="project-footer-nav border-t border-border mt-16 pt-8 lg:mt-24 lg:pt-12">
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-      <!-- Previous (newer in time) -->
+  <nav class="project-footer-nav" :aria-label="t('projects.pagination')">
+    <div class="project-footer-grid">
+      <!-- Previous -->
       <NuxtLink
         v-if="prev"
         :to="`/projets/${prev.slug}`"
-        class="group/prev flex flex-col gap-1 sm:items-start"
+        data-cursor-project
+        :data-cursor-text="t('projects.previous')"
+        class="project-footer-card project-footer-card--prev"
+        :style="{ '--accent': prev.accentColor || 'var(--color-primary)' }"
       >
-        <span class="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover/prev:text-foreground">
-          ← {{ t('projects.previous') }}
+        <span class="project-footer-kicker">
+          <span class="project-footer-arrow project-footer-arrow--left" aria-hidden="true">←</span>&nbsp;{{ t('projects.previous') }}
         </span>
-        <span
-          class="font-display text-2xl font-bold text-foreground transition-colors lg:text-3xl"
-          :style="prev.accentColor ? `--hover-color: ${prev.accentColor}` : undefined"
-        >
-          {{ prev.title }}
+        <span class="project-footer-title text-balance">{{ prev.title }}</span>
+        <span class="project-footer-tags">
+          <span v-for="tech in prev.technologies.slice(0, 3)" :key="tech">{{ tech }}</span>
         </span>
       </NuxtLink>
       <NuxtLink
         v-else
         to="/#projects"
-        class="group/back flex flex-col gap-1 sm:items-start"
+        data-cursor-hover
+        class="project-footer-card project-footer-card--all"
       >
-        <span class="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover/back:text-foreground">
-          ←
+        <span class="project-footer-kicker">
+          <span class="project-footer-arrow project-footer-arrow--left" aria-hidden="true">←</span>
         </span>
-        <span class="font-display text-2xl font-bold text-foreground transition-colors lg:text-3xl">
-          {{ t('projects.allProjects') }}
-        </span>
+        <span class="project-footer-title text-balance">{{ t('projects.allProjects') }}</span>
       </NuxtLink>
 
-      <!-- Next (older in time) -->
+      <!-- Next -->
       <NuxtLink
         v-if="next"
         :to="`/projets/${next.slug}`"
-        class="group/next flex flex-col gap-1 sm:items-end sm:text-right"
+        data-cursor-project
+        :data-cursor-text="t('projects.next')"
+        class="project-footer-card project-footer-card--next"
+        :style="{ '--accent': next.accentColor || 'var(--color-primary)' }"
       >
-        <span class="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover/next:text-foreground">
-          {{ t('projects.next') }} →
+        <span class="project-footer-kicker">
+          {{ t('projects.next') }}&nbsp;<span class="project-footer-arrow project-footer-arrow--right" aria-hidden="true">→</span>
         </span>
-        <span class="font-display text-2xl font-bold text-foreground transition-colors lg:text-3xl">
-          {{ next.title }}
+        <span class="project-footer-title text-balance">{{ next.title }}</span>
+        <span class="project-footer-tags">
+          <span v-for="tech in next.technologies.slice(0, 3)" :key="tech">{{ tech }}</span>
         </span>
       </NuxtLink>
       <NuxtLink
         v-else
         to="/#projects"
-        class="group/back flex flex-col gap-1 sm:items-end sm:text-right"
+        data-cursor-hover
+        class="project-footer-card project-footer-card--all project-footer-card--right"
       >
-        <span class="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover/back:text-foreground">
-          →
+        <span class="project-footer-kicker">
+          <span class="project-footer-arrow project-footer-arrow--right" aria-hidden="true">→</span>
         </span>
-        <span class="font-display text-2xl font-bold text-foreground transition-colors lg:text-3xl">
-          {{ t('projects.allProjects') }}
-        </span>
+        <span class="project-footer-title text-balance">{{ t('projects.allProjects') }}</span>
       </NuxtLink>
     </div>
   </nav>

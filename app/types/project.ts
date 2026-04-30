@@ -5,6 +5,11 @@ export interface ProjectImage {
 
 export type BentoSize = 'l' | 'm' | 's'
 
+export interface ProjectStat {
+  value: string
+  label: string
+}
+
 export interface Project {
   slug: string
   title: string
@@ -16,6 +21,10 @@ export interface Project {
   accentColor?: string
   takeawaysCount?: number
   bentoSize?: BentoSize
+  year?: string
+  role?: string
+  stats?: ProjectStat[]
+  heroImage?: string
 }
 
 export interface Skill {

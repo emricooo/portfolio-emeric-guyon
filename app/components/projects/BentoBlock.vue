@@ -172,27 +172,6 @@ function onLeave() {
     <!-- Hover ring — uses the cycling primary color (uniform across cards) -->
     <div class="bento-accent-ring pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300" />
 
-    <!-- Circular arrow CTA — appears on hover with scale-pop, bottom-right, primary color -->
-    <div
-      class="bento-cta pointer-events-none absolute bottom-4 right-4 z-[3] flex h-9 w-9 items-center justify-center rounded-full opacity-0"
-      :class="isLarge ? 'h-10 w-10' : ''"
-    >
-      <svg
-        class="h-3.5 w-3.5 text-black"
-        :class="isLarge ? 'h-4 w-4' : ''"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <line x1="5" y1="12" x2="19" y2="12" />
-        <polyline points="12 5 19 12 12 19" />
-      </svg>
-    </div>
-
   </NuxtLink>
 </template>
 
@@ -237,21 +216,6 @@ function onLeave() {
 .bento-block:hover .bento-accent-ring,
 .bento-block.is-hovered .bento-accent-ring {
   opacity: 1;
-}
-
-/* CTA button — primary color bg + glow + scale-pop on hover */
-.bento-cta {
-  background: var(--color-primary);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 35%, transparent);
-  transform: scale(0.5);
-  transform-origin: center center;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
-}
-
-.bento-block:hover .bento-cta,
-.bento-block.is-hovered .bento-cta {
-  opacity: 1;
-  transform: scale(1);
 }
 
 /* Soft dim on the other cards when one is hovered — restrained, not pornographic grey */

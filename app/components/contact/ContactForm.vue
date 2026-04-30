@@ -55,6 +55,14 @@ const isFormFilled = computed(() =>
   && message.value.trim().length > 0,
 )
 
+const FIELD_FOCUS_ORDER: Array<keyof FieldErrors> = ['name', 'email', 'type', 'message']
+const FIELD_TO_ID: Record<keyof FieldErrors, string> = {
+  name: 'contact-name',
+  email: 'contact-email',
+  type: 'contact-type',
+  message: 'contact-message',
+}
+
 function validate(): boolean {
   const errs: FieldErrors = {}
   if (name.value.trim().length < 2) errs.name = 'nameRequired'
@@ -64,7 +72,17 @@ function validate(): boolean {
   if (!message.value.trim()) errs.message = 'messageRequired'
   else if (message.value.trim().length < 20) errs.message = 'messageMin'
   fieldErrors.value = errs
-  return Object.keys(errs).length === 0
+
+  const isValid = Object.keys(errs).length === 0
+  if (!isValid) {
+    const firstField = FIELD_FOCUS_ORDER.find(k => errs[k])
+    if (firstField) {
+      nextTick(() => {
+        document.getElementById(FIELD_TO_ID[firstField])?.focus()
+      })
+    }
+  }
+  return isValid
 }
 
 async function playSuccessTransition() {

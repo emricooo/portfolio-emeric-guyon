@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const { init: initCursor, destroy: destroyCursor } = useCustomCursor()
 const { init: initTheme } = useTheme()
 const { start: startColorCycle, stop: stopColorCycle } = useColorCycle()
@@ -26,10 +27,12 @@ onUnmounted(() => {
 
 <template>
   <div class="grain min-h-screen bg-background font-sans text-foreground">
+    <a href="#main" class="skip-link">{{ t('a11y.skipLink') }}</a>
     <AppNavigation />
-    <main>
+    <main id="main">
       <slot />
     </main>
     <AppFooter />
+    <TransitionCurtain />
   </div>
 </template>

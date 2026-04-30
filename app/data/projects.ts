@@ -12,7 +12,17 @@ export const projects: Project[] = [
     featured: true,
     accentColor: '#F59E0B',
     bentoSize: 'l',
-    url:'https://elitetrackr.com/'
+    url: 'https://elitetrackr.com/',
+    takeawaysCount: 3,
+    year: '2026',
+    role: 'solo',
+    heroImage: '/images/projects/elitetrackr-hero.jpg',
+    stats: [
+      { value: '800K', label: 'athletes' },
+      { value: '14M', label: 'perfs' },
+      { value: '230', label: 'countries' },
+      { value: '9', label: 'languages' },
+    ],
   },
   {
     slug: 'ekkinox',
@@ -26,6 +36,7 @@ export const projects: Project[] = [
     featured: true,
     accentColor: '#8B5CF6',
     bentoSize: 'm',
+    takeawaysCount: 3,
   },
   {
     slug: '25lieuxinnovation',
@@ -38,7 +49,8 @@ export const projects: Project[] = [
     featured: true,
     accentColor: '#3B82F6',
     bentoSize: 's',
-    url: 'https://www.25lieuxinnovation.fr/'
+    url: 'https://www.25lieuxinnovation.fr/',
+    takeawaysCount: 3,
   },
   {
     slug: 'evianchezvous',
@@ -53,6 +65,7 @@ export const projects: Project[] = [
     featured: true,
     accentColor: '#4fc3f7',
     bentoSize: 's',
+    takeawaysCount: 3,
   },
   {
     slug: 'lonn',
@@ -67,6 +80,7 @@ export const projects: Project[] = [
     featured: true,
     accentColor: '#10B981',
     bentoSize: 'm',
+    takeawaysCount: 3,
   },
   {
     slug: 'juriscan',
@@ -74,10 +88,11 @@ export const projects: Project[] = [
     images: [
       { src: '/images/projects/juriscan-cover.jpg', cover: true },
     ],
-    technologies: ['Vue.js', 'TypeScript', 'AdonisJS'],
+    technologies: ['Vue.js', 'TypeScript', 'AdonisJS', 'DeepSeek', 'IA'],
     featured: true,
     accentColor: '#06B6D4',
     bentoSize: 's',
+    takeawaysCount: 3,
   },
   {
     slug: 'parentsdouceur',
@@ -89,6 +104,7 @@ export const projects: Project[] = [
     featured: true,
     accentColor: '#F97316',
     bentoSize: 's',
+    takeawaysCount: 3,
   },
   {
     slug: 'inria',
@@ -116,7 +132,7 @@ export const projects: Project[] = [
     featured: true,
     accentColor: '#ce93d8',
     bentoSize: 's',
-    url:'https://uplexa.com/'
-
+    url:'https://uplexa.com/',
+    takeawaysCount: 3,
   },
 ]

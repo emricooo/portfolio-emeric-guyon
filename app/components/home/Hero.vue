@@ -18,15 +18,22 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden">
-    <!-- Canvas: code background with name revealed through color contrast -->
+  <section
+    id="home"
+    class="relative flex min-h-screen items-center justify-center overflow-hidden"
+    :aria-label="t('hero.ariaLabel')"
+  >
+    <!-- Canvas: code background with name revealed through color contrast (aria-hidden via component root) -->
     <HomeHeroCodeBackground />
 
-    <!-- Invisible h1 for SEO / accessibility -->
-    <h1 class="sr-only">{{ t('seo.title') }}</h1>
+    <!-- H1 for SSR / SEO / screen readers — canvas paints the name visually but is aria-hidden -->
+    <h1 class="sr-only">{{ t('hero.name') }} — {{ t('hero.baseline') }}</h1>
 
-    <!-- Scroll indicator -->
-    <div class="hero-scroll-indicator absolute bottom-47.5 left-1/2 z-10 -translate-x-1/2 nav:bottom-8">
+    <!-- Scroll indicator (decorative — visual cue only, not announced to AT) -->
+    <div
+      class="hero-scroll-indicator absolute bottom-47.5 left-1/2 z-10 -translate-x-1/2 nav:bottom-8"
+      aria-hidden="true"
+    >
       <div class="animate-scroll-pulse flex flex-col items-center gap-2">
         <div class="h-10 w-px bg-linear-to-b from-transparent to-muted-foreground" />
         <span class="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Scroll</span>

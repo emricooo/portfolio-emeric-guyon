@@ -22,13 +22,21 @@ export function useSeo(options: {
   const image = options.image?.startsWith('http') ? options.image : `${SITE_URL}${options.image || defaultImage.replace(SITE_URL, '')}`
   const canonicalUrl = options.url || `${SITE_URL}${route.path}`
 
+  // Strip the `/en` prefix to derive the locale-neutral path,
+  // so hreflang variants point to the correct URL on either locale.
+  const neutralPath = route.path.replace(/^\/en(?=\/|$)/, '') || '/'
+  const frHref = `${SITE_URL}${neutralPath}`
+  const enHref = `${SITE_URL}/en${neutralPath === '/' ? '' : neutralPath}`
+
+  const isEn = locale.value === 'en'
+
   useHead({
     title,
     link: [
       { rel: 'canonical', href: canonicalUrl },
-      { rel: 'alternate', hreflang: 'fr', href: `${SITE_URL}${route.path}` },
-      { rel: 'alternate', hreflang: 'en', href: `${SITE_URL}/en${route.path}` },
-      { rel: 'alternate', hreflang: 'x-default', href: `${SITE_URL}${route.path}` },
+      { rel: 'alternate', hreflang: 'fr', href: frHref },
+      { rel: 'alternate', hreflang: 'en', href: enHref },
+      { rel: 'alternate', hreflang: 'x-default', href: frHref },
     ],
     meta: [
       { name: 'description', content: description },
@@ -39,8 +47,8 @@ export function useSeo(options: {
       { property: 'og:image', content: image },
       { property: 'og:url', content: canonicalUrl },
       { property: 'og:site_name', content: 'Emeric Guyon' },
-      { property: 'og:locale', content: 'fr_FR' },
-      { property: 'og:locale:alternate', content: 'en_US' },
+      { property: 'og:locale', content: isEn ? 'en_US' : 'fr_FR' },
+      { property: 'og:locale:alternate', content: isEn ? 'fr_FR' : 'en_US' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
