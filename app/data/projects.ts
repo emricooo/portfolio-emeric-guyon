@@ -5,8 +5,8 @@ export const projects: Project[] = [
     slug: 'elitetrackr',
     title: 'EliteTrackr',
     images: [
-      { src: '/images/projects/elitetracker-1.jpg' },
-      { src: '/images/projects/elitetracker-cover.jpg', cover: true },
+      { src: '/images/projects/elitetrackr-cover.jpg', cover: true },
+      { src: '/images/projects/elitetrackr-bolt.jpg' },
     ],
     technologies: ['Nuxt.js', 'TypeScript', 'AdonisJS', 'Python', 'D3.js'],
     featured: true,

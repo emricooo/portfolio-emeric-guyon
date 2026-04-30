@@ -36,6 +36,20 @@ html.lenis body {
 
 .project-page {
   position: relative;
+  /* Theme-aware hero palette (consumed by topbar + hero) */
+  --hero-bg: #f5f3ed;
+  --hero-fg: #111;
+  --hero-fg-soft: rgba(17, 17, 17, 0.6);
+  --hero-fg-faint: rgba(17, 17, 17, 0.06);
+  --hero-fg-inverse: #fff;
+}
+
+.dark .project-page {
+  --hero-bg: #0a0a0a;
+  --hero-fg: #fff;
+  --hero-fg-soft: rgba(255, 255, 255, 0.65);
+  --hero-fg-faint: rgba(255, 255, 255, 0.05);
+  --hero-fg-inverse: #0a0a0a;
 }
 
 /* Topbar (back button + agency) — sits above the hero */
@@ -67,8 +81,7 @@ html.lenis body {
   gap: 0.5rem;
   font-size: 0.8125rem;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.78);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  color: var(--hero-fg-soft);
   background: transparent;
   border: 0;
   padding: 0.4rem 0.6rem;
@@ -77,18 +90,17 @@ html.lenis body {
   transition: color 0.25s ease, background-color 0.25s ease;
 }
 .project-back:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--hero-fg);
+  background: var(--hero-fg-faint);
 }
 
 .project-topbar-agency {
   font-size: 0.75rem;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  color: var(--hero-fg-soft);
 }
 .project-topbar-agency a {
-  color: #fff;
+  color: var(--hero-fg);
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: opacity 0.2s ease;
@@ -97,58 +109,65 @@ html.lenis body {
   opacity: 0.8;
 }
 
-/* HERO — fullscreen cover with title overlay */
+/* HERO — typography-driven. Neutral bg (cream light / dark dark), accent only via faint halo. */
 .project-hero {
   position: relative;
   width: 100%;
-  height: 100svh;
-  min-height: 600px;
+  height: 65svh;
+  min-height: 460px;
   overflow: hidden;
-  background: #0a0a0a;
+  background: var(--hero-bg);
+  color: var(--hero-fg);
   isolation: isolate;
 }
 
-.project-hero-image-wrap {
+.project-hero-bg {
   position: absolute;
-  inset: -8% 0 -8%;
+  inset: 0;
   z-index: 0;
+  background: var(--hero-bg);
 }
-.project-hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  will-change: transform;
-}
+
 .project-hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    /* Accent glow from bottom-left for personality */
+    /* Faint accent halo bottom-right — only signal of project color */
     radial-gradient(
-      ellipse 80% 50% at 0% 100%,
-      color-mix(in srgb, var(--project-accent, var(--color-primary)) 35%, transparent) 0%,
-      transparent 60%
-    ),
-    /* Strong vertical gradient — dark top + dark bottom */
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.55) 0%,
-      rgba(0, 0, 0, 0.18) 25%,
-      rgba(0, 0, 0, 0.35) 55%,
-      rgba(0, 0, 0, 0.92) 100%
+      ellipse 60% 55% at 100% 100%,
+      color-mix(in srgb, var(--project-accent, var(--color-primary)) 14%, transparent) 0%,
+      transparent 65%
     );
   pointer-events: none;
+}
+
+/* Big faded watermark — year or project mark */
+.project-hero-watermark {
+  position: absolute;
+  right: -1.5vw;
+  bottom: -3vw;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(6rem, 20vw, 18rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: var(--hero-fg-faint);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  will-change: transform;
 }
 
 .project-hero-content {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 1.25rem 5rem;
+  padding: 0 1.25rem 3rem;
   max-width: 1280px;
   margin: 0 auto;
   left: 0;
@@ -156,7 +175,7 @@ html.lenis body {
 }
 @media (min-width: 768px) {
   .project-hero-content {
-    padding: 0 2rem 6rem;
+    padding: 0 2rem 4rem;
   }
 }
 
@@ -169,13 +188,13 @@ html.lenis body {
   font-size: 0.6875rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  color: var(--hero-fg-soft);
 }
 .project-hero-rule {
   display: inline-block;
   width: 2.25rem;
   height: 1px;
+  background: var(--hero-fg-soft);
 }
 .project-hero-tag {
   font-variant-numeric: tabular-nums;
@@ -183,14 +202,15 @@ html.lenis body {
 
 .project-hero-title {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2.75rem, 9.2vw, 8.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: #fff;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 9.5vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--hero-fg);
   text-wrap: balance;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
+  position: relative;
+  z-index: 2;
   will-change: transform;
 }
 
@@ -207,36 +227,36 @@ html.lenis body {
   flex-wrap: wrap;
   gap: 0.4rem;
 }
-/* Override Badge styling on dark hero — Badge is a <span> with text-muted-foreground */
+/* Override Badge styling on hero — theme-aware via hero vars */
 .project-hero-tags > * {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.92) !important;
-  border-color: rgba(255, 255, 255, 0.22) !important;
+  background: var(--hero-fg-faint);
+  color: var(--hero-fg) !important;
+  border-color: color-mix(in srgb, var(--hero-fg) 22%, transparent) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* CTA — matches the global nav-cta (transparent + outline) on the dark hero */
+/* CTA — outline style, swaps to filled on hover */
 .project-hero-cta {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.5rem 0.625rem 1.5rem;
+  padding: 0.625rem 1.5rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: var(--hero-fg);
+  border: 1px solid var(--hero-fg);
   border-radius: 9999px;
   background: transparent;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .project-hero-cta:hover {
-  background: #fff;
-  color: #0a0a0a;
-  border-color: #fff;
+  background: var(--hero-fg);
+  color: var(--hero-fg-inverse);
+  border-color: var(--hero-fg);
 }
 .project-hero-cta svg {
   transition: transform 0.3s ease;
@@ -257,7 +277,7 @@ html.lenis body {
   display: block;
   width: 1px;
   height: 36px;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  background: linear-gradient(180deg, transparent, var(--hero-fg-soft), transparent);
   animation: project-hero-scroll-pulse 2.4s ease-in-out infinite;
 }
 @keyframes project-hero-scroll-pulse {
@@ -320,7 +340,8 @@ html.lenis body {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(250, 250, 250, 0.55);
+  color: currentColor;
+  opacity: 0.55;
 }
 
 /* BODY — 2-col layout (existing structure preserved) */
@@ -500,8 +521,8 @@ html.lenis body {
 
 /* Reduced motion — kill the dramatic stuff */
 @media (prefers-reduced-motion: reduce) {
-  .project-hero-img,
   .project-hero-title,
+  .project-hero-watermark,
   .project-stat {
     transform: none !important;
     will-change: auto;

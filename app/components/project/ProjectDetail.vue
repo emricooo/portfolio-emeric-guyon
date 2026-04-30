@@ -126,10 +126,9 @@ onUnmounted(() => {
               :src="img.src"
               sizes="sm:100vw md:50vw lg:600px"
               :alt="t('projects.imageAlt', { project: project.title, n: idx + 2, tech: project.technologies.slice(0, 2).join(', ') })"
-              width="640"
-              height="480"
+              width="1920"
               loading="lazy"
-              class="block w-full"
+              class="block h-auto w-full"
             />
           </div>
         </div>
