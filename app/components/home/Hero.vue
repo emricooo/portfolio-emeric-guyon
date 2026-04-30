@@ -18,13 +18,18 @@ onMounted(() => {
   tl.from('.hero-scroll-indicator', { opacity: 0, duration: 0.6 }, 2.0)
 
   const events = ['scroll', 'pointermove', 'touchstart', 'keydown', 'wheel'] as const
+  let autoTimer: ReturnType<typeof setTimeout> | null = null
   const trigger = () => {
     showCanvas.value = true
+    if (autoTimer) clearTimeout(autoTimer)
     for (const ev of events) window.removeEventListener(ev, trigger)
   }
   for (const ev of events) {
     window.addEventListener(ev, trigger, { passive: true, once: true })
   }
+  // Fallback: auto-mount canvas 600ms after hydration so users who never interact
+  // (especially mobile users landing without scrolling) still see the hero effect.
+  autoTimer = setTimeout(trigger, 600)
 })
 </script>
 
