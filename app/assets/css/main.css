@@ -727,6 +727,7 @@ main {
   pointer-events: none;
   transform: translateY(101%);
   will-change: transform;
+  visibility: hidden;
 }
 
 /* Keep the curtain hidden when reduced motion is preferred — collapse to instant */

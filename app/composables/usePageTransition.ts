@@ -18,6 +18,7 @@ export function usePageTransition() {
     if (!curtainEl) return Promise.resolve()
     if (color) transitionColor.value = color
     return new Promise<void>((resolve) => {
+      gsap.set(curtainEl, { visibility: 'visible' })
       gsap.fromTo(
         curtainEl,
         { yPercent: 101 },
@@ -40,7 +41,10 @@ export function usePageTransition() {
         yPercent: 101,
         duration: 0.6,
         ease: 'expo.inOut',
-        onComplete: () => resolve(),
+        onComplete: () => {
+          gsap.set(curtainEl, { visibility: 'hidden' })
+          resolve()
+        },
       })
     })
   }
