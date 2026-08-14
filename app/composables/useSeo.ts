@@ -22,21 +22,14 @@ export function useSeo(options: {
   const image = options.image?.startsWith('http') ? options.image : `${SITE_URL}${options.image || defaultImage.replace(SITE_URL, '')}`
   const canonicalUrl = options.url || `${SITE_URL}${route.path}`
 
-  // Strip the `/en` prefix to derive the locale-neutral path,
-  // so hreflang variants point to the correct URL on either locale.
-  const neutralPath = route.path.replace(/^\/en(?=\/|$)/, '') || '/'
-  const frHref = `${SITE_URL}${neutralPath}`
-  const enHref = `${SITE_URL}/en${neutralPath === '/' ? '' : neutralPath}`
-
   const isEn = locale.value === 'en'
 
+  // hreflang alternates are emitted by @nuxtjs/i18n (useLocaleHead) —
+  // only the canonical is declared here to avoid duplicate signals.
   useHead({
     title,
     link: [
       { rel: 'canonical', href: canonicalUrl },
-      { rel: 'alternate', hreflang: 'fr', href: frHref },
-      { rel: 'alternate', hreflang: 'en', href: enHref },
-      { rel: 'alternate', hreflang: 'x-default', href: frHref },
     ],
     meta: [
       { name: 'description', content: description },

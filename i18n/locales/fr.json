@@ -26,9 +26,9 @@
   },
   "hero": {
     "name": "EMERIC GUYON",
-    "baseline": "Développeur fullstack senior — j'aide les startups et équipes tech à construire ce qu'il faut, et à le construire bien.",
+    "baseline": "Développeur fullstack freelance senior — j'aide les startups et équipes tech à construire ce qu'il faut, et à le construire bien.",
     "location": "Basé à Chambéry, full remote ou déplacement selon le projet. Lyon, Grenoble, Annecy, Paris…",
-    "ariaLabel": "Page d'accueil : présentation d'Emeric Guyon, développeur fullstack senior"
+    "ariaLabel": "Page d'accueil : présentation d'Emeric Guyon, développeur fullstack freelance senior"
   },
   "about": {
     "title": "Développeur orienté produit. Je ne fais pas que coder — j'aide à livrer ce qui compte vraiment.",
@@ -47,7 +47,7 @@
       "company": "Patriarche",
       "role": "Développeur front-end senior",
       "period": "2022 — 2024",
-      "clients": "Patriarche, Ekkinox, 25 lieux d'inovation"
+      "clients": "Patriarche, Ekkinox, 25 lieux d'innovation"
     },
     "exp3": {
       "company": "DATASOLUTION",
@@ -118,6 +118,7 @@
     "imageAlt": "{project} — capture d'écran {n} de l'interface ({tech})",
     "items": {
       "evianchezvous": {
+        "seoTitle": "Evianchezvous — e-commerce headless React + Magento 2 | Emeric Guyon",
         "description": "Refonte headless d'evianchezvous : Magento 1 → 2, front React + GraphQL.",
         "longDescription": "Refonte complète d'evianchezvous, site de livraison d'eau Evian à domicile (Paris/Île-de-France) : passage de Magento 1 monolithique à Magento 2 headless avec un front React + GraphQL. Tech lead front sur 2 ans, du cadrage à la prod.",
         "approach": "Le projet, c'est tout faire en même temps : migrer Magento 1 → 2, sortir le front du monolithe pour en faire une app React, repenser le checkout et le compte client, et porter la logique d'abonnement (livraison récurrente d'eau) qui n'est pas native Magento. Avec en filigrane le SSR pour ne pas perdre le référencement, et une perf qui devait battre la V1 dès le jour 1.",
@@ -128,6 +129,7 @@
         "result": "Toujours en prod plusieurs années après livraison. Perf et taux de conversion en hausse vs la V1 Magento 1. Côté perso, c'est mon premier site e-commerce en React et mon premier rôle de tech lead front sur 2 ans. La leçon principale : en passant un Magento en headless, on doit réinventer en React des choses que la V1 faisait gratuitement — cart, sessions, customer flows. Beaucoup de plomberie à reposer pour gagner en UX et en perf."
       },
       "ekkinox": {
+        "seoTitle": "Ekkinox — outil métier de suivi financier BTP (Vue.js) | Emeric Guyon",
         "description": "Outil métier de suivi financier de chantiers — interne Patriarche, puis white-label.",
         "longDescription": "Outil métier sur mesure pour le suivi financier de chantiers, démarré en interne chez Patriarche puis transformé en version white-label avec une perspective SaaS à terme. Front-end senior et lead front sur 18 mois — équipe de 2 front, 2 back, 1 PM, 1 designer.",
         "approach": "Au départ on voulait un truc modulaire, mais le métier est trop interconnecté pour ça : on est partis sur une organisation orientée domaine, structurée par interfaces — un découpage qui suit le mental model du designer UX et les flux utilisateurs réels. Ateliers métier pour chaque fonctionnalité, itérations rapides, démos régulières au client : on ajustait souvent, parfois fortement, mais sans perdre la cohérence d'ensemble.",
@@ -138,6 +140,7 @@
         "result": "18 mois sur le projet, du jour 1 jusqu'au passage en version white-label, avec une archi front qui n'a pas eu à être réécrite en cours de route. Côté perso, c'est mon premier vrai rôle de lead front sur la durée — l'occasion de poser des fondations qui tiennent, de challenger le PM quand il fallait, et d'apprendre un métier (la finance chantier) assez en profondeur pour pouvoir échanger avec les utilisateurs sans approximation."
       },
       "25lieuxinnovation": {
+        "seoTitle": "25 Lieux Innovation — site éditorial WordPress + GSAP | Emeric Guyon",
         "description": "Site éditorial des 25 lieux qui transforment l'innovation en France.",
         "longDescription": "Site éditorial pour mettre en lumière 25 lieux qui transforment l'innovation en France — projet maison Patriarche autour d'un trio livre / site / événement. WordPress full-custom (custom post types + taxonomies), Timber pour le templating Twig, ACF Pro pour les blocs éditoriaux, et un travail GSAP poussé pour faire vivre le contenu au scroll.",
         "approach": "Un site éditorial où la matière est riche (textes longs, photos, lieux classés par catégorie) et où l'enjeu côté front est d'éviter la lecture plate. Direction : un scroll storytelling avec reveals soignés, transitions entre lieux, et un layout qui met en valeur la photo et le texte en alternance. Côté CMS : sortir de WordPress par défaut pour donner aux éditeurs un back-office aligné sur leur logique réelle.",
@@ -148,6 +151,7 @@
         "result": "Site en ligne. Côté perso, c'est le projet où j'ai vraiment poussé GSAP plus loin — pas juste des fades, mais une vraie écriture de motion au service du contenu éditorial."
       },
       "lonn": {
+        "seoTitle": "Lonn — SaaS B2B de planning bien-être (Symfony, Vue.js) | Emeric Guyon",
         "description": "SaaS B2B pour centres de bien-être : planning des salariés et prise de rendez-vous.",
         "longDescription": "SaaS B2B pour centres de bien-être : un module de gestion du planning des salariés côté manager (façon pré-paie, règles horaires) et un système de prise de rendez-vous côté client final. MVP construit en équipe via Le Collectif 40 — j'étais responsable de l'architecture backend, du modèle de données et des choix techniques côté serveur.",
         "approach": "Le cœur du projet côté serveur : poser une archi qui tient, modéliser une base propre pour faire cohabiter deux scopes (planning RH + RDV clients) sans les mélanger, et exposer ça via une API BFF Symfony sur mesure. En échange continu avec le client, qui faisait office de product owner — chaque arbitrage scope, chaque règle métier était discuté avant d'être tranché. Discipline MVP stricte : trancher ce qui ne rentre pas dans la première version plutôt que livrer en retard.",
@@ -158,6 +162,7 @@
         "result": "MVP livré. Pas plus de bruit que ça : l'enjeu, c'était de poser les bases proprement et de tenir le scope. Pour moi, le projet où la discipline du « qu'est-ce qui ne rentre pas dans la V1 » était au cœur du brief — et où l'archi posée au départ a directement conditionné la vitesse de delivery."
       },
       "elitetrackr": {
+        "seoTitle": "EliteTrackr — plateforme data athlétisme (Nuxt, AdonisJS) | Emeric Guyon",
         "description": "Le Wikipédia de l'athlé. 800K athlètes, 14M de performances, 230 pays, 9 langues.",
         "role": "Solo · Design, Dev, Devops, Data, SEO",
         "stats": {
@@ -175,6 +180,7 @@
         "result": "En ligne depuis janvier 2026. ~50 visiteurs/jour en croissance 100 % organique, sans publicité. Lighthouse 99/92/96 sur desktop, 80/92/96 sur mobile — sur des pages qui adressent jusqu'à 14M de records. Tout en solo : design, UI/UX, front, back, devops, data, SEO. Au-delà des chiffres, c'est le projet où j'ai trouvé mon style — visuel, ton, structure — et où je vois la base s'enrichir un peu plus chaque jour. La valeur compose."
       },
       "juriscan": {
+        "seoTitle": "Juriscan — extraction juridique par IA, OCR + LLM local | Emeric Guyon",
         "description": "MVP d'extraction de données juridiques par IA, pipeline OCR + LLM 100% local.",
         "longDescription": "MVP d'extraction automatique de données depuis des documents juridiques (assignations, commandements, PV) pour un cabinet d'huissiers. OCR + interprétation IA, extraction structurée des champs, export vers le CRM interne du client. 1 mois solo en freelance, du cadrage à la livraison.",
         "approach": "Le cœur : un pipeline en deux temps. D'abord un OCR avec compréhension de layout sur le PDF, puis un modèle LLM qui interprète le markdown obtenu et identifie les champs à extraire (parties, dates, montants, adresses) selon le type de doc. Le tout en local sur GPU — pas d'API cloud, données sensibles obligent. Worker Rust pour orchestrer le multithreading et garder un débit correct sur des batchs de PDFs.",
@@ -185,6 +191,7 @@
         "result": "MVP livré, en cours de test côté cabinet client. Côté perso, c'est mon premier vrai projet IA — et le premier où j'ai construit la majeure partie en pair avec un assistant IA pour le code. Une stack que je ne connaissais pas (Rust, llama.cpp, DeepSeek local sur CUDA), apprise et mise en prod en 1 mois — c'est exactement le cas d'usage où l'assistant accélère sans dégrader la qualité, à condition de garder la main sur l'archi."
       },
       "parentsdouceur": {
+        "seoTitle": "ParentsDouceur — site vitrine WordPress sur mesure | Emeric Guyon",
         "description": "Site vitrine WordPress pour une accompagnante périnatale indépendante. UI/UX + dev solo.",
         "longDescription": "Site vitrine pour une accompagnante périnatale et parentale indépendante. UI/UX et développement, en direct avec la praticienne. WordPress full-custom (ACF + Timber), GSAP pour des animations douces.",
         "approach": "Petit projet solo en direct client : une accompagnante qui voulait un site qui lui ressemble — chaleureux, doux, féminin. Direction artistique maternelle (pastel, courbes, typo serif), pas de surenchère côté motion — juste ce qu'il faut pour respirer.",
@@ -195,6 +202,7 @@
         "result": "Site livré. Pour moi, un projet solo de bout en bout (UI/UX + dev) en direct avec la cliente — exercice utile pour aligner direction artistique et code sans intermédiaire."
       },
       "inria": {
+        "seoTitle": "MALT Inria — memory profiling C/C++ (Vue.js, D3) | Emeric Guyon",
         "description": "Outil de memory profiling pour traquer les allocations mémoire (malloc).",
         "longDescription": "Refonte complète de MALT, un outil de memory profiling open-source développé par l'INRIA pour traquer les allocations mémoire (malloc/free) de programmes C/C++. Migration de l'interface d'Angular vers Vue 3 + TypeScript, avec un gros travail sur les visualisations D3.",
         "approach": "Le brief : passer un outil scientifique d'Angular à Vue + TypeScript sans dégrader l'expérience des chercheurs qui l'utilisent au quotidien. Une fois la base stabilisée et les plugins remis à jour, retravailler la lisibilité des graphs et ajouter les interactions qui manquaient.",
@@ -205,6 +213,7 @@
         "result": "En production sur le repo officiel memtt/malt — open-source, utilisé par la communauté C/C++ qui fait du profiling mémoire. Le retour des mainteneurs : interface et code source plus clairs et plus lisibles que la V1. Côté perso, c'est le projet qui m'a forcé à creuser D3 sur des visualisations vraiment complexes — un terrain qu'on retrouve rarement sur des projets web classiques."
       },
       "uplexa": {
+        "seoTitle": "uPlexa — refonte site crypto en Next.js | Emeric Guyon",
         "description": "Refonte bénévole du site officiel d'uPlexa — crypto vie privée + minage IoT.",
         "longDescription": "Refonte du site officiel d'uPlexa, cryptomonnaie axée vie privée et minage via objets connectés (IoT). Projet bénévole, en solo, après avoir rejoint la communauté en tant que dev et utilisateur — l'ancien site était daté, l'équipe voulait quelque chose de plus pro et plus clean.",
         "approach": "Une vitrine crypto qui doit faire deux choses : expliquer le projet (vie privée, minage IoT) à un public tech et inspirer confiance. Refonte complète sur Next.js avec i18n pour adresser une communauté internationale — sections classiques d'un projet crypto sérieux : présentation, minage IoT, roadmap, équipe, wallet / exchange.",

@@ -14,7 +14,7 @@ if (!project.value) {
 const coverSrc = project.value.images.find(i => i.cover)?.src || project.value.images[0]?.src
 
 useSeo({
-  title: `${project.value.title} — Emeric Guyon`,
+  title: t(`projects.items.${project.value.slug}.seoTitle`),
   description: t(`projects.items.${project.value.slug}.description`),
   image: coverSrc,
 })
