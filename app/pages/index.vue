@@ -77,6 +77,48 @@ useHead({
               'addressRegion': 'Auvergne-Rhône-Alpes',
               'addressCountry': 'FR',
             },
+            'hasOfferCatalog': {
+              '@type': 'OfferCatalog',
+              'name': 'Développement web au forfait',
+              'itemListElement': [
+                {
+                  '@type': 'Offer',
+                  'itemOffered': {
+                    '@type': 'Service',
+                    'name': 'Création de site vitrine',
+                    'description': 'Site vitrine sur-mesure pour présenter votre activité et convertir — conception, développement et mise en ligne.',
+                    'provider': { '@id': 'https://emericguyon.com/#person' },
+                    'areaServed': [
+                      { '@type': 'City', 'name': 'Chambéry' },
+                      { '@type': 'City', 'name': 'Annecy' },
+                      { '@type': 'City', 'name': 'Lyon' },
+                      { '@type': 'City', 'name': 'Grenoble' },
+                      { '@type': 'City', 'name': 'Paris' },
+                      { '@type': 'AdministrativeArea', 'name': 'Savoie' },
+                      { '@type': 'Country', 'name': 'France' },
+                    ],
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  'itemOffered': {
+                    '@type': 'Service',
+                    'name': 'Développement d\'application web',
+                    'description': 'Application web et SaaS sur-mesure — du cadrage technique au déploiement.',
+                    'provider': { '@id': 'https://emericguyon.com/#person' },
+                    'areaServed': [
+                      { '@type': 'City', 'name': 'Chambéry' },
+                      { '@type': 'City', 'name': 'Annecy' },
+                      { '@type': 'City', 'name': 'Lyon' },
+                      { '@type': 'City', 'name': 'Grenoble' },
+                      { '@type': 'City', 'name': 'Paris' },
+                      { '@type': 'AdministrativeArea', 'name': 'Savoie' },
+                      { '@type': 'Country', 'name': 'France' },
+                    ],
+                  },
+                },
+              ],
+            },
           },
         ],
       }),

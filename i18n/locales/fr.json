@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "Emeric Guyon — Développeur Fullstack Freelance",
+    "title": "Emeric Guyon — Développeur Fullstack Freelance à Chambéry",
     "description": "Développeur fullstack freelance Vue/Nuxt/React. 10+ ans à livrer apps web et SaaS pour startups. Chambéry, Lyon, Paris, full remote France."
   },
   "nav": {
@@ -64,7 +64,81 @@
   },
   "services": {
     "label": "Services",
-    "title": "Ce que je peux faire pour vous.",
+    "title": "Deux façons de travailler ensemble.",
+    "subtitle": "Selon votre besoin : un renfort qui s'intègre à votre équipe, ou un projet livré clé en main. Dans les deux cas, on en discute d'abord — réponse honnête sous 48 h.",
+    "regie": {
+      "tag": "01 — En régie",
+      "title": "Un renfort qui s'adapte",
+      "subtitle": "Un profil senior qui s'intègre à votre équipe, le temps qu'il faut.",
+      "availableLabel": "Disponible comme",
+      "roles": [
+        "Frontend expert",
+        "Développeur fullstack",
+        "Lead technique",
+        "Renfort d'équipe"
+      ],
+      "bullets": [
+        "S'intègre à votre équipe (Slack, dailies, sprints)",
+        "Remote ou sur site",
+        "Du POC au passage à l'échelle",
+        "Engagement souple, le temps qu'il faut"
+      ],
+      "meta": "Disponibilité & TJM communiqués sur demande",
+      "cta": "Discuter d'une mission"
+    },
+    "forfait": {
+      "tag": "02 — Au forfait",
+      "title": "Un projet livré clé en main",
+      "subtitle": "Une idée, un livrable. Je m'occupe de tout, de la conception à la mise en ligne.",
+      "area": "Basé à Chambéry — Savoie, Annecy, Lyon, Grenoble, Paris, ou 100 % en remote.",
+      "offers": {
+        "showcase": {
+          "name": "Site vitrine",
+          "desc": "Présenter votre activité avec impact et convertir.",
+          "price": "Sur devis",
+          "delay": "2 à 3 semaines"
+        },
+        "webapp": {
+          "name": "Application web",
+          "desc": "Digitaliser votre produit avec une app sur-mesure.",
+          "price": "Sur devis",
+          "delay": "Sur mesure"
+        }
+      },
+      "meta": "Devis détaillé et gratuit sous 48 h",
+      "cta": "Demander un devis"
+    },
+    "domains": {
+      "label": "Sur quoi j'interviens",
+      "intro": "Que ce soit en régie ou au forfait, voici les domaines sur lesquels j'interviens au quotidien."
+    },
+    "reassurance": {
+      "response": "Réponse sous 48 h",
+      "noCommit": "Sans engagement",
+      "remote": "Remote ou sur site"
+    },
+    "process": {
+      "label": "Comment ça se passe",
+      "steps": [
+        {
+          "title": "On échange",
+          "desc": "Vous me décrivez votre besoin — projet à livrer ou mission à renforcer. Gratuitement et sans engagement."
+        },
+        {
+          "title": "Je vous propose",
+          "desc": "Je reviens sous 48 h avec une proposition claire : périmètre, délai, et budget (ou TJM) honnête."
+        },
+        {
+          "title": "On avance",
+          "desc": "On démarre par étapes, avec des points réguliers. Vous gardez la visibilité du début à la fin."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Un projet ou une mission ? Décrivez-le-moi, je vous dis honnêtement si je peux aider.",
+      "text": "Réponse sous 48 h — toujours gratuite, jamais de blabla commercial.",
+      "button": "Démarrer la conversation"
+    },
     "items": {
       "custom": {
         "title": "Construire quelque chose de nouveau",

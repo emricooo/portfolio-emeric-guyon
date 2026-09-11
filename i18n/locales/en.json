@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "Emeric Guyon — Freelance Fullstack Developer",
+    "title": "Emeric Guyon — Freelance Fullstack Developer in Chambéry",
     "description": "Freelance fullstack developer Vue/Nuxt/React. 10+ years shipping web apps and SaaS for startups. Available France, fully remote."
   },
   "nav": {
@@ -44,7 +44,81 @@
   },
   "services": {
     "label": "Services",
-    "title": "What I can do for you.",
+    "title": "Two ways to work together.",
+    "subtitle": "Depending on your need: a reinforcement that fits into your team, or a project delivered turnkey. Either way, we talk it through first — an honest answer within 48 h.",
+    "regie": {
+      "tag": "01 — Staff augmentation",
+      "title": "A reinforcement that adapts",
+      "subtitle": "A senior profile who embeds in your team, for as long as it takes.",
+      "availableLabel": "Available as",
+      "roles": [
+        "Frontend expert",
+        "Fullstack developer",
+        "Technical lead",
+        "Team reinforcement"
+      ],
+      "bullets": [
+        "Embeds in your team (Slack, dailies, sprints)",
+        "Remote or on site",
+        "From POC to scaling up",
+        "Flexible engagement, for as long as it takes"
+      ],
+      "meta": "Availability & day rate shared on request",
+      "cta": "Discuss a mission"
+    },
+    "forfait": {
+      "tag": "02 — Fixed scope",
+      "title": "A project delivered turnkey",
+      "subtitle": "One idea, one deliverable. I handle everything, from design to launch.",
+      "area": "Based in Chambéry — Savoie, Annecy, Lyon, Grenoble, Paris, or fully remote.",
+      "offers": {
+        "showcase": {
+          "name": "Showcase website",
+          "desc": "Present your business with impact and convert.",
+          "price": "On quote",
+          "delay": "2 to 3 weeks"
+        },
+        "webapp": {
+          "name": "Web application",
+          "desc": "Digitize your product with a custom-built app.",
+          "price": "On quote",
+          "delay": "Custom"
+        }
+      },
+      "meta": "Detailed, free quote within 48 h",
+      "cta": "Request a quote"
+    },
+    "domains": {
+      "label": "What I work on",
+      "intro": "Whether on staff augmentation or fixed scope, here are the areas I work on day to day."
+    },
+    "reassurance": {
+      "response": "Reply within 48 h",
+      "noCommit": "No commitment",
+      "remote": "Remote or on site"
+    },
+    "process": {
+      "label": "How it works",
+      "steps": [
+        {
+          "title": "We talk",
+          "desc": "You describe your need — a project to deliver or a mission to reinforce. Free and with no commitment."
+        },
+        {
+          "title": "I propose",
+          "desc": "I come back within 48 h with a clear proposal: scope, timeline, and an honest budget (or day rate)."
+        },
+        {
+          "title": "We move forward",
+          "desc": "We start step by step, with regular check-ins. You keep full visibility from start to finish."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "A project or a mission? Describe it to me, I'll tell you honestly if I can help.",
+      "text": "Reply within 48 h — always free, never any sales fluff.",
+      "button": "Start the conversation"
+    },
     "items": {
       "custom": {
         "title": "Build something new",
