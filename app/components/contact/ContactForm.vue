@@ -46,6 +46,12 @@ const fieldErrors = ref<FieldErrors>({})
 const submitError = ref<ErrorKey | null>(null)
 const submittedName = ref('')
 
+// Pre-fill the project type when arriving from a Services CTA.
+const { projectType } = useContactPrefill()
+watch(projectType, (val) => {
+  if (val && !type.value) type.value = val
+}, { immediate: true })
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const isFormFilled = computed(() =>

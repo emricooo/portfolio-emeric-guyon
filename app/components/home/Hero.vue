@@ -45,7 +45,8 @@ onMounted(() => {
     </ClientOnly>
 
     <!-- H1 for SSR / SEO / screen readers — canvas paints the name visually but is aria-hidden -->
-    <h1 class="sr-only">{{ t('hero.name') }} — {{ t('hero.baseline') }}</h1>
+    <h1 class="sr-only">{{ t('hero.h1') }}</h1>
+    <p class="sr-only">{{ t('hero.baseline') }}</p>
 
     <!-- Scroll indicator (decorative — visual cue only, not announced to AT) -->
     <div

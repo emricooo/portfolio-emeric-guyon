@@ -45,4 +45,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://emericguyon.com/sitemap.xml
+Sitemap: https://emericguyon.com/sitemap_index.xml
