@@ -96,14 +96,14 @@
         "showcase": {
           "name": "Showcase website",
           "desc": "Present your business with impact and convert.",
-          "price": "On quote",
-          "delay": "2 to 3 weeks"
+          "price": "From €2,500",
+          "included": "Design, launch, basic SEO"
         },
         "webapp": {
           "name": "Web application",
           "desc": "Digitize your product with a custom-built app.",
           "price": "On quote",
-          "delay": "Custom"
+          "included": "Scoping, development, deployment"
         }
       },
       "meta": "Detailed, free quote within 48 h",
