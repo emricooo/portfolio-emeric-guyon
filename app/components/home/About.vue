@@ -57,7 +57,7 @@ timelineReveal('.about-timeline')
               <div v-for="(exp, i) in ['exp1', 'exp2', 'exp3', 'exp4']" :key="exp" class="timeline-item relative">
                 <span class="timeline-dot absolute -left-6 top-1.5 h-2 w-2 -translate-x-1/2 rounded-full" :class="i === 0 ? 'bg-primary' : 'bg-border'" />
                 <div class="flex items-baseline justify-between gap-4">
-                  <span class="text-sm font-semibold text-foreground">{{ t(`about.${exp}.company`) }} <span class="font-normal text-muted-foreground">— {{ t(`about.${exp}.role`) }}</span></span>
+                  <span class="text-sm font-semibold text-foreground">{{ t(`about.${exp}.company`) }} <span class="font-normal text-muted-foreground"> · {{ t(`about.${exp}.role`) }}</span></span>
                   <span class="shrink-0 text-xs text-muted-foreground">{{ t(`about.${exp}.period`) }}</span>
                 </div>
                 <p class="mt-1 text-xs text-muted-foreground/60">{{ t(`about.${exp}.clients`) }}</p>

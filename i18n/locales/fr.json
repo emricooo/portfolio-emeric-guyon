@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "Emeric Guyon — Développeur Fullstack Freelance à Chambéry",
+    "title": "Emeric Guyon, développeur fullstack freelance à Chambéry",
     "description": "Développeur fullstack freelance Vue/Nuxt/React. 10+ ans à livrer apps web et SaaS pour startups. Chambéry, Lyon, Paris, full remote France."
   },
   "nav": {
@@ -26,49 +26,49 @@
   },
   "hero": {
     "name": "EMERIC GUYON",
-    "baseline": "Développeur fullstack freelance senior — j'aide les startups et équipes tech à construire ce qu'il faut, et à le construire bien.",
+    "baseline": "Développeur fullstack freelance senior. J'aide les startups et les équipes tech à construire ce qu'il faut, et à le construire bien.",
     "location": "Basé à Chambéry, full remote ou déplacement selon le projet. Lyon, Grenoble, Annecy, Paris…",
     "ariaLabel": "Page d'accueil : présentation d'Emeric Guyon, développeur fullstack freelance senior",
     "h1": "Emeric Guyon, développeur web fullstack freelance à Chambéry"
   },
   "about": {
-    "title": "Développeur orienté produit. Je ne fais pas que coder — j'aide à livrer ce qui compte vraiment.",
-    "p1": "Développeur fullstack freelance avec 10+ ans d'expérience. J'ai travaillé avec des startups, des scale-ups et de grandes organisations — du MVP à la production, d'une feature à une plateforme complète.",
+    "title": "Développeur orienté produit. Je ne fais pas que coder, j'aide à livrer ce qui compte vraiment.",
+    "p1": "Développeur fullstack freelance, plus de dix ans d'expérience. J'ai travaillé avec des startups, des scale-ups et de grandes organisations, du MVP à la production, d'une simple feature à une plateforme complète.",
     "p2": "Je pense produit avant de penser composant. Je challenge les specs, je questionne les priorités, je cherche le ROI. Quand je rejoins une équipe, je comprends le « pourquoi » avant de coder le « comment ». C'est comme ça qu'on évite de construire la mauvaise chose.",
-    "p3": "React, Next.js, Vue.js, Nuxt, TypeScript, Node.js, Symfony — et du WordPress custom quand c'est le bon choix. L'IA fait partie de mon quotidien : elle accélère le delivery, je garantis la qualité.",
+    "p3": "React, Next.js, Vue.js, Nuxt, TypeScript, Node.js, Symfony, et du WordPress custom quand c'est le bon choix. L'IA fait partie de mon quotidien : elle accélère le delivery, je garantis la qualité.",
     "label": "À propos",
     "experienceLabel": "Parcours",
     "exp1": {
       "company": "Indépendant",
       "role": "Développeur fullstack",
-      "period": "2025 — aujourd'hui",
+      "period": "2025 – aujourd'hui",
       "clients": "MyRole, INRIA, Lönn, Elite Trackr"
     },
     "exp2": {
       "company": "Patriarche",
       "role": "Développeur front-end senior",
-      "period": "2022 — 2024",
+      "period": "2022 – 2024",
       "clients": "Patriarche, Ekkinox, 25 lieux d'innovation"
     },
     "exp3": {
       "company": "DATASOLUTION",
       "role": "Développeur web",
-      "period": "2021 — 2022",
+      "period": "2021 – 2022",
       "clients": "EvianChezVous, Mieux Voir, NutriciaStore"
     },
     "exp4": {
       "company": "NewQuest",
       "role": "Développeur web",
-      "period": "2010 — 2021",
+      "period": "2010 – 2021",
       "clients": "My Evian, Chocolat De Neuville, Mieux Voir, Bragard"
     }
   },
   "services": {
     "label": "Services",
     "title": "Deux façons de travailler ensemble.",
-    "subtitle": "Selon votre besoin : un renfort qui s'intègre à votre équipe, ou un projet livré clé en main. Dans les deux cas, on en discute d'abord — réponse honnête sous 48 h.",
+    "subtitle": "Selon votre besoin : un renfort qui s'intègre à votre équipe, ou un projet livré clé en main. Dans les deux cas, on en discute d'abord. Réponse honnête sous 48 h.",
     "regie": {
-      "tag": "01 — En régie",
+      "tag": "01 · En régie",
       "title": "Un renfort qui s'adapte",
       "subtitle": "Un profil senior qui s'intègre à votre équipe, le temps qu'il faut.",
       "availableLabel": "Disponible comme",
@@ -88,10 +88,10 @@
       "cta": "Discuter d'une mission"
     },
     "forfait": {
-      "tag": "02 — Au forfait",
+      "tag": "02 · Au forfait",
       "title": "Un projet livré clé en main",
       "subtitle": "Une idée, un livrable. Je m'occupe de tout, de la conception à la mise en ligne.",
-      "area": "Basé à Chambéry — Savoie, Annecy, Lyon, Grenoble, Paris, ou 100 % en remote.",
+      "area": "Basé à Chambéry. Savoie, Annecy, Lyon, Grenoble, Paris, ou 100 % en remote.",
       "offers": {
         "showcase": {
           "name": "Site vitrine",
@@ -123,7 +123,7 @@
       "steps": [
         {
           "title": "On échange",
-          "desc": "Vous me décrivez votre besoin — projet à livrer ou mission à renforcer. Gratuitement et sans engagement."
+          "desc": "Vous me décrivez votre besoin, projet à livrer ou mission à renforcer. Gratuitement et sans engagement."
         },
         {
           "title": "Je vous propose",
@@ -137,29 +137,29 @@
     },
     "finalCta": {
       "title": "Un projet ou une mission ? Décrivez-le-moi, je vous dis honnêtement si je peux aider.",
-      "text": "Réponse sous 48 h — toujours gratuite, jamais de blabla commercial.",
+      "text": "Réponse sous 48 h, toujours gratuite, jamais de blabla commercial.",
       "button": "Démarrer la conversation"
     },
     "items": {
       "custom": {
         "title": "Construire quelque chose de nouveau",
-        "desc": "Applications web, plateformes SaaS, outils métier — du cadrage technique au déploiement. Je construis des produits pensés pour durer, pas juste pour livrer."
+        "desc": "Applications web, plateformes SaaS, outils métier, du cadrage technique au déploiement. Je construis des produits pensés pour durer, pas juste pour livrer."
       },
       "redesign": {
         "title": "Corriger ou moderniser l'existant",
-        "desc": "Modernisation de stack, migration de framework, refactoring legacy — je reprends l'existant et je le fais évoluer sans tout casser."
+        "desc": "Modernisation de stack, migration de framework, refactoring legacy. Je reprends l'existant et je le fais évoluer sans tout casser."
       },
       "performance": {
         "title": "Accélérer et gagner en visibilité",
-        "desc": "Audit, optimisation Core Web Vitals, SSR, lazy loading — des gains mesurables sur la vitesse et le référencement."
+        "desc": "Audit, optimisation Core Web Vitals, SSR, lazy loading. Des gains mesurables sur la vitesse et le référencement."
       },
       "consulting": {
         "title": "Poser les bonnes fondations",
-        "desc": "Choix de stack, architecture technique, revue de code — j'interviens en amont pour construire juste, avant qu'une ligne soit écrite."
+        "desc": "Choix de stack, architecture technique, revue de code. J'interviens en amont pour construire juste, avant qu'une ligne soit écrite."
       },
       "ai": {
         "title": "Intégrer l'IA là où ça a du sens",
-        "desc": "Intégration d'APIs IA (OpenAI, Claude, etc.), workflows automatisés, features intelligentes — l'IA au service de votre produit, pas l'inverse."
+        "desc": "Intégration d'APIs IA (OpenAI, Claude, etc.), workflows automatisés, features intelligentes. L'IA au service de votre produit, pas l'inverse."
       },
       "team": {
         "title": "Renforcer votre équipe",
@@ -190,10 +190,10 @@
     "pagination": "Navigation entre projets",
     "statsLabel": "Chiffres clés",
     "madeWithAgency": "Réalisé avec",
-    "imageAlt": "{project} — capture d'écran {n} de l'interface ({tech})",
+    "imageAlt": "{project}, capture d'écran {n} de l'interface ({tech})",
     "items": {
       "evianchezvous": {
-        "seoTitle": "Evianchezvous — e-commerce React + Magento 2 · Emeric Guyon",
+        "seoTitle": "Evianchezvous, e-commerce React + Magento 2 · Emeric Guyon",
         "description": "Refonte headless d'evianchezvous : migration Magento 1 vers 2, front en React et GraphQL.",
         "longDescription": "Refonte complète d'evianchezvous, site de livraison d'eau Evian à domicile sur Paris et l'Île-de-France. On est passés d'un Magento 1 monolithique à un Magento 2 headless, avec un front React et GraphQL. J'ai été tech lead front pendant deux ans, du cadrage jusqu'à la prod.",
         "approach": "Le plus dur, c'était de tout mener de front : migrer Magento 1 vers 2, sortir l'interface du monolithe pour en faire une vraie app React, repenser le checkout et le compte client, et coder la logique d'abonnement (la livraison récurrente d'eau) qui n'existe pas nativement dans Magento. Il fallait aussi garder le SSR pour ne pas perdre le référencement, et arriver à des performances meilleures que la V1 dès le premier jour.",
@@ -205,7 +205,7 @@
         "seoDescription": "Refonte headless du site e-commerce Evianchezvous : migration Magento 1 vers 2, front React + GraphQL. Projet mené par Emeric Guyon, développeur freelance."
       },
       "ekkinox": {
-        "seoTitle": "Ekkinox — suivi financier BTP en Vue.js · Emeric Guyon",
+        "seoTitle": "Ekkinox, suivi financier BTP en Vue.js · Emeric Guyon",
         "description": "Outil métier de suivi financier de chantiers, développé en interne chez Patriarche puis passé en white-label.",
         "longDescription": "Outil métier sur mesure pour le suivi financier de chantiers, démarré en interne chez Patriarche puis transformé en version white-label, avec une perspective SaaS à terme. J'étais front-end senior et lead front pendant 18 mois, sur une équipe de deux front, deux back, un PM et un designer.",
         "approach": "Au départ, on voulait quelque chose de modulaire, mais le métier s'est révélé trop interconnecté pour ça. On est partis sur une organisation orientée domaine, structurée par interfaces, un découpage qui suit le mental model du designer UX et les flux utilisateurs réels. On a fait des ateliers métier pour chaque fonctionnalité et pas mal d'itérations rapides, avec des démos régulières au client. On ajustait souvent, parfois fortement, sans perdre la cohérence d'ensemble.",
@@ -217,7 +217,7 @@
         "seoDescription": "Ekkinox, outil métier de suivi financier de chantiers BTP développé en Vue.js et TypeScript pour Patriarche (Chambéry), puis décliné en white-label."
       },
       "25lieuxinnovation": {
-        "seoTitle": "25 Lieux Innovation — site WordPress + GSAP · Emeric Guyon",
+        "seoTitle": "25 Lieux Innovation, site WordPress + GSAP · Emeric Guyon",
         "description": "Site éditorial autour des 25 lieux qui transforment l'innovation en France.",
         "longDescription": "Site éditorial pour mettre en lumière 25 lieux qui transforment l'innovation en France, un projet maison de Patriarche autour d'un trio livre, site et événement. WordPress full-custom (custom post types et taxonomies), Timber pour le templating Twig, ACF Pro pour les blocs éditoriaux, et un gros travail GSAP pour faire vivre le contenu au scroll.",
         "approach": "C'est un site éditorial où la matière est riche : textes longs, photos, des lieux classés par catégorie. L'enjeu côté front, c'était d'éviter la lecture plate. On est partis sur un scroll storytelling avec des reveals soignés, des transitions entre les lieux, et un layout qui met la photo et le texte en valeur en alternance. Côté CMS, il fallait sortir du WordPress par défaut pour donner aux éditeurs un back-office aligné sur leur logique réelle.",
@@ -229,7 +229,7 @@
         "seoDescription": "Site éditorial WordPress full-custom avec animations GSAP pour 25 Lieux Innovation. Conception et développement par Emeric Guyon, freelance à Chambéry."
       },
       "lonn": {
-        "seoTitle": "Lonn — SaaS planning bien-être Symfony · Emeric Guyon",
+        "seoTitle": "Lonn, SaaS planning bien-être Symfony · Emeric Guyon",
         "description": "SaaS B2B pour centres de bien-être, avec planning des salariés et prise de rendez-vous.",
         "longDescription": "SaaS B2B pour centres de bien-être, avec un module de gestion du planning des salariés côté manager (façon pré-paie, règles horaires) et un système de prise de rendez-vous côté client final. Le MVP a été construit en équipe via Le Collectif 40, et j'étais responsable de l'architecture backend, du modèle de données et des choix techniques côté serveur.",
         "approach": "Le cœur du projet côté serveur, c'était de poser une archi qui tient : modéliser une base propre pour faire cohabiter deux scopes, le planning RH et les RDV clients, sans les mélanger, puis exposer tout ça via une API BFF Symfony sur mesure. J'étais en échange continu avec le client, qui faisait office de product owner, et chaque arbitrage de scope, chaque règle métier, était discuté avant d'être tranché. On a gardé une discipline MVP stricte : trancher ce qui ne rentre pas dans la première version plutôt que de livrer en retard.",
@@ -241,7 +241,7 @@
         "seoDescription": "Lonn, SaaS B2B de planning et prise de rendez-vous pour centres de bien-être, développé en Symfony et Vue.js. Architecture, front et intégration API."
       },
       "elitetrackr": {
-        "seoTitle": "EliteTrackr — plateforme data athlétisme · Emeric Guyon",
+        "seoTitle": "EliteTrackr, plateforme data athlétisme · Emeric Guyon",
         "description": "Le Wikipédia de l'athlé : 800K athlètes, 14M de performances, 230 pays, 9 langues.",
         "role": "Solo · Design, Dev, Devops, Data, SEO",
         "stats": {
@@ -260,7 +260,7 @@
         "seoDescription": "EliteTrackr, plateforme data athlétisme : 800K athlètes, 14M performances, 230 pays, 9 langues. Nuxt, AdonisJS, Python, D3. Projet solo d'Emeric Guyon."
       },
       "juriscan": {
-        "seoTitle": "Juriscan — extraction juridique par IA · Emeric Guyon",
+        "seoTitle": "Juriscan, extraction juridique par IA · Emeric Guyon",
         "description": "MVP d'extraction de données juridiques par IA, avec un pipeline OCR et LLM 100% local.",
         "longDescription": "MVP d'extraction automatique de données depuis des documents juridiques (assignations, commandements, PV) pour un cabinet d'huissiers. OCR, interprétation par IA, extraction structurée des champs, puis export vers le CRM interne du client. Un mois en solo, en freelance, du cadrage jusqu'à la livraison.",
         "approach": "Le cœur du projet, c'est un pipeline en deux temps. D'abord un OCR avec compréhension du layout sur le PDF, puis un modèle LLM qui interprète le markdown obtenu et identifie les champs à extraire (parties, dates, montants, adresses) selon le type de document. Tout tourne en local sur GPU, pas d'API cloud, les données sont trop sensibles pour ça. Un worker Rust orchestre le multithreading et garde un débit correct sur des batchs de PDFs.",
@@ -272,7 +272,7 @@
         "seoDescription": "Juriscan, MVP d'extraction de données juridiques par IA : pipeline OCR + LLM 100 % local en AdonisJS, DeepSeek et Rust. Confidentialité des documents garantie."
       },
       "parentsdouceur": {
-        "seoTitle": "ParentsDouceur — site vitrine WordPress · Emeric Guyon",
+        "seoTitle": "ParentsDouceur, site vitrine WordPress · Emeric Guyon",
         "description": "Site vitrine WordPress pour une accompagnante périnatale indépendante, UI/UX et dev en solo.",
         "longDescription": "Site vitrine pour une accompagnante périnatale et parentale indépendante. J'ai fait l'UI/UX et le développement, en direct avec la praticienne. WordPress full-custom (ACF et Timber), avec GSAP pour des animations douces.",
         "approach": "Un petit projet solo en direct avec la cliente : une accompagnante qui voulait un site qui lui ressemble, chaleureux, doux, féminin. J'ai choisi une direction artistique maternelle (pastel, courbes, typo serif), sans surenchère côté motion, juste ce qu'il faut pour respirer.",
@@ -284,7 +284,7 @@
         "seoDescription": "Site vitrine WordPress sur mesure pour une accompagnante périnatale : UI/UX, développement et mise en ligne par Emeric Guyon, développeur web freelance."
       },
       "inria": {
-        "seoTitle": "MALT Inria — memory profiling en Vue.js · Emeric Guyon",
+        "seoTitle": "MALT Inria, memory profiling en Vue.js · Emeric Guyon",
         "description": "Outil de memory profiling pour traquer les allocations mémoire (malloc).",
         "longDescription": "Refonte complète de MALT, un outil de memory profiling open-source développé par l'INRIA pour traquer les allocations mémoire (malloc/free) de programmes C/C++. J'ai migré l'interface d'Angular vers Vue 3 et TypeScript, avec un gros travail sur les visualisations D3.",
         "approach": "Le brief était de faire passer un outil scientifique d'Angular à Vue et TypeScript, sans dégrader l'expérience des chercheurs qui l'utilisent au quotidien. Une fois la base stabilisée et les plugins remis à jour, j'ai retravaillé la lisibilité des graphs et ajouté les interactions qui manquaient.",
@@ -296,7 +296,7 @@
         "seoDescription": "MALT, outil open-source de memory profiling C/C++ pour l'INRIA (Grenoble) : migration Angular vers Vue 3 et visualisations D3. Mission freelance d'Emeric Guyon."
       },
       "uplexa": {
-        "seoTitle": "uPlexa — refonte site crypto Next.js · Emeric Guyon",
+        "seoTitle": "uPlexa, refonte site crypto Next.js · Emeric Guyon",
         "description": "Refonte bénévole du site officiel d'uPlexa, une crypto axée vie privée et minage IoT.",
         "longDescription": "Refonte du site officiel d'uPlexa, une cryptomonnaie axée vie privée et minage via objets connectés (IoT). Projet bénévole, en solo, après avoir rejoint la communauté comme dev et utilisateur. L'ancien site était daté et l'équipe voulait quelque chose de plus pro, plus clean.",
         "approach": "Une vitrine crypto doit faire deux choses : expliquer le projet (vie privée, minage IoT) à un public tech, et inspirer confiance. J'ai fait une refonte complète sur Next.js avec i18n pour adresser une communauté internationale, avec les sections classiques d'un projet crypto sérieux : présentation, minage IoT, roadmap, équipe, wallet et exchange.",
@@ -353,20 +353,20 @@
     }
   },
   "footer": {
-    "copyright": "Emeric Guyon — Développeur web freelance · Chambéry, Savoie",
-    "source": "Code source ouvert — fork, explore, inspire-toi.",
+    "copyright": "Emeric Guyon, développeur web freelance · Chambéry, Savoie",
+    "source": "Code source ouvert. Fork, explore, inspire-toi.",
     "localLink": "Développeur web à Chambéry"
   },
   "projectsPage": {
     "label": "Portfolio",
     "title": "Projets",
     "intro": "Neuf projets qui racontent dix ans de développement web : plateformes SaaS, e-commerce headless, outils métier, sites éditoriaux. Chacun détaille le contexte, l'approche et le résultat.",
-    "seoTitle": "Projets web — Emeric Guyon, développeur freelance",
+    "seoTitle": "Projets web d'Emeric Guyon, développeur freelance",
     "seoDescription": "Portfolio d'Emeric Guyon, développeur web freelance à Chambéry : SaaS, e-commerce, outils métier, sites vitrines. Contexte, approche et résultats de chaque projet."
   },
   "local": {
     "seo": {
-      "title": "Développeur web freelance à Chambéry (Savoie) — Emeric Guyon",
+      "title": "Développeur web freelance à Chambéry (Savoie) · Emeric Guyon",
       "description": "Développeur web freelance à Chambéry : site vitrine, application web, refonte. 10+ ans d'expérience, interlocuteur unique, devis gratuit sous 48 h. Savoie, Annecy, Grenoble, Lyon."
     },
     "hero": {

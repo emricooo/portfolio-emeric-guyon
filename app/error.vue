@@ -40,7 +40,7 @@ onMounted(() => {
 })
 
 useHead({
-  title: () => `${title.value} — Emeric Guyon`,
+  title: () => `${title.value} · Emeric Guyon`,
   meta: [
     { name: 'robots', content: isNotFound.value ? 'noindex, follow' : 'noindex, nofollow' },
   ],

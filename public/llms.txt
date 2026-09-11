@@ -1,10 +1,10 @@
-# Emeric Guyon — Développeur Fullstack Freelance
+# Emeric Guyon, développeur fullstack freelance
 
-> Développeur fullstack freelance senior (10+ ans d'expérience), basé à Chambéry, France. Spécialisé Vue.js, Nuxt, React, TypeScript, Node.js, Symfony. Interventions à Chambéry, Annecy, Grenoble, Lyon, Paris ou en full remote (France). Approche orientée produit : cadrage, architecture, delivery — du MVP à la plateforme SaaS complète.
+> Développeur fullstack freelance senior (10+ ans d'expérience), basé à Chambéry, France. Spécialisé Vue.js, Nuxt, React, TypeScript, Node.js, Symfony. Interventions à Chambéry, Annecy, Grenoble, Lyon, Paris ou en full remote (France). Approche orientée produit : cadrage, architecture, delivery, du MVP à la plateforme SaaS complète.
 
 Site bilingue : français (défaut, `/`) et anglais (`/en`).
 
-Page locale : [Développeur web freelance à Chambéry](https://emericguyon.com/developpeur-web-chambery) — site vitrine, application web, refonte pour les entreprises de Chambéry, Savoie, Annecy, Grenoble, Lyon.
+Page locale : [Développeur web freelance à Chambéry](https://emericguyon.com/developpeur-web-chambery) : site vitrine, application web, refonte pour les entreprises de Chambéry, Savoie, Annecy, Grenoble, Lyon.
 Tous les projets : https://emericguyon.com/projets
 
 ## Services
@@ -18,7 +18,7 @@ Tous les projets : https://emericguyon.com/projets
 
 ## Projets principaux
 
-- [EliteTrackr](https://emericguyon.com/projets/elitetrackr) : plateforme data athlétisme — 800K athlètes, 14M performances, 230 pays, 9 langues (Nuxt, AdonisJS, Python, D3)
+- [EliteTrackr](https://emericguyon.com/projets/elitetrackr) : plateforme data athlétisme, 800K athlètes, 14M performances, 230 pays, 9 langues (Nuxt, AdonisJS, Python, D3)
 - [Ekkinox](https://emericguyon.com/projets/ekkinox) : outil de suivi financier de chantiers, interne puis white-label (Vue.js, TypeScript)
 - [Lonn](https://emericguyon.com/projets/lonn) : SaaS B2B planning et prise de rendez-vous pour centres de bien-être (Symfony, Vue.js)
 - [Juriscan](https://emericguyon.com/projets/juriscan) : extraction de données juridiques par IA, pipeline OCR + LLM 100 % local (AdonisJS, DeepSeek, Rust)
@@ -30,10 +30,10 @@ Tous les projets : https://emericguyon.com/projets
 
 ## Parcours
 
-- 2025 — aujourd'hui : freelance (MyRole, INRIA, Lönn, EliteTrackr)
-- 2022 — 2024 : Patriarche, développeur front-end senior
-- 2021 — 2022 : Datasolution, développeur web
-- 2010 — 2021 : NewQuest (Evian, Blédina, Le Slip Français, EDHEC…)
+- 2025 – aujourd'hui : freelance (MyRole, INRIA, Lönn, EliteTrackr)
+- 2022 – 2024 : Patriarche, développeur front-end senior
+- 2021 – 2022 : Datasolution, développeur web
+- 2010 – 2021 : NewQuest (Evian, Blédina, Le Slip Français, EDHEC…)
 
 ## Contact
 
