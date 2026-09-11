@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://emericguyon.com',
-    name: 'Emeric Guyon — Fullstack Freelance Developer',
+    name: 'Emeric Guyon, Fullstack Freelance Developer',
   },
 
   sitemap: {

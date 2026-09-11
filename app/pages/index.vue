@@ -58,7 +58,7 @@ useHead({
           {
             '@type': 'ProfessionalService',
             '@id': 'https://emericguyon.com/#service',
-            'name': 'Emeric Guyon — Développement Fullstack Freelance',
+            'name': 'Emeric Guyon, développement fullstack freelance',
             'url': 'https://emericguyon.com',
             'image': 'https://emericguyon.com/images/og-image-fr.jpg',
             'description': t('seo.description'),
@@ -102,7 +102,7 @@ useHead({
                   'itemOffered': {
                     '@type': 'Service',
                     'name': 'Création de site vitrine',
-                    'description': 'Site vitrine sur-mesure pour présenter votre activité et convertir — conception, développement et mise en ligne.',
+                    'description': 'Site vitrine sur-mesure pour présenter votre activité et convertir : conception, développement et mise en ligne.',
                     'provider': { '@id': 'https://emericguyon.com/#person' },
                     'areaServed': [
                       { '@type': 'City', 'name': 'Chambéry' },
@@ -120,7 +120,7 @@ useHead({
                   'itemOffered': {
                     '@type': 'Service',
                     'name': 'Développement d\'application web',
-                    'description': 'Application web et SaaS sur-mesure — du cadrage technique au déploiement.',
+                    'description': 'Application web et SaaS sur-mesure, du cadrage technique au déploiement.',
                     'provider': { '@id': 'https://emericguyon.com/#person' },
                     'areaServed': [
                       { '@type': 'City', 'name': 'Chambéry' },
