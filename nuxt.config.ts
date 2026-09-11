@@ -36,6 +36,9 @@ export default defineNuxtConfig({
       { label: 'Last Modified', width: '25%' },
     ],
     urls: [
+      { loc: '/developpeur-web-chambery', _i18nTransform: false },
+      { loc: '/projets', _i18nTransform: true },
+      ...[
       'elitetrackr',
       'ekkinox',
       '25lieuxinnovation',
@@ -45,7 +48,8 @@ export default defineNuxtConfig({
       'parentsdouceur',
       'inria',
       'uplexa',
-    ].map(slug => ({ loc: `/projets/${slug}`, _i18nTransform: true })),
+      ].map(slug => ({ loc: `/projets/${slug}`, _i18nTransform: true })),
+    ],
   },
 
   i18n: {
@@ -57,13 +61,9 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     langDir: 'locales',
     strategy: 'prefix_except_default',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_locale',
-      cookieSecure: true,
-      alwaysRedirect: false,
-      fallbackLocale: 'fr',
-    },
+    // No automatic locale redirect: `/` must always serve the French homepage
+    // (Googlebot with Accept-Language: en was 302'd to /en, weakening `/`).
+    detectBrowserLanguage: false,
   },
 
   css: ['~/assets/css/main.css'],
@@ -103,7 +103,12 @@ export default defineNuxtConfig({
       '/_ipx/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
       '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
       // HTML pages — revalidate every hour
-      '/**': { headers: { 'cache-control': 'public, max-age=3600, must-revalidate' } },
+      '/**': {
+        headers: {
+          'cache-control': 'public, max-age=3600, must-revalidate',
+          'strict-transport-security': 'max-age=31536000; includeSubDomains',
+        },
+      },
     },
   },
 

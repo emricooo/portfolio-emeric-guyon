@@ -39,7 +39,7 @@ const next = computed(() => {
       </NuxtLink>
       <NuxtLink
         v-else
-        to="/#projects"
+        to="/projets"
         data-cursor-hover
         class="project-footer-card project-footer-card--all"
       >
@@ -68,7 +68,7 @@ const next = computed(() => {
       </NuxtLink>
       <NuxtLink
         v-else
-        to="/#projects"
+        to="/projets"
         data-cursor-hover
         class="project-footer-card project-footer-card--all project-footer-card--right"
       >

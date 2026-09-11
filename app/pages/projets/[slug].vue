@@ -15,7 +15,7 @@ const coverSrc = project.value.images.find(i => i.cover)?.src || project.value.i
 
 useSeo({
   title: t(`projects.items.${project.value.slug}.seoTitle`),
-  description: t(`projects.items.${project.value.slug}.description`),
+  description: t(`projects.items.${project.value.slug}.seoDescription`),
   image: coverSrc,
 })
 
@@ -53,7 +53,7 @@ useHead({
                 '@type': 'ListItem',
                 'position': 2,
                 'name': 'Projets',
-                'item': 'https://emericguyon.com/#projects',
+                'item': 'https://emericguyon.com/projets',
               },
               {
                 '@type': 'ListItem',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const { animateOnScroll, letterReveal, wordReveal, staggerReveal } = useScrollAnimation()
 
 // Animations
@@ -62,7 +62,10 @@ animateOnScroll('.contact-location', { y: 20, duration: 0.5, delay: 1.3 })
               {{ t('hero.baseline') }}
             </p>
             <p class="contact-location mt-2 text-[11px] uppercase tracking-[0.2em] text-muted-foreground/60">
-              {{ t('hero.location') }}
+              <NuxtLink v-if="locale === 'fr'" to="/developpeur-web-chambery" class="transition-colors hover:text-foreground">
+                {{ t('hero.location') }}
+              </NuxtLink>
+              <template v-else>{{ t('hero.location') }}</template>
             </p>
           </div>
         </div>

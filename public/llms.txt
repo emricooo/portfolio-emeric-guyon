@@ -4,6 +4,9 @@
 
 Site bilingue : français (défaut, `/`) et anglais (`/en`).
 
+Page locale : [Développeur web freelance à Chambéry](https://emericguyon.com/developpeur-web-chambery) — site vitrine, application web, refonte pour les entreprises de Chambéry, Savoie, Annecy, Grenoble, Lyon.
+Tous les projets : https://emericguyon.com/projets
+
 ## Services
 
 - Développement d'applications web, plateformes SaaS et outils métier (cadrage → déploiement)

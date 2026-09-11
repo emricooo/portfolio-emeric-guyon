@@ -2,7 +2,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const { t, tm, rt } = useI18n()
+const { t, tm, rt, locale } = useI18n()
 const { letterReveal, wordReveal } = useScrollAnimation()
 const { goToContact } = useContactPrefill()
 
@@ -217,7 +217,10 @@ onUnmounted(() => {
             </p>
             <p class="svc-anim mt-3 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
               <IconsMapPin class="mt-px h-4 w-4 shrink-0 text-foreground/50" />
-              {{ t('services.forfait.area') }}
+              <NuxtLink v-if="locale === 'fr'" to="/developpeur-web-chambery" class="underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground">
+                {{ t('services.forfait.area') }}
+              </NuxtLink>
+              <template v-else>{{ t('services.forfait.area') }}</template>
             </p>
 
             <div class="mt-6 space-y-3">
