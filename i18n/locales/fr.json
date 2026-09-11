@@ -95,15 +95,15 @@
       "offers": {
         "showcase": {
           "name": "Site vitrine",
-          "desc": "Présenter votre activité avec impact et convertir.",
-          "price": "Sur devis",
-          "delay": "2 à 3 semaines"
+          "desc": "Présenter votre activité et donner envie de vous contacter.",
+          "price": "À partir de 2 500 €",
+          "included": "Design, mise en ligne, SEO de base"
         },
         "webapp": {
           "name": "Application web",
-          "desc": "Digitaliser votre produit avec une app sur-mesure.",
+          "desc": "Un outil sur-mesure pour votre produit ou votre équipe.",
           "price": "Sur devis",
-          "delay": "Sur mesure"
+          "included": "Cadrage, développement, déploiement"
         }
       },
       "meta": "Devis détaillé et gratuit sous 48 h",
@@ -372,7 +372,7 @@
     "hero": {
       "label": "Freelance · Chambéry, Savoie",
       "title": "Développeur web freelance à Chambéry",
-      "intro": "Je conçois et développe des sites vitrines et des applications web sur-mesure pour les entreprises de Chambéry, de Savoie et des Alpes. Un seul interlocuteur, du premier échange à la mise en ligne, avec dix ans de métier derrière.",
+      "intro": "Je fais des sites vitrines et des applications web pour les entreprises de Chambéry et de Savoie. Vous parlez à une seule personne, celle qui conçoit et qui code, du premier rendez-vous jusqu'à la mise en ligne. J'ai dix ans de métier, dont onze passés en agence à Chambéry.",
       "cta": "Décrire mon projet",
       "ctaSecondary": "Voir les projets",
       "pills": [
@@ -383,19 +383,19 @@
     },
     "who": {
       "label": "Pour qui",
-      "title": "Vous êtes en Savoie et vous avez besoin d'un développeur web fiable.",
+      "title": "Vous êtes en Savoie et il vous faut un développeur web sérieux.",
       "items": [
         {
           "title": "TPE, PME et indépendants",
-          "desc": "Artisans, commerces, cabinets, professions libérales : un site vitrine qui présente clairement votre activité, se charge vite et vous amène des demandes de contact."
+          "desc": "Vous avez besoin d'un site qui explique clairement ce que vous faites, qui se charge vite et qui donne envie de vous appeler. C'est le cas le plus courant, et celui que je préfère."
         },
         {
           "title": "Agences et studios",
-          "desc": "Vous avez le client et le design, il vous manque le développement. J'interviens en sous-traitance, en marque blanche si besoin, sur du sur-mesure ou du WordPress custom."
+          "desc": "Vous avez le client et la maquette, il vous manque quelqu'un pour coder. Je travaille en sous-traitance, en marque blanche si vous voulez, sur du sur-mesure comme sur du WordPress."
         },
         {
           "title": "Startups et scale-ups",
-          "desc": "Savoie Technolac, Annecy, Grenoble : un profil senior pour construire un MVP, renforcer votre équipe ou reprendre une base de code existante."
+          "desc": "Savoie Technolac, Annecy, Grenoble. Un profil senior pour sortir un MVP, renforcer l'équipe quelques mois ou reprendre un code que plus personne n'ose toucher."
         }
       ]
     },
@@ -405,53 +405,55 @@
       "items": [
         {
           "title": "Site vitrine sur-mesure",
-          "desc": "Conception, développement, mise en ligne. Un site rapide, bien référencé, que vous pouvez faire évoluer. Pas de template, pas de thème acheté.",
+          "desc": "Conception, développement, mise en ligne. Un site rapide, bien construit pour Google, que vous pourrez faire évoluer. Je ne pars pas d'un thème acheté.",
           "price": "À partir de 2 500 €",
-          "delay": "2 à 3 semaines",
+          "included": "Design, mise en ligne, SEO de base",
           "type": "showcase"
         },
         {
           "title": "Application web",
-          "desc": "Outil métier, plateforme SaaS, espace client : du cadrage technique au déploiement, avec une architecture pensée pour durer.",
+          "desc": "Outil interne, espace client, plateforme SaaS. Je cadre le besoin avec vous, je développe, je déploie. L'architecture est pensée pour tenir plusieurs années.",
           "price": "Sur devis",
-          "delay": "Selon le périmètre",
+          "included": "Cadrage, développement, déploiement",
           "type": "webapp"
         },
         {
           "title": "Refonte et modernisation",
-          "desc": "Votre site est lent, daté ou impossible à maintenir. Audit, migration de stack, optimisation des performances et du référencement.",
+          "desc": "Votre site est lent, daté, ou plus personne ne sait le modifier. Je commence par un audit gratuit, puis je vous propose un plan chiffré.",
           "price": "Sur devis",
-          "delay": "Audit gratuit",
+          "included": "Audit gratuit, plan d'action chiffré",
           "type": "redesign"
         }
-      ]
+      ],
+      "includedLabel": "Inclus",
+      "priceLabel": "Tarif"
     },
     "why": {
       "label": "Freelance ou agence",
-      "title": "Pourquoi un développeur freelance plutôt qu'une agence web ?",
+      "title": "Pourquoi un freelance plutôt qu'une agence ?",
       "items": [
         {
           "title": "Un seul interlocuteur",
-          "desc": "Celui qui vous répond est celui qui conçoit et qui code. Pas de chef de projet intermédiaire, pas d'information perdue en route."
+          "desc": "La personne qui vous répond est celle qui fait le travail. Pas de chef de projet entre nous, rien ne se perd en route."
         },
         {
           "title": "Le juste prix",
-          "desc": "Pas de marge d'agence ni de frais de structure. Vous payez le travail réel, avec un devis détaillé avant de commencer."
+          "desc": "Vous payez le travail, pas les bureaux ni la structure. Le devis est détaillé avant de commencer, et il ne bouge pas en cours de route sans votre accord."
         },
         {
           "title": "Dix ans de métier",
-          "desc": "Onze ans en agence (NewQuest, Chambéry) puis en entreprise avant de passer freelance. Je connais les deux côtés, et les pièges de chacun."
+          "desc": "Onze ans chez NewQuest, une agence web de Chambéry, puis en entreprise avant de passer freelance. Je connais les deux côtés de la table."
         },
         {
-          "title": "Réactif et local",
-          "desc": "Basé à Chambéry, joignable directement. Réunion sur place pour le cadrage, visio pour le suivi, réponse sous 48 h à chaque message."
+          "title": "Basé à Chambéry",
+          "desc": "Joignable directement, par téléphone ou par mail. Réunion sur place pour cadrer, visio pour le suivi. Je réponds sous 48 h."
         }
       ]
     },
     "proof": {
       "label": "Références locales",
       "title": "Des projets pour des entreprises d'ici.",
-      "text": "J'ai travaillé pour Patriarche (Chambéry), MyRole (Chambéry) et l'INRIA (Grenoble), et pendant onze ans chez NewQuest, agence web chambérienne, sur des comptes comme Evian ou Le Slip Français. Le reste de mes projets se fait en remote, pour des clients à Lyon, Paris ou ailleurs en France.",
+      "text": "J'ai travaillé pour Patriarche et MyRole à Chambéry, et pour l'INRIA à Grenoble. Avant ça, onze ans chez NewQuest, agence chambérienne, sur des comptes comme Evian ou Le Slip Français. Le reste de mes clients est à Lyon, à Paris ou ailleurs en France, et on ne s'est parfois jamais vus en vrai.",
       "clients": [
         {
           "name": "Patriarche",
@@ -478,8 +480,8 @@
     },
     "area": {
       "label": "Zone d'intervention",
-      "title": "Chambéry, la Savoie et au-delà.",
-      "text": "Basé à Chambéry, je me déplace facilement à Aix-les-Bains, Annecy, Grenoble et Lyon pour les réunions de cadrage et les points importants. Pour le reste, la visio fonctionne très bien : une partie de mes clients ne m'a jamais rencontré en personne.",
+      "title": "Chambéry, la Savoie et un peu plus loin.",
+      "text": "Je suis à Chambéry. Aix-les-Bains, Annecy, Grenoble et Lyon sont à moins d'une heure et demie, donc je me déplace volontiers pour les réunions de cadrage et les points importants. Le reste du temps, la visio suffit largement.",
       "cities": [
         "Chambéry",
         "Aix-les-Bains",
@@ -495,23 +497,23 @@
       "items": [
         {
           "q": "Combien coûte un site vitrine à Chambéry ?",
-          "a": "Un site vitrine sur-mesure démarre à 2 500 € pour quatre à six pages, design compris, livré en deux à trois semaines. Le prix final dépend du nombre de pages, des fonctionnalités (formulaire, prise de rendez-vous, multilingue) et de qui produit les contenus. Vous recevez un devis détaillé et gratuit sous 48 h."
+          "a": "Comptez 2 500 € minimum pour un site sur-mesure de quatre à six pages, design compris. Le prix monte avec le nombre de pages, les fonctionnalités (formulaire, prise de rendez-vous, plusieurs langues) et selon qui écrit les textes. Vous recevez un devis détaillé et gratuit sous 48 h."
         },
         {
           "q": "Freelance ou agence web : quelle différence ?",
-          "a": "Avec un freelance, la personne qui vend est celle qui code. Vous gagnez en réactivité et vous ne payez pas les frais de structure d'une agence. Une agence reste pertinente si vous avez besoin d'une équipe complète (stratégie, print, publicité) sur un même projet. Pour un site ou une application, un développeur senior suffit, et je m'appuie sur des designers indépendants quand le projet le demande."
+          "a": "Avec un freelance, la personne qui vend est celle qui code. Vous gagnez du temps à chaque échange et vous ne payez pas la structure d'une agence. Une agence a du sens si vous avez besoin d'une équipe complète sur le même projet, avec de la stratégie, du print ou de la publicité. Pour un site ou une application, un développeur senior suffit. Quand il faut un designer, je travaille avec des indépendants que je connais."
         },
         {
           "q": "Intervenez-vous sur site en Savoie ?",
-          "a": "Oui. Je suis basé à Chambéry et je me déplace à Aix-les-Bains, Annecy, Grenoble et Lyon pour le cadrage et les étapes clés. Le suivi se fait ensuite en visio ou par messagerie, selon ce qui vous convient."
+          "a": "Oui. Je suis à Chambéry et je me déplace à Aix-les-Bains, Annecy, Grenoble et Lyon pour le cadrage et les étapes importantes. Ensuite, on avance en visio ou par messagerie, comme vous préférez."
         },
         {
           "q": "Quels sont les délais pour un site vitrine ?",
-          "a": "Comptez deux à trois semaines à partir de la validation des contenus (textes, photos). Pour une application web, le délai dépend du périmètre : un premier MVP prend en général entre quatre et huit semaines."
+          "a": "En général entre deux et quatre semaines, selon la vitesse à laquelle arrivent les textes, les photos et vos retours. Pour une application web, tout dépend du périmètre. Un premier MVP prend le plus souvent entre quatre et huit semaines. On fixe le planning ensemble dans le devis."
         },
         {
           "q": "Quelles technologies utilisez-vous ? Pourquoi pas toujours WordPress ?",
-          "a": "Vue.js, Nuxt, React, TypeScript et Node.js côté sur-mesure ; Symfony quand un back-end robuste s'impose ; WordPress custom quand le site est avant tout éditorial et que votre équipe doit le modifier seule. Le choix se fait selon votre besoin, pas selon une habitude."
+          "a": "Vue.js, Nuxt, React, TypeScript et Node.js pour le sur-mesure. Symfony quand il faut un back-end solide. WordPress quand le site est surtout éditorial et que votre équipe doit pouvoir le modifier seule. Je choisis l'outil en fonction du projet, pas l'inverse."
         }
       ]
     },

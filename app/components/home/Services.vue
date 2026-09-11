@@ -237,7 +237,7 @@ onUnmounted(() => {
                 </span>
                 <span class="svc-offer-meta">
                   <span class="svc-offer-price">{{ t(`services.forfait.offers.${offer.key}.price`) }}</span>
-                  <span class="svc-offer-delay">{{ t(`services.forfait.offers.${offer.key}.delay`) }}</span>
+                  <span class="svc-offer-delay">{{ t(`services.forfait.offers.${offer.key}.included`) }}</span>
                 </span>
               </button>
             </div>

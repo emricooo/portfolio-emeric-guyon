@@ -11,7 +11,7 @@ const { goToContact } = useContactPrefill()
 const PAGE_URL = 'https://emericguyon.com/developpeur-web-chambery'
 
 type Item = { title: string, desc: string }
-type Offer = Item & { price: string, delay: string, type: ContactProjectType }
+type Offer = Item & { price: string, included: string, type: ContactProjectType }
 type Faq = { q: string, a: string }
 type Client = { name: string, city: string }
 
@@ -158,12 +158,12 @@ useHead({
             <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{{ offer.desc }}</p>
             <dl class="mt-6 space-y-1 text-sm">
               <div class="flex justify-between gap-4">
-                <dt class="text-muted-foreground">Tarif</dt>
+                <dt class="text-muted-foreground">{{ t('local.offers.priceLabel') }}</dt>
                 <dd class="font-semibold text-foreground">{{ offer.price }}</dd>
               </div>
               <div class="flex justify-between gap-4">
-                <dt class="text-muted-foreground">Délai</dt>
-                <dd class="font-semibold text-foreground">{{ offer.delay }}</dd>
+                <dt class="text-muted-foreground">{{ t('local.offers.includedLabel') }}</dt>
+                <dd class="text-right font-semibold text-foreground">{{ offer.included }}</dd>
               </div>
             </dl>
             <button type="button" class="svc-btn svc-btn--outline group mt-6 self-start" @click="goToContact(offer.type)">
