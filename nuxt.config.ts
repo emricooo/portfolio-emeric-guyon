@@ -131,6 +131,11 @@ export default defineNuxtConfig({
               src: 'https://analytics.elitetrackr.com/script.js',
               defer: true,
               'data-website-id': 'f1fbaa2f-37d8-4072-b09c-d961faf36ad2',
+            }, {
+              // In-house tracker (whovisits), run in parallel with Umami during the trial
+              src: 'https://t.elitetrackr.com/t.js',
+              defer: true,
+              'data-site': 'emericguyon',
             }]
           : []),
       ],
@@ -140,7 +145,10 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         // Preconnect to deferred analytics (cuts RTT when script loads)
         ...(!import.meta.dev
-          ? [{ rel: 'preconnect', href: 'https://analytics.elitetrackr.com', crossorigin: '' }]
+          ? [
+              { rel: 'preconnect', href: 'https://analytics.elitetrackr.com', crossorigin: '' },
+              { rel: 'preconnect', href: 'https://t.elitetrackr.com', crossorigin: '' },
+            ]
           : []),
         // Critical fonts: preloaded locally (no external RTT)
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/ClashDisplay-Bold.woff2', crossorigin: '' },
